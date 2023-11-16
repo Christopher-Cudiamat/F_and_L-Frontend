@@ -16,7 +16,7 @@ export const getFeaturedCondos = async (): Promise<ICondosList | null> => {
       'type'
     ],
     populate: { hero: { fields: ['url'] } },
-    pagination: { pageSize: 4 }
+    pagination: { pageSize: 6 }
   })
 
   return {

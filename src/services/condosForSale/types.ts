@@ -2,7 +2,7 @@ export interface ICondos {
   slug: string;
   title: string;
   description: string;
-  status: string;
+  status: string[];
   price: string;
   image: string;
   type: string;

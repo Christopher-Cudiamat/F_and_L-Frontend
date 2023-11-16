@@ -2,7 +2,7 @@
 import { INavItem } from '@/app/config';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import Container from '@/components/Atom/Container/Container';
+import Container from '@/components/Atoms/Container/Container';
 
 interface IHeaderProps {
   navItems: INavItem[];
@@ -16,7 +16,7 @@ export default function Header({navItems}: IHeaderProps) {
   const nonActiveStyle = `${linkStyle} border-transparent`; 
 
   return (
-    <header className='border-b border-t border-teal-400 bg-white'>
+    <header className='border-b border-t border-teal-400 bg-white hidden md:block'>
       <Container className='flex justify-between'>
         <p className="py-4">LOGO</p>
         <nav>

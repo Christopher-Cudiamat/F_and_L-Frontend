@@ -1,25 +1,16 @@
-import PropertyCard from "@/components/Molecules/PropertyCard/PropertyCard.component";
-import { getFeaturedCondos } from "@/services/condosForSale/getFeaturedCondos";
-import { ICondos } from '@/services/condosForSale/types';
-import Container from '@/components/Atom/Container/Container';
-
+import React from 'react';
+import SectionTitle from "@/components/Molecules/SectionTitle/SectionTitle";
+import SectionFeaturedProperties from "@/sections/SectionFeaturedProperties/SectionFeaturedProperties";
 
 export default async function HomePage() {
-  const featuredCondos = await getFeaturedCondos();
-
   return (
-    <section>
-      <Container>
-        <ul className="flex flex-col lg:flex-row gap-6">
-          {
-            featuredCondos?.condos.map((item: ICondos) => (
-              <li key={item.slug} className="w-full md:w-96">
-                <PropertyCard {...item}/>
-              </li>
-            ))
-          }
-        </ul>
-      </Container>
-    </section>
+    <React.Fragment>
+      <SectionTitle
+        title="Best selling properties"
+        ButtonLabel="View all"
+        href="/condos-for-sale"
+      />
+      <SectionFeaturedProperties />
+    </React.Fragment>
   )
 }

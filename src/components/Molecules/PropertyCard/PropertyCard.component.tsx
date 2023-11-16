@@ -20,7 +20,7 @@ const PropertyCard = ({
   }
 
   return (
-    <div className="group/property-card bg-white w-full rounded-md shadow-lg"> 
+    <div className="group/property-card bg-white w-full rounded-md shadow-lg hover:shadow-xl duration-200"> 
       <div className='flex flex-col relative w-full h-52 rounded-tl-md rounded-tr-md overflow-hidden'>
         <Image 
           src={image} 
@@ -30,9 +30,15 @@ const PropertyCard = ({
           className="group-hover/property-card:scale-[1.20] duration-300 object-cover" 
         />
         <div className="absolute inset-0 bg-blue-950/50"/>
-        <div className="bg-blue-600 text-white text-xs font-normal absolute top-3 right-3 rounded-xl p-2">
-          {status}
-        </div>
+        <ul className="flex gap-x-1">
+          <li className={
+            `text-xs font-normal absolute top-3 right-3 rounded-xl p-2 text-white
+            ${!status.includes('Sold-out') ? 'bg-blue-600' : 'bg-red-500'} 
+            `}
+          >
+            {status}
+          </li>
+        </ul>
         <div className="absolute bottom-4 left-4 max-w-[80%]">
           <h6 className='text-yellow-300 text-sm font-bold uppercase'>
             {type}
@@ -54,7 +60,7 @@ const PropertyCard = ({
         </p>
         <Link 
           href={`condos-for-sale/${slug}`} 
-          className="bg-blue-600 p-4 text-white text-xs font-bold flex rounded-md w-fit"
+          className="bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white text-xs font-bold flex rounded-md w-fit"
         >
           More Details
         </Link>

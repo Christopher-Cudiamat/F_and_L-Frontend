@@ -5,11 +5,11 @@ interface IContainerProps {
 
 export default function Container({
   children,
-  className
+  className = ""
 }: IContainerProps) {
 
   return (
-    <div className={`${className} container mx-auto px-6`}>
+    <div className={`container 2xl:max-w-[1300px] mx-auto px-6 ${className}`}>
       { children }
     </div>
   );
