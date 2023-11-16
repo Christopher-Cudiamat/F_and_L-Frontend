@@ -1,0 +1,32 @@
+{
+  "name": "real-estate",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "fetch-undici": "^3.0.1",
+    "marked": "^10.0.0",
+    "next": "latest",
+    "qs": "^6.11.2",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/marked": "^6.0.0",
+    "@types/node": "latest",
+    "@types/qs": "^6.9.10",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "postcss": "latest",
+    "tailwindcss": "latest",
+    "typescript": "latest"
+  }
+}
