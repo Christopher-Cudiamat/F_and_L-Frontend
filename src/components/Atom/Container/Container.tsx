@@ -1,6 +1,6 @@
 interface IContainerProps {
-  children: React.ReactNode; //👈 children prop typr
-  className: string;
+  children: React.ReactNode;
+  className?: string;
 };
 
 export default function Container({

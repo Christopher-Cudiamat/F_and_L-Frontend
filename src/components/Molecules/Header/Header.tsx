@@ -2,7 +2,7 @@
 import { INavItem } from '@/app/config';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import Container from '@/components/Container/Container';
+import Container from '@/components/Atom/Container/Container';
 
 interface IHeaderProps {
   navItems: INavItem[];
