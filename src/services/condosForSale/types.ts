@@ -2,15 +2,15 @@ export interface ICondos {
   slug: string;
   title: string;
   description: string;
-  location: string;
+  status: string;
   price: string;
-  heroImg: string;
+  image: string;
+  type: string;
+  location?: string;
   nearestLandmark?: string;
 }
 
 export interface ICondo extends ICondos {
-  type: string;
-  status: string;
   latitude: string;
   longitude: string;
   gallery: string[];

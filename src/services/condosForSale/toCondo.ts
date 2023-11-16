@@ -6,8 +6,10 @@ export function toCondo(item: ICmsItem): ICondos {
     slug: attributes.slug,
     title: attributes.title,
     description: attributes.description,
-    location: attributes.location,
+    status: attributes.status,
+    nearestLandmark: attributes.nearestLandmark,
     price: attributes.price,
-    heroImg: new URL(attributes.hero.data.attributes.url, process.env.CMS_URL).href
+    type: attributes.type,
+    image: new URL(attributes.hero.data.attributes.url, process.env.CMS_URL).href
   };
 }

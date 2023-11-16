@@ -10,8 +10,10 @@ export const getFeaturedCondos = async (): Promise<ICondosList | null> => {
       'slug',
       'title',
       'description',
-      'location',
+      'nearestLandmark',
+      'status',
       'price',
+      'type'
     ],
     populate: { hero: { fields: ['url'] } },
     pagination: { pageSize: 4 }

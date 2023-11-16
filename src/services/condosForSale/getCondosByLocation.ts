@@ -15,8 +15,10 @@ export const getCondosByLocation = async (location: string): Promise<ICondosList
       'slug',
       'title',
       'description',
-      'location',
+      'nearestLandmark',
+      'status',
       'price',
+      'type'
     ],
     populate: { hero: { fields: ['url'] } },
   })
