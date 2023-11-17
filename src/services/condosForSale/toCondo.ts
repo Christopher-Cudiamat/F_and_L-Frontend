@@ -2,6 +2,7 @@ import { ICondos, ICmsItem } from "./types";
 
 export function toCondo(item: ICmsItem): ICondos {
   const { attributes } = item;
+  console.log('ITM',item)
   return {
     slug: attributes.slug,
     title: attributes.title,
@@ -10,6 +11,7 @@ export function toCondo(item: ICmsItem): ICondos {
     nearestLandmark: attributes.nearestLandmark,
     price: attributes.price,
     type: attributes.type,
-    image: new URL(attributes.hero.data.attributes.url, process.env.CMS_URL).href
+    image: new URL(attributes.hero.data.attributes.url, process.env.CMS_URL).href,
+    ...item
   };
 }

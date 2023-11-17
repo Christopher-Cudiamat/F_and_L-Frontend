@@ -7,6 +7,11 @@ export const getCondo = async(slug: string): Promise<ICondo | null> => {
   const { data } = await fetchCondo({
     filters: { slug: { $eq: slug} },
       fields: [
+        'slug',
+        'title',
+        'description',
+        'location',
+        'price',
         'description',
         'latitude',
         'longitude',

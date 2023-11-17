@@ -14,7 +14,7 @@ const SectionTitle = ({
   href,
 }: SectionTitleProps) => {
   return (
-    <Container className="flex flex-col lg:flex-row items-center lg:justify-between text-center lg:text-left mb-6 lg:mb-8">
+    <div className="flex flex-col lg:flex-row items-center lg:justify-between text-center lg:text-left mb-6 lg:mb-8">
       <h2 className="text-slate-600 text-3xl font-semibold mb-5 lg:mb-0">
         {title}
       </h2>
@@ -27,7 +27,7 @@ const SectionTitle = ({
           {ButtonLabel}
         </Link>
       }
-    </Container>
+    </div>
   )
 }
 

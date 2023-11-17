@@ -20,7 +20,7 @@ const PropertyCard = ({
   }
 
   return (
-    <div className="group/property-card bg-white w-full rounded-md shadow-lg hover:shadow-xl duration-200"> 
+    <li className="group/property-card bg-white w-full rounded-md shadow-lg hover:shadow-xl duration-200"> 
       <div className='flex flex-col relative w-full h-52 rounded-tl-md rounded-tr-md overflow-hidden'>
         <Image 
           src={image} 
@@ -60,12 +60,12 @@ const PropertyCard = ({
         </p>
         <Link 
           href={`condos-for-sale/${slug}`} 
-          className="bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white text-xs font-bold flex rounded-md w-fit"
+          className="bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white text-xs font-semibold flex rounded-md w-fit duration-100"
         >
           More Details
         </Link>
       </div>
-    </div>
+    </li>
   )
 }
 

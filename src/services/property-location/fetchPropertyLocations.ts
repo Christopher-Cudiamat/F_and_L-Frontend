@@ -3,7 +3,7 @@ import { ICmsItem } from '../condosForSale/types';
 
 const CMS_URL = process.env.CMS_URL;
 
-export async function fetchPropertyLocations(pageSize: number = 2) {
+export async function fetchPropertyLocations(pageSize: number) {
   const url = `${CMS_URL}/api/property-locations?${qs.stringify({
     fields: [
       'slug',
@@ -23,6 +23,6 @@ export async function fetchPropertyLocations(pageSize: number = 2) {
   return data.map((item: ICmsItem) => ({
     slug: item.attributes.slug,
     location: item.attributes.location,
-    // image: new URL(item.attributes.image.data.attributes.url, process.env.CMS_URL).href
+    image: new URL(item.attributes.image.data.attributes.url, process.env.CMS_URL).href
   }));
 }
