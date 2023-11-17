@@ -5,7 +5,7 @@ import { fetchPropertyLocations } from '@/services/property-location/fetchProper
 
 const SectionFeaturedLocations = async() => {
   const featuredLocations = await fetchPropertyLocations(7);
-  console.log()
+
   return (
     <section className="bg-gray-900 py-40">
       <Container>

@@ -19,7 +19,10 @@ export const getCondo = async(slug: string): Promise<ICondo | null> => {
         'body',
         'amenities',
         'features',
-        'address'
+        'address',
+        'status',
+        'nearestLandmark',
+        'type',
       ],
       populate: { 
         gallery: { fields: ['url'] }, 

@@ -18,7 +18,7 @@ interface IPropertyLocationPageProps {
 
 export default async function PropertyLocationPage({ params: { slug }}: any) {
   const results = await getCondosByLocation(slug);
-  console.log('BY LOCA',results);
+
   return (
     <>
     {
