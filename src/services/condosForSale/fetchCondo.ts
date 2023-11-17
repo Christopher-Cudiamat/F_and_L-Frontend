@@ -1,14 +1,14 @@
 import qs from 'qs';
 
 const CMS_URL = process.env.CMS_URL;
-const CACHE_TAG_REVIEWS = 'condos';
+export const CACHE_TAG_CONDO = 'condo';
 
 // set parameters for and fetch api
 export async function fetchCondo(parameters: any) {
   const url = `${CMS_URL}/api/condos?${qs.stringify(parameters, { encodeValuesOnly: true })}`;
   const response = await fetch(url, {
     next: {
-      tags: [CACHE_TAG_REVIEWS],
+      tags: [CACHE_TAG_CONDO],
     },
   });
   if (!response.ok) {

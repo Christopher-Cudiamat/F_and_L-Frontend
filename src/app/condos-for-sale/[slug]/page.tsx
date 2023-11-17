@@ -29,7 +29,12 @@ export async function generateMetadata({ params: { slug }}: ICondoForSalePagePro
 
 export default async function CondoForSalePage({ params: { slug }}: ICondoForSalePageProps) {
   const condo = await getCondo(slug);
-  console.log("condo render------------------------------------",condo)
+
+  if (!condo) {
+    notFound()
+  }
+
+  console.log('[CONDO-RENDERING]------>',slug)
   return (
     <div>
       <h1>{condo?.title}</h1>
