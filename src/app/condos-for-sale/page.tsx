@@ -28,6 +28,7 @@ const CondosForSalePage = async ({searchParams}: ISearchParams) => {
           <Pagination
             pageCount={results?.pageCount}
             page={page}
+            path='/condos-for-sale'
           />
         </Container>
       </section>

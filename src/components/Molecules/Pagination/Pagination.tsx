@@ -4,11 +4,13 @@ import React from 'react'
 interface PaginationProps {
   page: number;
   pageCount?: number;
+  path: string;
 }
 
 const Pagination = ({
   page, 
-  pageCount
+  pageCount,
+  path
 }: PaginationProps) => {
   const pages = Array.from(Array(pageCount),(_, i) => i + 1);
 
@@ -16,7 +18,7 @@ const Pagination = ({
     <div className='flex justify-center items-center gap-x-4 my-24'>
       {page !== 1 &&
         <Link 
-          href={`/condos-for-sale?page=${page - 1}`}
+          href={`${path}?page=${page - 1}`}
           className='bg-blue-600 hover:bg-blue-700 text-sm md:text-base font-normal rounded-sm py-1.5 px-4 text-white duration-100'
         >
           Previous
@@ -27,7 +29,7 @@ const Pagination = ({
           <li 
             key={item}>
             <Link 
-              href={`/condos-for-sale?page=${item}`}
+              href={`${path}?page=${item}`}
               className={`border ${item === page ? 'bg-yellow-400 border-yellow-400' : 'bg-white border-slate-800'} text-slate-800 py-1.5 px-3 rounded-sm hover:bg-yellow-400 hover:border-yellow-400 duration-100`}
             >
               {item}
@@ -38,7 +40,7 @@ const Pagination = ({
       {((pageCount && page !== pages.length)) &&
         <Link 
           className='bg-blue-600 hover:bg-blue-700 text-sm md:text-base font-normal rounded-sm py-1.5 px-4 text-white duration-100'
-          href={`/condos-for-sale?page=${page + 1}`}>
+          href={`${path}?page=${page + 1}`}>
           Next
         </Link>
       }
