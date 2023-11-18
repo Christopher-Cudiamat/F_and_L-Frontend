@@ -26,6 +26,6 @@ export interface ICmsItem {
 }
 
 export interface ICondosList {
-  pagesCount: number;
+  pageCount: number;
   condos: ICondos[];
 }

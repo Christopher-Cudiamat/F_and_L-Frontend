@@ -10,4 +10,3 @@
 // const file = 'scripts/strapi-response.json';
 
 // writeFileSync(file, formatted, utf8);
-// console.log(data);

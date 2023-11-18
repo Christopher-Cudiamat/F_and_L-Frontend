@@ -34,7 +34,6 @@ export default async function CondoForSalePage({ params: { slug }}: ICondoForSal
     notFound()
   }
 
-
   return (
     <div>
       <h1>{condo?.title}</h1>

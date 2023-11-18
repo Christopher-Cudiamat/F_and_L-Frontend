@@ -3,8 +3,8 @@ import { toCondo } from './toCondo';
 import { ICondosList } from './types';
 
 //Retrieve all condos for sale
-export const getCondos = async (): Promise<ICondosList | null> => {
-  const { data } = await fetchCondo({
+export const getCondos = async (pageSize: number = 100, page: number = 1): Promise<ICondosList | null> => {
+  const { data, meta } = await fetchCondo({
     fields: [
       'slug',
       'title',
@@ -15,11 +15,11 @@ export const getCondos = async (): Promise<ICondosList | null> => {
       'type'
     ],
     populate: { hero: { fields: ['url'] } },
-    pagination: { pageSize: 100 }
+    pagination: { pageSize, page}
   })
 
   return {
-    pagesCount: 30,
+    pageCount: meta.pagination.pageCount,
     condos: data.map(toCondo),
   }
 }
