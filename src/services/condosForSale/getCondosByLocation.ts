@@ -8,7 +8,7 @@ export const getCondosByLocation = async (location: string): Promise<ICondosList
     .split('-')
     .map((item: string) => item[0].toUpperCase() + item.slice(1))
     .join(' ');
-  console.log('formattedLocation',formattedLocation)
+
   const { data } = await fetchCondo({
     filters:{ location: {$eq: formattedLocation} },
     fields: [

@@ -9,6 +9,6 @@ export async function POST(request: any) {
     if(payload.model === CACHE_TAG_CONDO) revalidateTag(CACHE_TAG_CONDO);
     if(payload.model === CACHE_TAG_PROPERTY_LOCATION) revalidateTag(CACHE_TAG_PROPERTY_LOCATION);
   }
-  console.log("PAYLOAD", payload);
+
   return new Response(null, {status: 204})
 }

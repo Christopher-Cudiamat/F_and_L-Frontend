@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^0.0.0-insiders.adfe121",
     "fetch-undici": "^3.0.1",
     "marked": "^10.0.0",
     "next": "latest",

@@ -6,8 +6,7 @@ import Container from '@/components/Atoms/Container/Container';
 
 const CondosForSalePage = async () => {
   const results = await getCondos();
-  console.log('[CONDOS-RENDERING]------>',results?.condos.map((review: any) => review.slug).join(', '))
-  console.log('results?.condos',results?.condos)
+
   return (
     <React.Fragment>
 
