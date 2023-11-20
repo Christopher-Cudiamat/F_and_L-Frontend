@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Overlay from '@/components/Atoms/Overlay/Overlay';
 
 interface ILocationCardProps {
   slug: string;
@@ -23,7 +24,7 @@ const LocationCard = ({
         loading="lazy"
         className="group-hover/location-card:scale-[1.20] duration-300 object-cover" 
       />
-      <div className="absolute inset-0 bg-slate-950/50"/>
+      <Overlay color="bg-slate-950/50"/>
       <div className="relative flex flex-col items-center">
         <p className="text-white text-xl font-semibold mb-4">{location}</p>
         <Link

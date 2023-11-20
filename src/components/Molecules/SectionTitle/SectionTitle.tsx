@@ -23,7 +23,7 @@ const SectionTitle = ({
           (ButtonLabel && href) &&
           <Link 
             href={href} 
-            className="bg-blue-600 font-semibold text-white px-4 py-2 w-fit rounded-md"
+            className="bg-blue-600 hover:bg-blue-700 font-semibold text-white px-4 py-2 w-fit rounded-md duration-200"
           >
             {ButtonLabel}
           </Link>

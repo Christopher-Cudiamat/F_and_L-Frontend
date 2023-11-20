@@ -7,6 +7,7 @@ import LocationCard from "@/components/Molecules/LocationCard/LocationCard";
 import PropertyCard from "@/components/Molecules/PropertyCard/PropertyCard.component";
 import CardsContainer from "@/components/Molecules/CardsContainer/CardsContainer";
 import CategoryFilter from "@/components/Molecules/CategoryFilter/CategoryFilter";
+import ContactUsBanner from "@/components/Molecules/ContactUsBanner/ContactUsBanner";
 
 export default async function HomePage() {
   const featuredLocations = await fetchPropertyLocations(8);
@@ -31,6 +32,10 @@ export default async function HomePage() {
           }
         </CardsContainer>
       </section>
+      <ContactUsBanner 
+        image="/images/real-estate-agents.png" 
+        altText="Real estate agents"
+      />
       <section className="bg-white pt-10 pb-20">
         <SectionTitle
           title="Top property locations"

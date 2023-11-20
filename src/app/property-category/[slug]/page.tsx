@@ -1,4 +1,3 @@
-import { getSlugs } from '@/services/condosForSale/getSlugs';
 import React from 'react';
 import { ICondos } from '@/services/condosForSale/types';
 import PropertyCard from '@/components/Molecules/PropertyCard/PropertyCard.component';
@@ -19,7 +18,6 @@ export async function generateStaticParams(): Promise<IPropertyCategoryPageParam
 }
 
 export default async function PropertyCategoryPage({ params: { slug }}: IPropertyCategoryPageProps) {
-  console.log("SLUG",slug)
   const results = await getCondosByCategory(slug);
 
   return (

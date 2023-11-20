@@ -2,6 +2,7 @@ import React from 'react';
 import { ICondos } from '@/services/condosForSale/types';
 import Link from 'next/link';
 import Image from 'next/image';
+import Overlay from '@/components/Atoms/Overlay/Overlay';
 
 const PropertyCard = ({
   slug,
@@ -24,7 +25,7 @@ const PropertyCard = ({
           loading="lazy"
           className="group-hover/property-card:scale-[1.20] duration-300 object-cover" 
         />
-        <div className="absolute inset-0 bg-blue-950/50"/>
+        <Overlay color="bg-slate-950/50"/>
         <ul className="flex gap-x-1">
           <li className={
             `text-xs font-normal absolute top-3 right-3 rounded-2xl p-2 text-white
