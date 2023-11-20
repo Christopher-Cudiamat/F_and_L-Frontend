@@ -13,14 +13,14 @@ export const getFeaturedCondos = async (): Promise<ICondosList | null> => {
       'nearestLandmark',
       'status',
       'price',
-      'type'
+      'category'
     ],
-    populate: { hero: { fields: ['url'] } },
+    populate: { image: { fields: ['url'] } },
     pagination: { pageSize: 6 }
   })
 
   return {
-    pagesCount: 30,
+    pageCount: 30,
     condos: data.map(toCondo),
   }
 }

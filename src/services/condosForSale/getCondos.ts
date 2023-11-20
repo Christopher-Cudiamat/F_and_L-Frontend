@@ -12,9 +12,9 @@ export const getCondos = async (pageSize: number = 100, page: number = 1): Promi
       'nearestLandmark',
       'status',
       'price',
-      'type'
+      'category'
     ],
-    populate: { hero: { fields: ['url'] } },
+    populate: { image: { fields: ['url'] } },
     pagination: { pageSize, page}
   })
 

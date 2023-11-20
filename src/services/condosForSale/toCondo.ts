@@ -10,7 +10,7 @@ export function toCondo(item: ICmsItem): ICondos {
     status: attributes.status,
     nearestLandmark: attributes.nearestLandmark,
     price: attributes.price,
-    type: attributes.type,
-    image: new URL(attributes.hero.data.attributes.url, process.env.CMS_URL).href,
+    category: attributes.category,
+    image: new URL(attributes.image.data.attributes.url, process.env.CMS_URL).href,
   };
 }

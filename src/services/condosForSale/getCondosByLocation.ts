@@ -20,11 +20,11 @@ export const getCondosByLocation = async (location: string): Promise<ICondosList
       'price',
       'type'
     ],
-    populate: { hero: { fields: ['url'] } },
+    populate: { image: { fields: ['url'] } },
   })
 
   return {
-    pagesCount: 30,
+    pageCount: 30,
     condos: data.map(toCondo),
   }
 }

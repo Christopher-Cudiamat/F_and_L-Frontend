@@ -14,5 +14,5 @@ export async function fetchCondo(parameters: any) {
   if (!response.ok) {
     throw new Error(`CMS returned ${response.status} for ${url}`);
   }
-  return await response.json();
+  return await response.json(); 
 }

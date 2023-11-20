@@ -22,11 +22,11 @@ export const getCondo = async(slug: string): Promise<ICondo | null> => {
         'address',
         'status',
         'nearestLandmark',
-        'type',
+        'category',
       ],
       populate: { 
         gallery: { fields: ['url'] }, 
-        hero: { fields: ['url'] },
+        image: { fields: ['url'] },
       },
       pagination: { pageSize: 1, withCount: false }
   })

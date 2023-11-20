@@ -11,7 +11,7 @@ const PropertyCard = ({
   price,
   status,
   image,
-  type
+  category
 }: ICondos) => {
 
   const handleTruncateString = (str: string) => {
@@ -41,7 +41,7 @@ const PropertyCard = ({
         </ul>
         <div className="absolute bottom-4 left-4 max-w-[80%]">
           <h6 className='text-yellow-300 text-sm font-bold uppercase'>
-            {type}
+            {category}
           </h6>
           <p className='text-white text-base'>
             {price}

@@ -8,7 +8,7 @@ import LocationCard from "@/components/Molecules/LocationCard/LocationCard";
 import PropertyCard from "@/components/Molecules/PropertyCard/PropertyCard.component";
 
 export default async function HomePage() {
-  const featuredLocations = await fetchPropertyLocations(8);
+  // const featuredLocations = await fetchPropertyLocations(8);
   const featuredCondos = await getFeaturedCondos();
 
   return (
@@ -28,7 +28,7 @@ export default async function HomePage() {
           </ul>
         </Container>
       </section>
-      <section className="bg-white pt-10 pb-20">
+      {/* <section className="bg-white pt-10 pb-20">
         <Container>
           <SectionTitle
             title="Top property locations"
@@ -42,7 +42,7 @@ export default async function HomePage() {
             }
           </ul>
         </Container>
-      </section>
+      </section> */}
     </React.Fragment>
   )
 }

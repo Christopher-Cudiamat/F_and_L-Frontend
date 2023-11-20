@@ -5,7 +5,7 @@ export interface ICondos {
   status: string[];
   price: string;
   image: string;
-  type: string;
+  category: string;
   location?: string;
   nearestLandmark?: string;
 }
