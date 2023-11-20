@@ -14,13 +14,8 @@ const PropertyCard = ({
   category
 }: ICondos) => {
 
-  const handleTruncateString = (str: string) => {
-    const formatted = str.substring(0,130);
-    return `${formatted}...`
-  }
-
   return (
-    <li className="group/property-card bg-white w-full rounded-md shadow-lg hover:shadow-xl duration-200"> 
+    <li className="group/property-card bg-white w-full rounded-md shadow-lg hover:shadow-xl duration-200 relative"> 
       <div className='flex flex-col relative w-full h-52 rounded-tl-md rounded-tr-md overflow-hidden'>
         <Image 
           src={image} 
@@ -48,15 +43,15 @@ const PropertyCard = ({
           </p>
         </div>
       </div>
-      <div className="px-4 py-6">
+      <div className="px-4 pb-8 pt-6">
         <p className="text-slate-900 text-xl font-semibold">
           {title}
         </p>
         <p className='text-slate-400 text-sm mb-4'>
           {nearestLandmark}
         </p>
-        <p className='text-slate-900 text-base mb-6'>
-          {handleTruncateString(description)}
+        <p className='text-slate-900 text-base mb-6 line-clamp-6'>
+          {description}
         </p>
         <Link 
           href={`/condos-for-sale/${slug}`} 

@@ -11,6 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^0.0.0-insiders.adfe121",
     "@heroicons/react": "^2.0.18",
+    "@tailwindcss/line-clamp": "^0.4.4",
     "fetch-undici": "^3.0.1",
     "marked": "^10.0.0",
     "next": "latest",
