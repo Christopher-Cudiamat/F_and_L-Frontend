@@ -3,14 +3,10 @@ import { toCondo } from './toCondo';
 import { ICondosList } from './types';
 
 //Retrieve featured condos for sale
-export const getCondosByLocation = async (location: string): Promise<ICondosList | null> => {
-  const formattedLocation = location
-    .split('-')
-    .map((item: string) => item[0].toUpperCase() + item.slice(1))
-    .join(' ');
-
-  const { data } = await fetchCondo({
-    filters:{ location: {$eq: formattedLocation} },
+export const getCondosByCategory = async (category: string): Promise<ICondosList | null> => {
+    const formattedCategory = category;
+    const { data } = await fetchCondo({
+    filters:{ category: {$eq: formattedCategory} },
     fields: [
       'slug',
       'title',
@@ -18,7 +14,7 @@ export const getCondosByLocation = async (location: string): Promise<ICondosList
       'nearestLandmark',
       'status',
       'price',
-      'category'
+      'type'
     ],
     populate: { image: { fields: ['url'] } },
   })

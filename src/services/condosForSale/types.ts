@@ -11,8 +11,6 @@ export interface ICondos {
 }
 
 export interface ICondo extends ICondos {
-  latitude: string;
-  longitude: string;
   gallery: string[];
   body?: string;
   amenities: string[];

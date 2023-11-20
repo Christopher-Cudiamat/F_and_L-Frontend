@@ -12,7 +12,7 @@ const SectionFeaturedLocations = async() => {
         <SectionTitle
               title="Top property locations"
               ButtonLabel="View all"
-              href="/property-locations"
+              href="/property-location"
             />
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {

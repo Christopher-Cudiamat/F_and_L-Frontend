@@ -13,8 +13,6 @@ export const getCondo = async(slug: string): Promise<ICondo | null> => {
         'location',
         'price',
         'description',
-        'latitude',
-        'longitude',
         'location',
         'body',
         'amenities',
@@ -37,8 +35,6 @@ export const getCondo = async(slug: string): Promise<ICondo | null> => {
   const item = data[0];
   return {
     gallery: item.attributes.gallery.data.map((item: any) => new URL(item.attributes.url, process.env.CMS_URL).href),
-    latitude: item.attributes.latitude,
-    longitude: item.attributes.longitude,
     body: item.attributes.body,
     address: item.attributes.address,
     amenities: item.attributes.amenities,

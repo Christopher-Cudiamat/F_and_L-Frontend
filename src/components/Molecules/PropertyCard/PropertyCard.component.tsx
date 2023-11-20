@@ -40,7 +40,7 @@ const PropertyCard = ({
           </li>
         </ul>
         <div className="absolute bottom-4 left-4 max-w-[80%]">
-          <h6 className='text-yellow-300 text-sm font-bold uppercase'>
+          <h6 className='text-yellow-300 text-sm font-semibold uppercase'>
             {category}
           </h6>
           <p className='text-white text-base'>
@@ -49,7 +49,7 @@ const PropertyCard = ({
         </div>
       </div>
       <div className="px-4 py-6">
-        <p className="text-slate-900 text-xl font-bold">
+        <p className="text-slate-900 text-xl font-semibold">
           {title}
         </p>
         <p className='text-slate-400 text-sm mb-4'>
@@ -59,7 +59,8 @@ const PropertyCard = ({
           {handleTruncateString(description)}
         </p>
         <Link 
-          href={`condos-for-sale/${slug}`} 
+          href={`/condos-for-sale/${slug}`} 
+          replace={true}
           className="bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white text-xs font-semibold flex rounded-md w-fit duration-100"
         >
           More Details
