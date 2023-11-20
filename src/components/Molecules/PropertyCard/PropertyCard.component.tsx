@@ -32,7 +32,7 @@ const PropertyCard = ({
         <div className="absolute inset-0 bg-blue-950/50"/>
         <ul className="flex gap-x-1">
           <li className={
-            `text-xs font-normal absolute top-3 right-3 rounded-xl p-2 text-white
+            `text-xs font-normal absolute top-3 right-3 rounded-2xl p-2 text-white
             ${!status.includes('Sold-out') ? 'bg-blue-600' : 'bg-red-500'} 
             `}
           >
@@ -61,7 +61,7 @@ const PropertyCard = ({
         <Link 
           href={`/condos-for-sale/${slug}`} 
           replace={true}
-          className="bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white text-xs font-semibold flex rounded-md w-fit duration-100"
+          className="bg-blue-600 hover:bg-blue-700 px-4 py-3 text-white text-xs font-semibold flex rounded-md w-fit duration-100"
         >
           More Details
         </Link>

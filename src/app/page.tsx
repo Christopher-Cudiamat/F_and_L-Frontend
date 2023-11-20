@@ -2,11 +2,11 @@ import React from "react";
 import { fetchPropertyLocations } from "@/services/property-location/fetchPropertyLocations";
 import { getFeaturedCondos } from "@/services/condosForSale/getFeaturedCondos";
 import { ICondos } from "@/services/condosForSale/types";
-import Container from "@/components/Atoms/Container/Container";
 import SectionTitle from "@/components/Molecules/SectionTitle/SectionTitle";
 import LocationCard from "@/components/Molecules/LocationCard/LocationCard";
 import PropertyCard from "@/components/Molecules/PropertyCard/PropertyCard.component";
 import CardsContainer from "@/components/Molecules/CardsContainer/CardsContainer";
+import CategoryFilter from "@/components/Molecules/CategoryFilter/CategoryFilter";
 
 export default async function HomePage() {
   const featuredLocations = await fetchPropertyLocations(8);
@@ -14,7 +14,11 @@ export default async function HomePage() {
 
   return (
     <React.Fragment>
-      <section className="bg-gray-100 pt-10 pb-20">
+      <section className="bg-white py-16 md:py-20">
+        <SectionTitle title="What are you looking for?"/>
+        <CategoryFilter />
+      </section>
+      <section className="bg-slate-100 pt-10 pb-20">
         <SectionTitle
           title="Best selling properties"
           ButtonLabel="View all"

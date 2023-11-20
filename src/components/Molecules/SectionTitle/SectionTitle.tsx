@@ -16,7 +16,7 @@ const SectionTitle = ({
   return (
     <Container>
       <div className="flex flex-col lg:flex-row items-center lg:justify-between text-center lg:text-left mb-6 lg:mb-8">
-        <h2 className="text-slate-600 text-3xl font-semibold mb-5 lg:mb-0">
+        <h2 className="text-slate-600 text-3xl lg:text-4xl font-semibold mb-5 lg:mb-0">
           {title}
         </h2>
         {
