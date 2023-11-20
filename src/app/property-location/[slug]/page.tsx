@@ -5,6 +5,7 @@ import React from 'react';
 import Container from '@/components/Atoms/Container/Container';
 import { ICondos } from '@/services/condosForSale/types';
 import PropertyCard from '@/components/Molecules/PropertyCard/PropertyCard.component';
+import CardsContainer from '@/components/Molecules/CardsContainer/CardsContainer';
 
 interface IPropertyLocationPageParams {
   slug: string;
@@ -24,14 +25,12 @@ export default async function PropertyLocationPage({ params: { slug }}: IPropert
 
   return (
     <section className="bg-gray-100 pt-10 pb-20">
-        <Container>
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {results?.condos.map((item: ICondos) => (
-                <PropertyCard key={item.slug} {...item}/>
-              ))
-            }
-          </ul>
-        </Container>
-      </section>
+      <CardsContainer>
+        {results?.condos.map((item: ICondos) => (
+            <PropertyCard key={item.slug} {...item}/>
+          ))
+        }
+      </CardsContainer>
+    </section>
   )
 }

@@ -4,6 +4,7 @@ import { ICondos } from '@/services/condosForSale/types';
 import PropertyCard from '@/components/Molecules/PropertyCard/PropertyCard.component';
 import Container from '@/components/Atoms/Container/Container';
 import Pagination from '@/components/Molecules/Pagination/Pagination';
+import CardsContainer from '@/components/Molecules/CardsContainer/CardsContainer';
 
 interface ISearchParams {
   searchParams: {page?: string};
@@ -18,19 +19,17 @@ const CondosForSalePage = async ({searchParams}: ISearchParams) => {
   return (
     <React.Fragment>
       <section className="bg-white pt-10 pb-20">
-        <Container>
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-6">
-            {results?.condos.map((item: ICondos) => (
-                <PropertyCard key={item.slug} {...item}/>
-              ))
-            }
-          </ul>
-          <Pagination
-            pageCount={results?.pageCount}
-            page={page}
-            path='/condos-for-sale'
-          />
-        </Container>
+        <CardsContainer>
+          {results?.condos.map((item: ICondos) => (
+              <PropertyCard key={item.slug} {...item}/>
+            ))
+          }
+        </CardsContainer>
+        <Pagination
+          pageCount={results?.pageCount}
+          page={page}
+          path='/condos-for-sale'
+        />
       </section>
     </React.Fragment>
   )
