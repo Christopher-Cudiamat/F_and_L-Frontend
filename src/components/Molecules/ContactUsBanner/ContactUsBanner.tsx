@@ -28,7 +28,7 @@ const ContactUsBanner = ({
           <h3 className="text-white text-2xl lg:text-3xl mb-4">
             Helping you find the property of your dreams.
           </h3>
-          <p className="text-base w-[500px] text-white mb-8">
+          <p className="text-base md:w-[500px] text-white mb-8">
             If you’re interested to buy properties in any of our projects in SMDC, we’re happy to answer all your questions. 
           </p>
           <Link 

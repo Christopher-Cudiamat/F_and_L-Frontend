@@ -8,6 +8,7 @@ import PropertyCard from "@/components/Molecules/PropertyCard/PropertyCard.compo
 import CardsContainer from "@/components/Molecules/CardsContainer/CardsContainer";
 import CategoryFilter from "@/components/Molecules/CategoryFilter/CategoryFilter";
 import ContactUsBanner from "@/components/Molecules/ContactUsBanner/ContactUsBanner";
+import AboutUsBanner from "@/components/Molecules/AboutUsBanner/AboutUsBanner";
 
 export default async function HomePage() {
   const featuredLocations = await fetchPropertyLocations(8);
@@ -49,6 +50,7 @@ export default async function HomePage() {
           }
         </CardsContainer>
       </section>
+      <AboutUsBanner />
     </React.Fragment>
   )
 }

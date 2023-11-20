@@ -17,6 +17,7 @@
     "next": "latest",
     "qs": "^6.11.2",
     "react": "latest",
+    "react-countup": "^6.5.0",
     "react-dom": "latest",
     "react-icons": "^4.12.0"
   },
