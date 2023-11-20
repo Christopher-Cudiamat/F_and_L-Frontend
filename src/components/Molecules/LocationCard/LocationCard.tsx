@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Overlay from '@/components/Atoms/Overlay/Overlay';
+import { MapPinIcon } from '@heroicons/react/24/outline';
 
 interface ILocationCardProps {
   slug: string;
@@ -26,7 +27,10 @@ const LocationCard = ({
       />
       <Overlay color="bg-slate-950/50"/>
       <div className="relative flex flex-col items-center">
-        <p className="text-white text-xl font-semibold mb-4">{location}</p>
+        <div className="flex gap-x-1 items-center mb-4">
+          <MapPinIcon className="text-white w-6" />
+          <p className="text-white text-xl font-semibold">{location}</p>
+        </div>
         <Link
           href={`property-location/${slug}`} 
           className="bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white text-sm font-semibold flex rounded-md w-fit duration-100"
