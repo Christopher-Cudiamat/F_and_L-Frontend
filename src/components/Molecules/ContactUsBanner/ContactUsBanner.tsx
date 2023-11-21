@@ -15,7 +15,7 @@ const ContactUsBanner = ({
 }: IContactUsBannerProps) => {
 
   return (
-    <section className="relative w-full max-w-[1400px] h-[500px] py-20 mx-auto mb-18 mt-24 lg:mb-20 lg:mt-28 rounded-md">
+    <section className="relative w-full max-w-[1400px] h-[500px] py-20 mx-auto mb-18 mt-24 lg:mb-20 lg:mt-28 rounded-md overflow-hidden">
         <Image 
           src={image}
           alt={altText}

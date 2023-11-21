@@ -20,7 +20,7 @@ export default async function HomePage() {
         <SectionTitle title="What are you looking for?"/>
         <CategoryFilter />
       </section>
-      <section className="bg-slate-100 pt-10 pb-20">
+      <section className="bg-slate-50 pt-10 pb-20">
         <SectionTitle
           title="Best selling properties"
           ButtonLabel="View all"
