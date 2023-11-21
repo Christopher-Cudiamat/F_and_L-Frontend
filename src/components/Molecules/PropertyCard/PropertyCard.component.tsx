@@ -51,7 +51,7 @@ const PropertyCard = ({
         <p className='text-slate-400 text-sm mb-4'>
           {nearestLandmark}
         </p>
-        <p className='text-slate-900 text-base mb-6 line-clamp-6'>
+        <p className='text-slate-900 text-base mb-6 line-clamp-4'>
           {description}
         </p>
         <Link 

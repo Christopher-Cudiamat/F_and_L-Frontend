@@ -9,6 +9,7 @@ import CardsContainer from "@/components/Molecules/CardsContainer/CardsContainer
 import CategoryFilter from "@/components/Molecules/CategoryFilter/CategoryFilter";
 import ContactUsBanner from "@/components/Molecules/ContactUsBanner/ContactUsBanner";
 import AboutUsBanner from "@/components/Molecules/AboutUsBanner/AboutUsBanner";
+import Slider from "@/components/Molecules/Slider/Slider";
 
 export default async function HomePage() {
   const featuredLocations = await fetchPropertyLocations(8);
@@ -16,6 +17,7 @@ export default async function HomePage() {
 
   return (
     <React.Fragment>
+      <Slider/>
       <section className="bg-white py-16 md:py-20">
         <SectionTitle title="What are you looking for?"/>
         <CategoryFilter />
