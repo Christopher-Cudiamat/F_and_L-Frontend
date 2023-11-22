@@ -2,9 +2,9 @@ import React from 'react';
 import { getCondos } from '@/services/condosForSale/getCondos';
 import { ICondos } from '@/services/condosForSale/types';
 import PropertyCard from '@/components/Molecules/PropertyCard/PropertyCard.component';
-import Container from '@/components/Atoms/Container/Container';
 import Pagination from '@/components/Molecules/Pagination/Pagination';
 import CardsContainer from '@/components/Molecules/CardsContainer/CardsContainer';
+import Hero from '@/components/Molecules/Hero/Hero';
 
 interface ISearchParams {
   searchParams: {page?: string};
@@ -18,7 +18,14 @@ const CondosForSalePage = async ({searchParams}: ISearchParams) => {
 
   return (
     <React.Fragment>
-      <section className="bg-white pt-10 pb-20">
+      <Hero
+        title="Properties"
+        subtitle="Discover all available properties for you"
+        image="/images/properties-hero.png"
+        altText="Property"
+        height="md"
+      />
+      <section className="bg-white pt-10 lg:pt-20 pb-32">
         <CardsContainer>
           {results?.condos.map((item: ICondos) => (
               <PropertyCard key={item.slug} {...item}/>

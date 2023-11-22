@@ -1,4 +1,6 @@
+import React from "react";
 import CardsContainer from "@/components/Molecules/CardsContainer/CardsContainer";
+import Hero from "@/components/Molecules/Hero/Hero";
 import LocationCard from "@/components/Molecules/LocationCard/LocationCard";
 import { fetchPropertyLocations } from "@/services/property-location/fetchPropertyLocations";
 
@@ -6,7 +8,14 @@ export default async function PropertyLocationsPage() {
   const propertyLocations = await fetchPropertyLocations(100);
 
   return (
-    <div>
+    <React.Fragment>
+      <Hero
+        title="Property Locations"
+        subtitle="Prime Locations for your new home"
+        image="/images/property-locations-hero.png"
+        altText="Property locations"
+        height="md"
+      />
       <section className="bg-white pt-10 pb-20">
         <CardsContainer>
           {propertyLocations.map((item: ILocation) => (
@@ -15,6 +24,6 @@ export default async function PropertyLocationsPage() {
           }
         </CardsContainer>
       </section>
-    </div>
+    </React.Fragment>
   )
 }

@@ -8,6 +8,7 @@ import {
     ChevronRightIcon,
     ChevronLeftIcon
 } from '@heroicons/react/24/outline';
+import Overlay from "@/components/Atoms/Overlay/Overlay";
 
 const slides = [
     {
@@ -48,7 +49,7 @@ const Slider = () => {
     }
 
     return (
-        <div className="relative">
+        <div className="relative h-[550px]">
             <div className="embla" ref={emblaRef}>
                 <div className="embla__container">
                     {slides.map((slide) => (
@@ -60,14 +61,16 @@ const Slider = () => {
                                 className="object-cover" 
                             />
                         </div>
-                    ))}                
+                    ))}             
                 </div>
             </div>
+            <Overlay color="bg-slate-950/60"/>   
+            <Overlay color="bg-gradient-to-t from-cyan-500/30 to-blue-500/10"/>   
             <button onClick={scrollPrev}>
-                <ChevronLeftIcon className="z-50 text-white/50 hover:text-white 100 duration-150 w-10 lg:w-20 absolute top-1/2 left-1 transform -translate-y-1/2"/>
+                <ChevronLeftIcon className="z-50 text-white/50 hover:text-white 100 duration-150 w-10 lg:w-20 absolute top-1/2 left-0 transform -translate-y-1/2"/>
             </button>
             <button onClick={scrollNext}>
-                <ChevronRightIcon className="z-50 text-white/50 hover:text-white 100 duration-150 w-10 lg:w-20 absolute top-1/2 right-1 transform -translate-y-1/2"/>
+                <ChevronRightIcon className="z-50 text-white/50 hover:text-white 100 duration-150 w-10 lg:w-20 absolute top-1/2 right-0 transform -translate-y-1/2"/>
             </button>
         </div>
     )
