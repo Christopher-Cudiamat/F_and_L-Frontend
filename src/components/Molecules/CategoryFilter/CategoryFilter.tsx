@@ -42,15 +42,15 @@ const CategoryFilter = () => {
             <Link 
                 key={item.slug} 
                 href={`/property-category/${item.slug}`}
-                className="flex flex-col md:flex-row md:justify-between bg-slate-50 py-4 px-8 md:px-6 rounded-md sadow-md hover:scale-[1.02] hover:shadow-lg duration-200 items-center justify-center"
+                className="flex flex-row justify-between items-center bg-slate-50 py-8 px-6 md:px-8 md:px-6 rounded-md shadow-md hover:scale-[1.02] hover:shadow-lg duration-200"
             >
                 <div className="flex flex-col">
-                    <h4 className="font-semibold text-xl mb-1.5 text-center">
+                    <h4 className="font-semibold text-xl mb-1.5">
                         {item.label}
                     </h4>
-                    <p className="flex gap-x-2 text-base text-center justify-center text-slate-500 font-normal"><span className="font-semibold">{item.count}</span> listed units</p>
+                    <p className="flex gap-x-2 text-base md:justify-start text-slate-500 font-normal"><span className="font-semibold">{item.count}</span> listed units</p>
                 </div>
-                <item.icon className="w-20 md:w-24 lg:w-20 xl:w-32 mt-6 lg:mt-0 text-blue-600"/>
+                <item.icon className="w-20 md:w-24 lg:w-20 xl:w-32 text-blue-600"/>
             </Link>
         ))}
     </Container>

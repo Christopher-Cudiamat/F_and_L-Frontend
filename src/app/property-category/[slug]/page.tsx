@@ -27,7 +27,7 @@ export default async function PropertyCategoryPage({ params: { slug }}: IPropert
       <Hero
         title={slugParser(slug)}
         subtitle="Discover all available properties for you"
-        image="/images/property-categories-hero.png"
+        image={"/images/property-categories-hero.png"}
         altText="Property"
         height="md"
       />

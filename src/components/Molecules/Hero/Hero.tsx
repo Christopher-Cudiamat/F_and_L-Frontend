@@ -6,7 +6,7 @@ import Container from '@/components/Atoms/Container/Container';
 interface IHeroProps {
     title: string;
     subtitle?: string;
-    image: string;
+    image?: string;
     altText: string;
     height?: "sm" | "md" | "lg" | "full";
 }
@@ -14,7 +14,7 @@ interface IHeroProps {
 const Hero = ({
     title,
     subtitle,
-    image,
+    image = "/images/property-categories-hero.png",
     altText,
     height = "lg"
 }: IHeroProps) => {
