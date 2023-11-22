@@ -5,6 +5,7 @@ import PropertyCard from '@/components/Molecules/PropertyCard/PropertyCard.compo
 import Pagination from '@/components/Molecules/Pagination/Pagination';
 import CardsContainer from '@/components/Molecules/CardsContainer/CardsContainer';
 import Hero from '@/components/Molecules/Hero/Hero';
+import ContactUsBanner from '@/components/Molecules/ContactUsBanner/ContactUsBanner';
 
 interface ISearchParams {
   searchParams: {page?: string};
@@ -25,7 +26,7 @@ const CondosForSalePage = async ({searchParams}: ISearchParams) => {
         altText="Property"
         height="md"
       />
-      <section className="bg-white pt-10 lg:pt-20 pb-32">
+      <section className="bg-white pt-10 lg:pt-20 pb-10">
         <CardsContainer>
           {results?.condos.map((item: ICondos) => (
               <PropertyCard key={item.slug} {...item}/>
@@ -38,6 +39,10 @@ const CondosForSalePage = async ({searchParams}: ISearchParams) => {
           path='/condos-for-sale'
         />
       </section>
+      <ContactUsBanner 
+        image="/images/real-estate-agents.png" 
+        altText="Real estate agents"
+      />
     </React.Fragment>
   )
 };

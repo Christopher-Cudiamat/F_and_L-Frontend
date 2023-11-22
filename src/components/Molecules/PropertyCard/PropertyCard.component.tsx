@@ -28,7 +28,7 @@ const PropertyCard = ({
         <Overlay color="bg-slate-950/50"/>
         <ul className="flex gap-x-1">
           <li className={
-            `text-xs font-normal absolute top-3 right-3 rounded-2xl p-2 text-white
+            `text-xs font-normal absolute top-3 right-3 rounded-2xl py-2 px-3 text-white
             ${!status.includes('Sold-out') ? 'bg-blue-600' : 'bg-red-500'} 
             `}
           >
@@ -57,7 +57,7 @@ const PropertyCard = ({
         <Link 
           href={`/condos-for-sale/${slug}`} 
           replace={true}
-          className="bg-blue-600 hover:bg-blue-700 px-4 py-3 text-white text-xs font-semibold flex rounded-md w-fit duration-100"
+          className="border border-blue-600 hover:bg-blue-600 px-4 py-3 text-blue-600 hover:text-white text-xs font-semibold flex rounded-lg w-fit duration-100"
         >
           More Details
         </Link>

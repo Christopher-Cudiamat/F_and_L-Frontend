@@ -15,15 +15,15 @@ const ContactUsBanner = ({
 }: IContactUsBannerProps) => {
 
   return (
-    <section className="relative w-full max-w-[1400px] h-[500px] py-20 mx-auto mb-18 mt-24 lg:mb-20 lg:mt-28 rounded-md overflow-hidden">
+    <section className="relative w-full max-w-[1400px] h-[500px] py-20 mx-auto mb-18 mt-24 lg:mb-20 lg:mt-28 2xl:rounded-md overflow-hidden">
         <Image 
           src={image}
           alt={altText}
           fill 
           loading="lazy"
-          className="inset-0 object-cover rounded-md" 
+          className="inset-0 object-cover 2xl:rounded-md" 
         />
-        <Overlay color="bg-slate-950/50 rounded-md"/>
+        <Overlay color="bg-slate-950/50 2xl:rounded-md"/>
         <Container className="relative flex flex-col justify-center h-full">
           <h3 className="text-white text-2xl lg:text-3xl mb-4">
             Helping you find the property of your dreams.
