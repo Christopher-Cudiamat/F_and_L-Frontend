@@ -18,7 +18,7 @@ export default async function HomePage() {
   return (
     <React.Fragment>
       <Slider/>
-      <section className="bg-white py-16 md:py-20">
+      <section className="bg-white py-10 md:py-20">
         <SectionTitle title="What are you looking for?"/>
         <CategoryFilter />
       </section>
