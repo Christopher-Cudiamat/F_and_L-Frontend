@@ -45,7 +45,7 @@ const CategoryFilter = () => {
                 className="flex flex-row justify-between items-center bg-slate-50 py-8 px-6 md:px-8 md:px-6 rounded-md shadow-md hover:scale-[1.02] hover:shadow-lg duration-200"
             >
                 <div className="flex flex-col">
-                    <h4 className="font-semibold text-xl mb-1.5">
+                    <h4 className="text-slate-800 font-semibold text-xl mb-1.5">
                         {item.label}
                     </h4>
                     <p className="flex gap-x-2 text-base md:justify-start text-slate-500 font-normal"><span className="font-semibold">{item.count}</span> listed units</p>

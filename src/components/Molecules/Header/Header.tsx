@@ -4,9 +4,18 @@ import React from "react";
 import Link from "next/link";
 import Container from "@/components/Atoms/Container/Container";
 import DesktopMenu from "./DesktopMenu";
+import MobileMenu from "./MobileMenu";
+import { 
+  BuildingLibraryIcon,
+  BuildingOffice2Icon, 
+  BuildingOfficeIcon, 
+  HomeIcon, 
+  MapPinIcon 
+} from "@heroicons/react/24/outline";
 export interface ISubLink {
   label: string;
   link: string;
+  icon: any;
 }
 export interface INavItem {
   label: string;
@@ -25,23 +34,28 @@ const navItems = [
     subLinks: [
       {
         label: "All",
-        link: "/condos-for-sale"
+        link: "/condos-for-sale",
+        icon: BuildingLibraryIcon,
       },
       {
         label: "Condominium",
-        link: "/property-category/condominium"
+        link: "/property-category/condominium",
+        icon: BuildingOfficeIcon,
       },
       {
         label: "House and Lot",
-        link: "/property-category/house-and-lot"
+        link: "/property-category/house-and-lot",
+        icon: HomeIcon,
       },
       {
         label: "Residential Office",
-        link: "/property-category/residential-office"
+        link: "/property-category/residential-office",
+        icon: BuildingOffice2Icon,
       },
       {
         label: "By Location",
-        link: "/property-location"
+        link: "/property-location",
+        icon: MapPinIcon,
       }
     ]
   },
@@ -58,15 +72,19 @@ const navItems = [
 export default function Header() {
 
   return (
-    <header className="border-b border-blue-600 hidden md:block shadow-md">
+    <header 
+      className="bg-blue-800 z-100 w-full"
+      id="header"
+    >
       <Container className="flex justify-between items-center">
         <Link 
           href="/"
-          className="text-blue-800 font-bold text-2xl"
+          className="text-white font-bold text-2xl"
         >
-          FL Real Estate
+          FL <span className="text-base font-normal">Real Estate</span>
         </Link>
-        <DesktopMenu navItems={navItems}/>
+        <DesktopMenu navItems={navItems} />
+        <MobileMenu navItems={navItems}/>
       </Container>
     </header>
   );

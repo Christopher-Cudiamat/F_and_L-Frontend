@@ -25,7 +25,7 @@ const PropertyCard = ({
           loading="lazy"
           className="group-hover/property-card:scale-[1.20] duration-300 object-cover" 
         />
-        <Overlay color="bg-slate-950/50"/>
+        <Overlay color="bg-slate-950/40"/>
         <ul className="flex gap-x-1">
           <li className={
             `text-xs font-normal absolute top-3 right-3 rounded-2xl py-2 px-3 text-white

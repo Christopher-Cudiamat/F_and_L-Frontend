@@ -7,17 +7,17 @@ import { INavItem, INavItems, ISubLink } from './Header';
 
 const DesktopMenu = ({ navItems }: INavItems) => {
     const currentRoute = usePathname();
-    const linkStyle = "text-slate-600 font-normal pt-[24px] py-5 border-b-4 duration-200 hover:border-blue-600 flex items-center gap-x-1"; 
-    const activeStyle = `${linkStyle} border-blue-600 font-semibold`; 
+    const linkStyle = "text-white font-normal pt-[24px] py-5 border-b-4 duration-200 hover:border-white flex items-center gap-x-1"; 
+    const activeStyle = `${linkStyle} border-white font-semibold`; 
     const nonActiveStyle = `${linkStyle} border-transparent`;
 
     return (
-        <nav>
+        <nav className="hidden md:block">
             <ul className="flex">
                 {navItems.map((navItem: INavItem, index: number) => (
                     <li 
                         key={index} 
-                        className="flex items-center relative px-8"
+                        className="flex items-center relative px-4 lg:px-6"
                     >
                         {navItem.subLinks ?
                         <Menu 
@@ -34,20 +34,21 @@ const DesktopMenu = ({ navItems }: INavItems) => {
                                     <ChevronDownIcon className={`w-4 mt-1 duration-150 ${open ? "rotate-180" : "rotate-0"}`}/>
                                 </Menu.Button>
                                 <Menu.Items 
-                                    as="div" 
-                                    className="absolute -bottom-[231px] flex flex-col py-4 rounded-tr-lg rounded-b-lg rounded-tl-0 z-50 bg-blue-600 text-white w-max"
+                                    as="div"
+                                    className="absolute -bottom-[239px] flex flex-col py-4 rounded-tr-lg rounded-b-lg rounded-tl-0 z-50 bg-white text-blue-600 w-max"
                                 >
                                     {navItem.subLinks?.map((item: ISubLink) => (
                                         <Menu.Item 
                                             key={item.link} 
-                                            as={Fragment} 
+                                            as="div"
                                         >
                                             <Link
                                                 href={item.link}
-                                                className={`w-full py-2 px-6 text-white hover:bg-blue-700 ${
-                                                    item.link === currentRoute ? 'bg-blue-700' : 'bg-blue-600'
+                                                className={`flex gap-x-4 w-full py-2 px-4 text-blue-600 hover:bg-slate-50 ${
+                                                    item.link === currentRoute ? 'bg-slate-50' : 'bg-white'
                                                 }`}
                                             >
+                                                <item.icon className="w-5 text-blue-600"/>
                                                 {item.label}
                                             </Link>
                                         </Menu.Item>

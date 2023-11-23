@@ -25,7 +25,7 @@ const LocationCard = ({
         loading="lazy"
         className="group-hover/location-card:scale-[1.20] duration-300 object-cover" 
       />
-      <Overlay color="bg-slate-950/50"/>
+      <Overlay color="bg-slate-950/40"/>
       <div className="relative flex flex-col items-center">
         <div className="flex gap-x-1 items-center mb-4">
           <MapPinIcon className="text-white w-6" />

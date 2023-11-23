@@ -44,7 +44,7 @@ const AboutUsBanner = () => {
                         title="Always choose the SMDC, the leading developer in the Philippines."
                         className="-pl-4"
                     />
-                    <p className="font-semibold text-base mb-10 -mt-4 text-center lg:text-left lg:mt-0">
+                    <p className="text-slate-800 font-semibold text-base mb-10 -mt-4 text-center lg:text-left lg:mt-0">
                         If you are looking for an investment opportunity consider the SMDC.With properties still currently being built and still lined-up, the Philippines is still definitely enjoying the major surge of the Real Estate Market.
                     </p>
                 </div>
