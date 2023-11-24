@@ -39,10 +39,12 @@ const CondosForSalePage = async ({searchParams}: ISearchParams) => {
           path='/condos-for-sale'
         />
       </section>
-      <ContactUsBanner 
-        image="/images/real-estate-agents.png" 
-        altText="Real estate agents"
-      />
+      <section className="pb-20">
+        <ContactUsBanner 
+          image="/images/real-estate-agents.png" 
+          altText="Real estate agents"
+        />
+      </section>
     </React.Fragment>
   )
 };

@@ -11,6 +11,7 @@ export async function fetchCondo(parameters: any) {
       tags: [CACHE_TAG_CONDO],
     },
   });
+  console.log('RES',response)
   if (!response.ok) {
     throw new Error(`CMS returned ${response.status} for ${url}`);
   }

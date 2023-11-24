@@ -16,7 +16,7 @@ export const getCondo = async(slug: string): Promise<ICondo | null> => {
         'location',
         'body',
         'amenities',
-        'features',
+        'units',
         'address',
         'status',
         'nearestLandmark',
@@ -25,6 +25,7 @@ export const getCondo = async(slug: string): Promise<ICondo | null> => {
       populate: { 
         gallery: { fields: ['url'] }, 
         image: { fields: ['url'] },
+        logo: {fields: ['url']}
       },
       pagination: { pageSize: 1, withCount: false }
   })
@@ -33,12 +34,14 @@ export const getCondo = async(slug: string): Promise<ICondo | null> => {
     return null;
   }
   const item = data[0];
+
   return {
     gallery: item.attributes.gallery.data.map((item: any) => new URL(item.attributes.url, process.env.CMS_URL).href),
     body: item.attributes.body,
     address: item.attributes.address,
     amenities: item.attributes.amenities,
-    features: item.attributes.features,
+    units: item.attributes.units,
+    logo: new URL(item.attributes.logo.data.attributes.url, process.env.CMS_URL).href,
     ...toCondo(item) 
   }
 }

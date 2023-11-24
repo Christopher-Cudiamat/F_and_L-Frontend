@@ -95,7 +95,7 @@ const Footer = ({
               </li>
             ))}
           </ul>
-          <p className="text-sm text-white/70">Copyright 2023 FL Real Estate. All Rights Reserved. </p>     
+          <p className="text-xs md:text-sm text-white/70 text-center">Copyright 2023 FL Real Estate. All Rights Reserved. </p>     
         </Container>  
       </div>         
     </footer>

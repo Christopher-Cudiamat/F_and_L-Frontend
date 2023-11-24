@@ -9,7 +9,7 @@ export default function Container({
 }: IContainerProps) {
 
   return (
-    <div className={`container 2xl:max-w-[1300px] mx-auto px-6 ${className}`}>
+    <div className={`container 2xl:max-w-[1300px] mx-auto px-4 ${className}`}>
       { children }
     </div>
   );

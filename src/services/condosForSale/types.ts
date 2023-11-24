@@ -14,8 +14,9 @@ export interface ICondo extends ICondos {
   gallery: string[];
   body?: string;
   amenities: string[];
-  features: string[];
+  units: string[];
   address: string;
+  logo?: string;
 }
 
 export interface ICmsItem {

@@ -59,10 +59,12 @@ export default async function HomePage() {
           }
         </CardsContainer>
       </section>
-      <ContactUsBanner 
-        image="/images/real-estate-agents.png" 
-        altText="Real estate agents"
-      />
+      <section className="bg-white py-10">
+        <ContactUsBanner 
+          image="/images/real-estate-agents.png" 
+          altText="Real estate agents"
+        />
+      </section>
       <section className="bg-white pt-10 pb-20">
         <SectionTitle
           title="Featured locations"
