@@ -34,19 +34,23 @@ export default async function HomePage() {
             href="#section-category"
           >
             Explore
-            <ChevronDoubleDownIcon className="w-4"/>
+            <ChevronDoubleDownIcon className="w-4 animate-bounce mt-1"/>
           </Link>
         </Container>
       </section>
       <section className="bg-white pt-10 pb-14 md:py-14" id="section-category">
-        <SectionTitle title="What are you looking for?"/>
+        <SectionTitle 
+          title="What are you looking for?"
+          withLine
+        />
         <CategoryFilter />
       </section>
       <section className="bg-slate-50 pt-10 pb-20">
         <SectionTitle
-          title="Best selling properties"
+          title="Featured properties"
           ButtonLabel="View all"
           href="/condos-for-sale"
+          withLine
         />
         <CardsContainer>
           {featuredCondos?.condos.map((item: ICondos) => (
@@ -61,9 +65,10 @@ export default async function HomePage() {
       />
       <section className="bg-white pt-10 pb-20">
         <SectionTitle
-          title="Top property locations"
+          title="Featured locations"
           ButtonLabel="View all"
           href="/property-location"
+          withLine
         />
         <CardsContainer>
           {featuredLocations.map((item: ILocation) => (

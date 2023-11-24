@@ -1,5 +1,4 @@
 import React from 'react'
-import BurgerMenu from './BurgerMenu';
 import { Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
 import { INavItem, INavItems, ISubLink } from './Header';
@@ -53,7 +52,7 @@ const MobileMenu = ({ navItems }: INavItems) => {
                                         <ChevronRightIcon className={`${index === 0 ? "hidden" : "flex"} w-5 text-white`}/>
                                     </div>
                                     {item.subLinks && 
-                                        <ul className="ml-3">
+                                        <ul className="ml-1">
                                             {navItems[0].subLinks?.map((item: ISubLink) => (
                                                 <Menu.Item  
                                                     key={item.label}

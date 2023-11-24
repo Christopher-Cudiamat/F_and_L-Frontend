@@ -33,7 +33,7 @@ const navItems = [
     link: "",
     subLinks: [
       {
-        label: "All",
+        label: "All Properties",
         link: "/condos-for-sale",
         icon: BuildingLibraryIcon,
       },
@@ -67,7 +67,7 @@ const navItems = [
     label: "Contact Us",
     link: "/contact-us"
   },
-]
+];
 
 export default function Header() {
 
