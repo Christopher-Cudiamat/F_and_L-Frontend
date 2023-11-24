@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
 import Footer from '@/components/Molecules/Footer/Footer';
 import Header from '@/components/Molecules/Header/Header';
+import { footer } from '@/components/Molecules/Footer/config';
 
 const inter = Open_Sans({ subsets: ['latin'] })
 
@@ -20,7 +21,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <main>
           {children}
         </main>
-        <Footer />
+        <Footer {...footer}/>
       </body>
     </html>
   )

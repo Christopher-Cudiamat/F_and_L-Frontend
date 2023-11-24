@@ -1,145 +1,101 @@
 import Container from '@/components/Atoms/Container/Container';
-import { BuildingOffice2Icon, BuildingOfficeIcon, HomeIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import React from 'react';
 
-export interface ISubLink {
+export interface ILink {
   label: string;
   link: string;
-  icon: any;
-}
-export interface INavItem {
-  label: string;
-  link: string;
-  subLinks?: ISubLink[];
 }
 
-export interface INavItems {
-  navItems: INavItem[];
-}
-
-const properties = [
-  {
-    label: "See all properties",
-    link: "/condos-for-sale",
-    icon: BuildingOfficeIcon,
-  },
-  {
-    label: "Buy a condominium",
-    link: "/property-category/condominium",
-    icon: BuildingOfficeIcon,
-  },
-  {
-    label: "Buy a house and lot",
-    link: "/property-category/house-and-lot",
-    icon: HomeIcon,
-  },
-  {
-    label: "Buy a residential office",
-    link: "/property-category/residential-office",
-    icon: BuildingOffice2Icon,
-  },
-  {
-    label: "Search property by location",
-    link: "/property-location",
-    icon: MapPinIcon,
-  }
-]
-
-
-const connections = [
-  {
-    label: "About Us",
-    link: "/about-us",
-  },
-  {
-    label: "Contact Us",
-    link: "/contact-us"
-  },
-]
-
-const socialMedias = [
-  {
-    link: "/1",
-    icon: MapPinIcon
-  },
-  {
-    link: "/2",
-    icon: MapPinIcon
-  },
-  {
-    link: "/3",
-    icon: MapPinIcon
-  },
-]
-
-const Footer = () => {
+const Footer = ({ 
+  company,
+  properties,
+  contacts,
+  socials,
+  disclaimer
+ }: any) => {
+  const sectionContainerStyle = "mb-10 md:mx-auto lg:mx-0";
+  const sectionTitleStyle = "text-lg text-center lg:text-left font-bold mb-4";
+  const linksContainerStyle = "flex flex-col items-center lg:items-start gap-y-2 text-base font-normal text-white/80";
+  const linkStyle = "md:hover:text-white duration-150";
 
   return (
-    <footer className="bg-slate-700 pt-12">
-      <Container className="grid grid-cols-1 md:grid-cols-4">
-        <div className="w-full md:col-span-4">
+    <footer className="bg-slate-800 pt-12">
+      <Container className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 text-white">
+        <div className="w-full md:col-span-4 lg:col-span-2 text-center lg:text-left mb-10 border-b border-white/40 lg:border-transparent">
           <Link 
             href="/"
-            className="text-white font-bold text-6xl mb-10"
+            className="text-blue-600 font-bold text-6xl lg:text-8xl mb-8 lg:mg-6"
           >
-            FL <span className="text-2xl font-normal">Real Estate</span>
+            {/* This will be replaced by an actual logo */}
+            {company.logo.split(" ")[0]} <span className="text-2xl lg:text-3xl font-normal">{company.logo.split(" ")[1] + " " + company.logo.split(" ")[2]}</span>
           </Link>
-          <ul className="flex mb-10">
-            {socialMedias.map((item: any) => (
+          <h2 className="mx-auto lg:mx-0 text-2xl lg:text-2xl lg: max-w-[200px] md:max-w-full font-semibold pt-5 pb-8">
+            {company.tagline}
+          </h2>
+        </div>
+
+        <div className={`${sectionContainerStyle}`}>
+          <h4 className={`${sectionTitleStyle}`}>
+            {properties.title}
+          </h4>
+          <ul className={`${linksContainerStyle}`}>
+            {properties.links.map((item: any) => (
+              <li 
+                key={item.label}
+              >
+                <Link 
+                  href={item.link}
+                  className={`${linkStyle}`}
+                >
+                  {item.label}
+                </Link>
+              </li>
+              ))}
+          </ul>
+        </div>
+
+        <div className={`${sectionContainerStyle}`}>
+          <h4 className={`${sectionTitleStyle}`}>
+            {contacts.title}
+          </h4>
+          <ul className={`${linksContainerStyle}`}>
+            {contacts.links.map((item: any) => (
+              <li 
+                key={item.label}
+              >
+                <Link 
+                  href={item.link}
+                  className={`${linkStyle}`}
+                >
+                  {item.label}
+                </Link>
+              </li>
+              ))}
+          </ul>
+        </div>
+
+        <div className={`text-center lg:text-left ${sectionContainerStyle}`}>
+          <h4 className={`${sectionTitleStyle}`}>
+            {disclaimer.title}
+          </h4>
+          <p className='text-sm text-white/60 leading-6'>
+            {disclaimer.text}
+          </p>
+        </div>
+      </Container>
+      <div className="bg-slate-900 text-white text-xs font-light py-6">
+        <Container className="flex flex-col gap-y-8 items-center md:flex-row md:justify-between">
+          <ul className="flex">
+            {socials.links.map((item: any) => (
               <li key={item.link} className="mr-5">
                 <a href={item.link}>
-                  <item.icon className="w-10 text-white" />
+                  <item.icon className="w-8 text-white" />
                 </a>
               </li>
             ))}
           </ul>
-        </div>
-        <ul className="flex flex-col mb-8">
-          {properties.map((item: any) => (
-            <li 
-              key={item.label}
-              className="text-lg text-white font-semibold py-3"
-            >
-              <Link 
-                href={item.link}
-                className="flex gap-x-2"
-              >
-                <item.icon className="w-5"/>
-                {item.label}
-              </Link>
-            </li>
-            ))}
-        </ul>
-        <ul className="flex flex-col mb-8">
-          {properties.map((item: any) => (
-            <li 
-              key={item.label}
-              className="text-lg text-white font-semibold py-3"
-            >
-              <Link 
-                href={item.link}
-                className="flex gap-x-2"
-              >
-                <item.icon className="w-5"/>
-                {item.label}
-              </Link>
-            </li>
-            ))}
-        </ul>
-        <div className="text-white">
-        <h4 className='text-lg font-semibold mb-5'>
-          Disclaimer
-        </h4>
-        <p className='text-sm'>
-        To promote SMDC Projects and increase Sales and Marketing of SMDC Condominiums, all information stated are intended to give a general overview of the project only and does not constitute any part of an offer or contract. www.smdc.com is the official website of SMDC.
-        </p>
-        </div>
-      </Container>
-      <div className="bg-slate-800 text-white text-xs font-light py-6">
-        <Container className="flex flex-col gap-y-4">
-          <p>Copyright 2023 FL Real Estate. All Rights Reserved. </p>     
-          <p>Designed by: Dev Tops. </p>
+          <p className="text-sm text-white/70">Copyright 2023 FL Real Estate. All Rights Reserved. </p>     
         </Container>  
       </div>         
     </footer>
