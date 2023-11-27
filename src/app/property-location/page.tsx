@@ -3,6 +3,7 @@ import CardsContainer from "@/components/Molecules/CardsContainer/CardsContainer
 import Hero from "@/components/Molecules/Hero/Hero";
 import LocationCard from "@/components/Molecules/LocationCard/LocationCard";
 import { fetchPropertyLocations } from "@/services/property-location/fetchPropertyLocations";
+import ContactUsBanner from "@/components/Molecules/ContactUsBanner/ContactUsBanner";
 
 export default async function PropertyLocationsPage() {
   const propertyLocations = await fetchPropertyLocations(100);
@@ -23,6 +24,13 @@ export default async function PropertyLocationsPage() {
             ))
           }
         </CardsContainer>
+      </section>
+      <section>
+        <ContactUsBanner 
+          image="/images/real-estate-agents.png" 
+          altText="Real estate agents"
+          full
+        /> 
       </section>
     </React.Fragment>
   )

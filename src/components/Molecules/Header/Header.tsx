@@ -34,7 +34,7 @@ const navItems = [
     subLinks: [
       {
         label: "All Properties",
-        link: "/condos-for-sale",
+        link: "/properties",
         icon: BuildingLibraryIcon,
       },
       {

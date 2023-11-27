@@ -1,0 +1,29 @@
+import Link from "next/link";
+import Image from "next/image";
+import React from "react";
+import Container from "@/components/Atoms/Container/Container";
+import { properties  } from "./config";
+
+const PropertyList = () => {
+  return (
+    <Container>
+        <ul className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 justify-center items-center gap-2">
+            {properties.map((item: any) => (
+                <li>
+                    <Link href={item.link}>
+                        <Image 
+                            src={item.logo} 
+                            width={500}
+                            height={500}
+                            alt="" 
+                            className="w-36 md:w-48 xl:w-56 h-auto mb-10 hover:scale-[1.1] duration-200" 
+                        />
+                    </Link>
+                </li>
+            ))}
+        </ul>
+    </Container>
+  )
+}
+
+export default PropertyList;

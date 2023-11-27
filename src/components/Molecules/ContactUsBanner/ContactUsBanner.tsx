@@ -23,9 +23,9 @@ const ContactUsBanner = ({
         alt={altText}
         fill 
         loading="lazy"
-        className={`inset-0 object-cover ${full ? "2xl:rounded-0" : "2xl:rounded-md"}`} 
+        className={`${full ? "2xl:rounded-0" : "2xl:rounded-md"} inset-0 object-cover`} 
       />
-      <Overlay color="bg-slate-950/70 2xl:rounded-md"/>
+      <Overlay color={`${full ? "2xl:rounded-0" : "2xl:rounded-md"} bg-slate-950/70 2xl:rounded-md`}/>
       <Container className="relative flex flex-col justify-center h-full">
         <div className="border border-yellow-400 max-w-[600px] px-6 py-8">
           <h3 className="text-white text-2xl lg:text-3xl mb-4">

@@ -6,6 +6,7 @@ import { getCondosByCategory } from '@/services/condosForSale/getCondosByCategor
 import { categories } from '@/components/Molecules/CategoryFilter/CategoryFilter';
 import Hero from '@/components/Molecules/Hero/Hero';
 import { slugParser } from '@/utils/slugParser';
+import ContactUsBanner from '@/components/Molecules/ContactUsBanner/ContactUsBanner';
 
 interface IPropertyCategoryPageParams {
   slug: string;
@@ -38,6 +39,13 @@ export default async function PropertyCategoryPage({ params: { slug }}: IPropert
             ))
           }
         </CardsContainer>
+      </section>
+      <section>
+        <ContactUsBanner 
+          image="/images/real-estate-agents.png" 
+          altText="Real estate agents"
+          full
+        /> 
       </section>
     </React.Fragment>
   )

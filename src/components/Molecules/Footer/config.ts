@@ -10,7 +10,7 @@ export const footer = {
       links: [
         {
           label: "All Properties",
-          link: "/condos-for-sale",
+          link: "/properties",
         },
         {
           label: "Condominium",

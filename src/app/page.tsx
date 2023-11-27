@@ -49,7 +49,7 @@ export default async function HomePage() {
         <SectionTitle
           title="Featured properties"
           ButtonLabel="View all"
-          href="/condos-for-sale"
+          href="/properties"
           withLine
         />
         <CardsContainer>

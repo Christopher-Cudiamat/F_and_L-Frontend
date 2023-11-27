@@ -36,7 +36,7 @@ const stats = [
 
 const AboutUsBanner = () => {
   return (
-    <section className="pt-10 pb-20 bg-slate-50">
+    <section className="pt-10 pb-20  xl:pt-20 xl:pb-24 bg-slate-50">
         <Container className="grid grid-cols-1">
             <div className="flex flex-col items-center lg:items-start mb-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-12">

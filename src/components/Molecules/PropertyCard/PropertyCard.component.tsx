@@ -55,7 +55,7 @@ const PropertyCard = ({
           {description}
         </p>
         <Link 
-          href={`/condos-for-sale/${slug}`} 
+          href={`/properties/${slug}`} 
           replace={true}
           className="border border-blue-600 hover:bg-blue-600 px-4 py-3 text-blue-600 hover:text-white text-xs font-semibold flex rounded-lg w-fit duration-100"
         >

@@ -6,6 +6,7 @@ import PropertyCard from '@/components/Molecules/PropertyCard/PropertyCard.compo
 import CardsContainer from '@/components/Molecules/CardsContainer/CardsContainer';
 import Hero from '@/components/Molecules/Hero/Hero';
 import { slugParser } from '@/utils/slugParser';
+import ContactUsBanner from '@/components/Molecules/ContactUsBanner/ContactUsBanner';
 
 interface IPropertyLocationPageParams {
   slug: string;
@@ -38,6 +39,13 @@ export default async function PropertyLocationPage({ params: { slug }}: IPropert
             ))
           }
         </CardsContainer>
+      </section>
+      <section>
+        <ContactUsBanner 
+          image="/images/real-estate-agents.png" 
+          altText="Real estate agents"
+          full
+        /> 
       </section>
     </React.Fragment>
   )

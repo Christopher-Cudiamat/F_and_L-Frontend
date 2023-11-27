@@ -36,14 +36,15 @@ const CondosForSalePage = async ({searchParams}: ISearchParams) => {
         <Pagination
           pageCount={results?.pageCount}
           page={page}
-          path='/condos-for-sale'
+          path='/properties'
         />
       </section>
-      <section className="pb-20">
+      <section>
         <ContactUsBanner 
           image="/images/real-estate-agents.png" 
           altText="Real estate agents"
-        />
+          full
+        /> 
       </section>
     </React.Fragment>
   )

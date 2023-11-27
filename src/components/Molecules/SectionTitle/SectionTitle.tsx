@@ -25,7 +25,7 @@ const SectionTitle = ({
             {title}
           </h2>
           {withLine &&
-            <div className="h-1 w-1/4 md:w-[200px] md:h-1.5 bg-yellow-400"/>
+            <div className="h-1 w-1/4 md:w-1/2 md:h-1.5 bg-yellow-400"/>
           }
         </div>
         {
