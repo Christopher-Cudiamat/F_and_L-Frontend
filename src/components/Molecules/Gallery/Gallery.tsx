@@ -20,10 +20,9 @@ const options = {
 }
 
 const Gallery = ({ slides }: ISlides) => {
-    console.log("SLIDES", slides)
     const [emblaRef, emblaApi] = useEmblaCarousel(options);
     const arrowStlye = "z-50 text-white/80 hover:text-white 100 duration-150 w-10 lg:w-20 absolute top-1/2 transform -translate-y-1/2";
-    const slideHeightStyle = "h-[400px] lg:h-[800px] xl:h-[600px]";
+    const slideHeightStyle = "h-[400px] lg:h-[600px]";
 
     const scrollPrev = () => {
         if (emblaApi) emblaApi.scrollPrev();
@@ -45,13 +44,13 @@ const Gallery = ({ slides }: ISlides) => {
                         {slides.map((slide: TSlide) => (
                             <div 
                                 key={slide} 
-                                className={`${slideHeightStyle} embla__slide w-full h-full relative`}
+                                className={`${slideHeightStyle} embla__slide relative`}
                             >
                                 <Image 
                                     src={slide} 
                                     alt=""
                                     fill 
-                                    className="object-cover rounded-md" 
+                                    className="w-full h-full object-cover rounded-md" 
                                 />
                             </div>
                         ))}             

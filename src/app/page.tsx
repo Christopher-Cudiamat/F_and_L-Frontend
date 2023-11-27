@@ -59,12 +59,6 @@ export default async function HomePage() {
           }
         </CardsContainer>
       </section>
-      <section className="bg-white py-10">
-        <ContactUsBanner 
-          image="/images/real-estate-agents.png" 
-          altText="Real estate agents"
-        />
-      </section>
       <section className="bg-white pt-10 pb-20">
         <SectionTitle
           title="Featured locations"
@@ -80,6 +74,13 @@ export default async function HomePage() {
         </CardsContainer>
       </section>
       <AboutUsBanner />
+      <section>
+        <ContactUsBanner 
+          image="/images/real-estate-agents.png" 
+          altText="Real estate agents"
+          full
+        />
+      </section>
     </React.Fragment>
   )
 }

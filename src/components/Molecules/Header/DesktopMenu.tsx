@@ -7,7 +7,7 @@ import { INavItem, INavItems, ISubLink } from './Header';
 
 const DesktopMenu = ({ navItems }: INavItems) => {
     const currentRoute = usePathname();
-    const linkStyle = "text-white font-normal pt-[24px] py-5 border-b-4 duration-200 hover:border-white flex items-center gap-x-1"; 
+    const linkStyle = "text-white font-normal pt-[24px] py-5 border-b-2 duration-200 hover:border-white flex items-center gap-x-1"; 
     const activeStyle = `${linkStyle} border-white font-semibold`; 
     const nonActiveStyle = `${linkStyle} border-transparent`;
 

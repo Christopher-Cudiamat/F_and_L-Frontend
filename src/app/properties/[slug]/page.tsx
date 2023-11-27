@@ -127,7 +127,7 @@ export default async function CondoForSalePage({ params: { slug }}: ICondoForSal
       </section>
       <section className="bg-white py-10">
         <SectionTitle title="Other Properties" withLine/>  
-        <PropertyList/>
+        <PropertyList activeProperty={slug}/>
       </section>
       <section>
         <ContactUsBanner 

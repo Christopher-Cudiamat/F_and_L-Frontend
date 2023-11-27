@@ -6,6 +6,10 @@ import Pagination from '@/components/Molecules/Pagination/Pagination';
 import CardsContainer from '@/components/Molecules/CardsContainer/CardsContainer';
 import Hero from '@/components/Molecules/Hero/Hero';
 import ContactUsBanner from '@/components/Molecules/ContactUsBanner/ContactUsBanner';
+import SectionTitle from '@/components/Molecules/SectionTitle/SectionTitle';
+import CategoryFilter from '@/components/Molecules/CategoryFilter/CategoryFilter';
+import Filters from '@/components/Molecules/Filters/Filters';
+import Container from '@/components/Atoms/Container/Container';
 
 interface ISearchParams {
   searchParams: {page?: string};
@@ -26,6 +30,7 @@ const CondosForSalePage = async ({searchParams}: ISearchParams) => {
         altText="Property"
         height="md"
       />
+      <Filters />
       <section className="bg-white pt-10 lg:pt-20 pb-10">
         <CardsContainer>
           {results?.condos.map((item: ICondos) => (
@@ -38,6 +43,13 @@ const CondosForSalePage = async ({searchParams}: ISearchParams) => {
           page={page}
           path='/properties'
         />
+      </section>
+      <section className="bg-white pt-10 pb-14 md:py-14" id="section-category">
+        <SectionTitle 
+          title="What are you looking for?"
+          withLine
+        />
+        <CategoryFilter />
       </section>
       <section>
         <ContactUsBanner 
