@@ -7,7 +7,7 @@ export interface ILink {
   link: string;
 }
 
-const Footer = ({ company, properties, contacts, socials, disclaimer }: any) => {
+const Footer: React.FC<any> = ({ company, properties, contacts, socials, disclaimer }) => {
   const sectionContainerStyle = 'mb-10 md:mx-auto lg:mx-0';
   const sectionTitleStyle = 'text-lg text-center lg:text-left font-bold mb-4';
   const linksContainerStyle =

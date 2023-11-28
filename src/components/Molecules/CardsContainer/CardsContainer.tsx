@@ -5,7 +5,7 @@ interface ICardsContainerProps {
   children: React.ReactNode;
 }
 
-const CardsContainer = ({ children }: ICardsContainerProps) => {
+const CardsContainer: React.FC<ICardsContainerProps> = ({ children }) => {
   return (
     <Container>
       <ul className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>{children}</ul>

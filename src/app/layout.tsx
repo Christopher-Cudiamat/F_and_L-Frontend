@@ -12,7 +12,11 @@ export const metadata: Metadata = {
   description: 'Real estate website',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+interface IRootLayout {
+  children: React.ReactNode;
+}
+
+const RootLayout: React.FC<IRootLayout> = ({ children }) => {
   return (
     <html
       lang='en'
@@ -25,4 +29,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

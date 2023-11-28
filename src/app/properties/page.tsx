@@ -1,6 +1,6 @@
 import React from 'react';
 import { getCondos } from '@/services/condosForSale/getCondos';
-import { ICondos } from '@/services/condosForSale/types';
+import { type ICondos } from '@/services/condosForSale/types';
 import PropertyCard from '@/components/Molecules/PropertyCard/PropertyCard.component';
 import Pagination from '@/components/Molecules/Pagination/Pagination';
 import CardsContainer from '@/components/Molecules/CardsContainer/CardsContainer';
@@ -9,7 +9,6 @@ import ContactUsBanner from '@/components/Molecules/ContactUsBanner/ContactUsBan
 import SectionTitle from '@/components/Molecules/SectionTitle/SectionTitle';
 import CategoryFilter from '@/components/Molecules/CategoryFilter/CategoryFilter';
 import Filters from '@/components/Molecules/Filters/Filters';
-import Container from '@/components/Atoms/Container/Container';
 
 interface ISearchParams {
   searchParams: { page?: string };
@@ -17,7 +16,7 @@ interface ISearchParams {
 
 const pageSize = 8;
 
-const CondosForSalePage = async ({ searchParams }: ISearchParams) => {
+const PropertiesPage: React.FC<ISearchParams> = async ({ searchParams }) => {
   const page = parsePageParam(searchParams.page);
   const results = await getCondos(pageSize, page);
 
@@ -67,9 +66,9 @@ const CondosForSalePage = async ({ searchParams }: ISearchParams) => {
   );
 };
 
-export default CondosForSalePage;
+export default PropertiesPage;
 
-function parsePageParam(value: string | undefined) {
+function parsePageParam(value: string | undefined): number {
   if (value) {
     const page = parseInt(value);
     if (isFinite(page) && page > 0) {

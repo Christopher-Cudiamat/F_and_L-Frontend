@@ -1,10 +1,10 @@
 import React from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
-import { INavItem, INavItems, ISubLink } from './Header';
+import { type INavItem, type INavItems, type ISubLink } from './Header';
 import { Bars3Icon, ChevronRightIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
-const MobileMenu = ({ navItems }: INavItems) => {
+const MobileMenu: React.FC<INavItems> = ({ navItems }) => {
   return (
     <Menu
       as='nav'

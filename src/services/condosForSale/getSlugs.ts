@@ -1,5 +1,5 @@
 import { fetchCondo } from './fetchCondo';
-import { ICmsItem } from './types';
+import { type ICmsItem } from './types';
 
 export const getSlugs = async (): Promise<string[]> => {
   const { data } = await fetchCondo({

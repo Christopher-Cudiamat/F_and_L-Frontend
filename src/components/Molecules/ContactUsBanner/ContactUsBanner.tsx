@@ -10,7 +10,7 @@ interface IContactUsBannerProps {
   full?: boolean;
 }
 
-const ContactUsBanner = ({ image, altText, full = false }: IContactUsBannerProps) => {
+const ContactUsBanner: React.FC<IContactUsBannerProps> = ({ image, altText, full = false }) => {
   return (
     <div
       className={`w-full ${full ? 'max-w-full' : 'max-w-[1400px]'} ${

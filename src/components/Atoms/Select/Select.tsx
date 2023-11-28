@@ -1,10 +1,14 @@
 'use client';
 
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import { Listbox } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
-const Select = ({ items }: any) => {
+interface ISelectProps {
+  items: any[];
+}
+
+const Select: React.FC<ISelectProps> = ({ items }: any) => {
   const [selectedItem, setSelectedItem] = useState(items[0]);
 
   return (

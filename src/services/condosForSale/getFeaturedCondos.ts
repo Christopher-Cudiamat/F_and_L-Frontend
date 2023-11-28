@@ -1,8 +1,8 @@
 import { fetchCondo } from './fetchCondo';
 import { toCondo } from './toCondo';
-import { ICondosList } from './types';
+import { type ICondosList } from './types';
 
-//Retrieve featured condos for sale
+// Retrieve featured condos for sale
 export const getFeaturedCondos = async (): Promise<ICondosList | null> => {
   const { data } = await fetchCondo({
     filters: { isFeatured: { $eq: true } },

@@ -69,7 +69,7 @@ const navItems = [
   },
 ];
 
-export default function Header() {
+const Header: React.FC = () => {
   return (
     <header
       className='bg-blue-800 z-100 w-full'
@@ -87,4 +87,6 @@ export default function Header() {
       </Container>
     </header>
   );
-}
+};
+
+export default Header;

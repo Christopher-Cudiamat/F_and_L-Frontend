@@ -1,8 +1,8 @@
 import { fetchCondo } from './fetchCondo';
 import { toCondo } from './toCondo';
-import { ICondosList } from './types';
+import { type ICondosList } from './types';
 
-//Retrieve all condos for sale
+// Retrieve all condos for sale
 export const getCondos = async (
   pageSize: number = 100,
   page: number = 1

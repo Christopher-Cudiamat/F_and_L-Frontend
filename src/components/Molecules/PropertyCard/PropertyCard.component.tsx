@@ -1,10 +1,10 @@
 import React from 'react';
-import { ICondos } from '@/services/condosForSale/types';
+import { type ICondos } from '@/services/condosForSale/types';
 import Link from 'next/link';
 import Image from 'next/image';
 import Overlay from '@/components/Atoms/Overlay/Overlay';
 
-const PropertyCard = ({
+const PropertyCard: React.FC<ICondos> = ({
   slug,
   title,
   description,
@@ -13,7 +13,7 @@ const PropertyCard = ({
   status,
   image,
   category,
-}: ICondos) => {
+}) => {
   return (
     <li className='group/property-card bg-white w-full rounded-md shadow-lg hover:shadow-xl duration-200 relative'>
       <div className='flex flex-col relative w-full h-52 rounded-tl-md rounded-tr-md overflow-hidden'>

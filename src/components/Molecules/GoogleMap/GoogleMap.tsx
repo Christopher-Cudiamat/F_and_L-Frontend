@@ -2,9 +2,9 @@
 
 import GoogleMapReact from 'google-map-react';
 
-const AnyReactComponent = ({ text }: { text: string }) => <div>{text}</div>;
+// const AnyReactComponent = ({ text }: { text: string }) => <div>{text}</div>;
 
-const GoogleMap = () => {
+const GoogleMap: React.FC = () => {
   const defaultProps = {
     center: {
       lat: 10.99835602,

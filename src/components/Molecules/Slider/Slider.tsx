@@ -34,14 +34,14 @@ const autoplayOptions = {
   stopOnMouseEnter: true,
 };
 
-const Slider = () => {
+const Slider: React.FC = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay(autoplayOptions)]);
 
-  const scrollPrev = () => {
+  const scrollPrev = (): void => {
     if (emblaApi) emblaApi.scrollPrev();
   };
 
-  const scrollNext = () => {
+  const scrollNext = (): void => {
     if (emblaApi) emblaApi.scrollNext();
   };
 

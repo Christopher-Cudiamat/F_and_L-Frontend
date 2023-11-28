@@ -10,13 +10,13 @@ interface SectionTitleProps {
   withLine?: boolean;
 }
 
-const SectionTitle = ({
+const SectionTitle: React.FC<SectionTitleProps> = ({
   title,
   ButtonLabel,
   href,
   className,
   withLine = false,
-}: SectionTitleProps) => {
+}) => {
   return (
     <Container className={`${className}`}>
       <div className='flex flex-col md:flex-row items-center md:justify-between text-center lg:text-left mb-6 lg:mb-8'>

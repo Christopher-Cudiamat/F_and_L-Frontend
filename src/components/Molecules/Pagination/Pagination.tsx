@@ -10,7 +10,7 @@ interface PaginationProps {
 
 const MIN_PAGE_COUNT = 1;
 
-const Pagination = ({ page, pageCount, path }: PaginationProps) => {
+const Pagination: React.FC<PaginationProps> = ({ page, pageCount, path }) => {
   const pages = Array.from(Array(pageCount), (_, i) => i + 1);
 
   return (

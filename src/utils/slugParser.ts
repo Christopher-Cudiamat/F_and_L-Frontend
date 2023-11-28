@@ -1,4 +1,4 @@
-export const slugParser = (str: string) => {
+export const slugParser = (str: string): string => {
   const invalidWords = ['a', 'the', 'or', 'an', 'and', 'of', 'but'];
   const formatted = str
     .split('-')

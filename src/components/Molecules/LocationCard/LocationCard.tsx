@@ -10,7 +10,7 @@ interface ILocationCardProps {
   image: string;
 }
 
-const LocationCard = ({ slug, location, image }: ILocationCardProps) => {
+const LocationCard: React.FC<ILocationCardProps> = ({ slug, location, image }) => {
   return (
     <li className='group/location-card overflow-hidden h-[300px] w-full relative flex justify-center items-center rounded-md shadow-lg hover:shadow-xl duration-200'>
       <Image

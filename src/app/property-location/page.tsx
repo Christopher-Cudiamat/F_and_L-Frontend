@@ -2,10 +2,13 @@ import React from 'react';
 import CardsContainer from '@/components/Molecules/CardsContainer/CardsContainer';
 import Hero from '@/components/Molecules/Hero/Hero';
 import LocationCard from '@/components/Molecules/LocationCard/LocationCard';
-import { fetchPropertyLocations } from '@/services/property-location/fetchPropertyLocations';
+import {
+  type ILocation,
+  fetchPropertyLocations,
+} from '@/services/property-location/fetchPropertyLocations';
 import ContactUsBanner from '@/components/Molecules/ContactUsBanner/ContactUsBanner';
 
-export default async function PropertyLocationsPage() {
+const PropertyLocationsPage: React.FC = async () => {
   const propertyLocations = await fetchPropertyLocations(100);
 
   return (
@@ -36,4 +39,6 @@ export default async function PropertyLocationsPage() {
       </section>
     </React.Fragment>
   );
-}
+};
+
+export default PropertyLocationsPage;

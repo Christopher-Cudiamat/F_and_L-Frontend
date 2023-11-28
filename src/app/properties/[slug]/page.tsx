@@ -37,7 +37,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function CondoForSalePage({ params: { slug } }: ICondoForSalePageProps) {
+const PropertyPage: React.FC<ICondoForSalePageProps> = async ({ params: { slug } }) => {
   const condo = await getCondo(slug);
 
   if (!condo) {
@@ -94,7 +94,7 @@ export default async function CondoForSalePage({ params: { slug } }: ICondoForSa
               <h2 className='text-lg font-semibold mb-1.5'>UNITS</h2>
               <ul>
                 {condo.units.map((item: any) => (
-                  <li>{item}</li>
+                  <li key={item}>{item}</li>
                 ))}
               </ul>
             </div>
@@ -105,7 +105,7 @@ export default async function CondoForSalePage({ params: { slug } }: ICondoForSa
               <h2 className='text-lg font-semibold mb-1.5'>AMENITIES</h2>
               <ul>
                 {condo.amenities.map((item: any) => (
-                  <li>{item}</li>
+                  <li key={item}>{item}</li>
                 ))}
               </ul>
             </div>
@@ -146,4 +146,6 @@ export default async function CondoForSalePage({ params: { slug } }: ICondoForSa
       </section>
     </React.Fragment>
   );
-}
+};
+
+export default PropertyPage;

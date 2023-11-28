@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Container from '@/components/Atoms/Container/Container';
 import Select from '@/components/Atoms/Select/Select';
 
-const Filters = () => {
+const Filters: React.FC = () => {
   return (
     <section className='bg-white px-8'>
       <Container className='relative flex flex-col gap-y-3 w-full lg:w-fit md:flex-row md:gap-x-3 justify-center items-center bg-slate-100 shadow-md -mt-14 p-8 md:p-8 rounded-md'>

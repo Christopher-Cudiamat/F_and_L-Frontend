@@ -4,7 +4,7 @@ const CMS_URL = process.env.CMS_URL;
 export const CACHE_TAG_CONDO = 'condo';
 
 // set parameters for and fetch api
-export async function fetchCondo(parameters: any) {
+export async function fetchCondo(parameters: any): Promise<any> {
   const url = `${CMS_URL}/api/condos?${qs.stringify(parameters, { encodeValuesOnly: true })}`;
   const response = await fetch(url, {
     next: {

@@ -3,6 +3,8 @@ interface IContainerProps {
   className?: string;
 }
 
-export default function Container({ children, className = '' }: IContainerProps) {
+const Container: React.FC<IContainerProps> = ({ children, className = '' }) => {
   return <div className={`container 2xl:max-w-[1300px] mx-auto px-4 ${className}`}>{children}</div>;
-}
+};
+
+export default Container;

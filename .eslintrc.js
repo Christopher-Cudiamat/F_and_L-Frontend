@@ -3,7 +3,12 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['standard-with-typescript', 'plugin:react/recommended', 'prettier'],
+  extends: [
+    'standard-with-typescript',
+    'plugin:react/recommended',
+    'prettier',
+    'next/core-web-vitals',
+  ],
   overrides: [
     {
       env: {
@@ -20,5 +25,10 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react'],
-  rules: {},
+  rules: {
+    '@typescript-eslint/strict-boolean-expressions': 0,
+    'react/react-in-jsx-scope': 'off',
+    'spaced-comment': 'error',
+    'no-duplicate-imports': 'error',
+  },
 };

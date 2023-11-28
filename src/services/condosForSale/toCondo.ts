@@ -1,4 +1,4 @@
-import { ICondos, ICmsItem } from './types';
+import { type ICondos, type ICmsItem } from './types';
 
 export function toCondo(item: ICmsItem): ICondos {
   const { attributes } = item;

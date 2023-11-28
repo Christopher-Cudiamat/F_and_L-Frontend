@@ -1,5 +1,5 @@
 import React from 'react';
-import { ICondos } from '@/services/condosForSale/types';
+import { type ICondos } from '@/services/condosForSale/types';
 import PropertyCard from '@/components/Molecules/PropertyCard/PropertyCard.component';
 import CardsContainer from '@/components/Molecules/CardsContainer/CardsContainer';
 import { getCondosByCategory } from '@/services/condosForSale/getCondosByCategory';
@@ -20,9 +20,7 @@ export async function generateStaticParams(): Promise<IPropertyCategoryPageParam
   return categories.map((item) => ({ slug: item.slug }));
 }
 
-export default async function PropertyCategoryPage({
-  params: { slug },
-}: IPropertyCategoryPageProps) {
+const PropertyCategoryPage: React.FC<IPropertyCategoryPageProps> = async ({ params: { slug } }) => {
   const results = await getCondosByCategory(slug);
 
   return (
@@ -53,4 +51,6 @@ export default async function PropertyCategoryPage({
       </section>
     </React.Fragment>
   );
-}
+};
+
+export default PropertyCategoryPage;

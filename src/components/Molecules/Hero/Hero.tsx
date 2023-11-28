@@ -11,13 +11,13 @@ interface IHeroProps {
   height?: 'sm' | 'md' | 'lg' | 'full';
 }
 
-const Hero = ({
+const Hero: React.FC<IHeroProps> = ({
   title,
   subtitle,
   image = '/images/property-categories-hero.png',
   altText,
   height = 'lg',
-}: IHeroProps) => {
+}) => {
   const heightValue = {
     sm: 'h-[250px]',
     md: 'h-[350px]',

@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
-import { INavItem, INavItems, ISubLink } from './Header';
+import { type INavItem, type INavItems, type ISubLink } from './Header';
 
-const DesktopMenu = ({ navItems }: INavItems) => {
+const DesktopMenu: React.FC<INavItems> = ({ navItems }) => {
   const currentRoute = usePathname();
   const linkStyle =
     'text-white font-normal pt-[24px] py-5 border-b-2 duration-200 hover:border-white flex items-center gap-x-1';
@@ -31,7 +31,7 @@ const DesktopMenu = ({ navItems }: INavItems) => {
                       as='button'
                       className={
                         (currentRoute !== '/' &&
-                          navItem.subLinks?.some((item) => item.link.includes(currentRoute))) ||
+                          navItem.subLinks?.some((item) => item.link.includes(currentRoute))) ??
                         open
                           ? activeStyle
                           : nonActiveStyle
@@ -68,7 +68,7 @@ const DesktopMenu = ({ navItems }: INavItems) => {
               </Menu>
             ) : (
               <Link
-                href={navItem.link!}
+                href={navItem.link}
                 className={currentRoute === navItem.link ? activeStyle : nonActiveStyle}
               >
                 {navItem.label}

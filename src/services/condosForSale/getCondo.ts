@@ -1,8 +1,8 @@
 import { fetchCondo } from './fetchCondo';
 import { toCondo } from './toCondo';
-import { ICondo } from './types';
+import { type ICondo } from './types';
 
-//Retrieve a single for sale
+// Retrieve a single for sale
 export const getCondo = async (slug: string): Promise<ICondo | null> => {
   const { data } = await fetchCondo({
     filters: { slug: { $eq: slug } },

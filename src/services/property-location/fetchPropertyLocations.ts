@@ -1,10 +1,16 @@
 import qs from 'qs';
-import { ICmsItem } from '../condosForSale/types';
+import { type ICmsItem } from '../condosForSale/types';
 
 const CMS_URL = process.env.CMS_URL;
 export const CACHE_TAG_PROPERTY_LOCATION = 'property-location';
 
-export async function fetchPropertyLocations(pageSize: number) {
+export interface ILocation {
+  slug: string;
+  location: string;
+  image: string;
+}
+
+export async function fetchPropertyLocations(pageSize: number): Promise<any> {
   const url = `${CMS_URL}/api/property-locations?${qs.stringify(
     {
       fields: ['slug', 'location'],

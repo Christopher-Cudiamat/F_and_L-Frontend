@@ -1,7 +1,7 @@
 import React from 'react';
 import { getCondosByLocation } from '@/services/condosForSale/getCondosByLocation';
 import { getSlugs } from '@/services/condosForSale/getSlugs';
-import { ICondos } from '@/services/condosForSale/types';
+import { type ICondos } from '@/services/condosForSale/types';
 import PropertyCard from '@/components/Molecules/PropertyCard/PropertyCard.component';
 import CardsContainer from '@/components/Molecules/CardsContainer/CardsContainer';
 import Hero from '@/components/Molecules/Hero/Hero';
@@ -21,9 +21,7 @@ export async function generateStaticParams(): Promise<any> {
   return slugs.map((slug) => ({ slug }));
 }
 
-export default async function PropertyLocationPage({
-  params: { slug },
-}: IPropertyLocationPageProps) {
+const PropertyLocationPage: React.FC<IPropertyLocationPageProps> = async ({ params: { slug } }) => {
   const results = await getCondosByLocation(slug);
 
   return (
@@ -53,4 +51,6 @@ export default async function PropertyLocationPage({
       </section>
     </React.Fragment>
   );
-}
+};
+
+export default PropertyLocationPage;

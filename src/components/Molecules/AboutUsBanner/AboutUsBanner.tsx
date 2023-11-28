@@ -34,7 +34,7 @@ const stats = [
   },
 ];
 
-const AboutUsBanner = () => {
+const AboutUsBanner: React.FC = () => {
   return (
     <section className='pt-10 pb-20  xl:pt-20 xl:pb-24 bg-slate-50'>
       <Container className='grid grid-cols-1'>

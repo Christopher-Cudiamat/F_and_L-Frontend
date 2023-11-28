@@ -1,8 +1,8 @@
 import { fetchCondo } from './fetchCondo';
 import { toCondo } from './toCondo';
-import { ICondosList } from './types';
+import { type ICondosList } from './types';
 
-//Retrieve featured condos for sale
+// Retrieve featured condos for sale
 export const getCondosByLocation = async (location: string): Promise<ICondosList | null> => {
   const formattedLocation = location
     .split('-')

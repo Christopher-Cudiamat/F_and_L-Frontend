@@ -16,21 +16,21 @@ const options = {
   loop: true,
 };
 
-const Gallery = ({ slides }: ISlides) => {
+const Gallery: React.FC<ISlides> = ({ slides }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const arrowStlye =
     'z-50 text-white/80 hover:text-white 100 duration-150 w-10 lg:w-20 absolute top-1/2 transform -translate-y-1/2';
   const slideHeightStyle = 'h-[400px] lg:h-[600px]';
 
-  const scrollPrev = () => {
+  const scrollPrev = (): void => {
     if (emblaApi) emblaApi.scrollPrev();
   };
 
-  const scrollNext = () => {
+  const scrollNext = (): void => {
     if (emblaApi) emblaApi.scrollNext();
   };
 
-  const scrollTo = (index: number) => {
+  const scrollTo = (index: number): void => {
     if (emblaApi) emblaApi.scrollTo(index);
   };
 
@@ -69,7 +69,9 @@ const Gallery = ({ slides }: ISlides) => {
           <div
             key={slide}
             className='embla__slide w-full h-[80px] sm:h-[100px] md:h-[120px] xl:h-[100px] relative shadow-sm cursor-pointer'
-            onClick={() => scrollTo(index)}
+            onClick={() => {
+              scrollTo(index);
+            }}
           >
             <Image
               src={slide}

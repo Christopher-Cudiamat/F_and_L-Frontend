@@ -8,8 +8,8 @@ interface IPropertyList {
   activeProperty: string;
 }
 
-const PropertyList = ({ activeProperty }: IPropertyList) => {
-  let filteredProperties = properties
+const PropertyList: React.FC<IPropertyList> = ({ activeProperty }) => {
+  const filteredProperties = properties
     .map((value) => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value)
@@ -19,7 +19,7 @@ const PropertyList = ({ activeProperty }: IPropertyList) => {
     <Container>
       <ul className='grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 justify-center items-center gap-2'>
         {filteredProperties.map((item: any) => (
-          <li>
+          <li key={item.id}>
             <Link href={item.id}>
               <Image
                 src={item.logo}

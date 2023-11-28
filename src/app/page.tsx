@@ -1,7 +1,9 @@
 import React from 'react';
 import { fetchPropertyLocations } from '@/services/property-location/fetchPropertyLocations';
 import { getFeaturedCondos } from '@/services/condosForSale/getFeaturedCondos';
-import { ICondos } from '@/services/condosForSale/types';
+import { type ICondos } from '@/services/condosForSale/types';
+import Link from 'next/dist/client/link';
+import { ChevronDoubleDownIcon } from '@heroicons/react/24/outline';
 import SectionTitle from '@/components/Molecules/SectionTitle/SectionTitle';
 import LocationCard from '@/components/Molecules/LocationCard/LocationCard';
 import PropertyCard from '@/components/Molecules/PropertyCard/PropertyCard.component';
@@ -11,10 +13,8 @@ import ContactUsBanner from '@/components/Molecules/ContactUsBanner/ContactUsBan
 import AboutUsBanner from '@/components/Molecules/AboutUsBanner/AboutUsBanner';
 import Slider from '@/components/Molecules/Slider/Slider';
 import Container from '@/components/Atoms/Container/Container';
-import Link from 'next/dist/client/link';
-import { ChevronDoubleDownIcon } from '@heroicons/react/24/outline';
 
-export default async function HomePage() {
+const HomePage: React.FC = async () => {
   const featuredLocations = await fetchPropertyLocations(8);
   const featuredCondos = await getFeaturedCondos();
 
@@ -89,4 +89,6 @@ export default async function HomePage() {
       </section>
     </React.Fragment>
   );
-}
+};
+
+export default HomePage;
