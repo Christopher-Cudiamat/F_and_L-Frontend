@@ -9,26 +9,24 @@ module.exports = {
     'prettier',
     'next/core-web-vitals',
   ],
-  overrides: [
-    {
-      env: {
-        node: true,
-      },
-      files: ['.eslintrc.{js,cjs}'],
-      parserOptions: {
-        sourceType: 'script',
-      },
-    },
-  ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
     ecmaVersion: 'latest',
     sourceType: 'module',
+    tsconfigRootDir: __dirname,
   },
-  plugins: ['react'],
+  plugins: ['react', '@typescript-eslint'],
   rules: {
     '@typescript-eslint/strict-boolean-expressions': 0,
-    'react/react-in-jsx-scope': 'off',
-    'spaced-comment': 'error',
+    '@typescript-eslint/prefer-nullish-coalescing': 0,
     'no-duplicate-imports': 'error',
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
 };

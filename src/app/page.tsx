@@ -1,5 +1,8 @@
 import React from 'react';
-import { fetchPropertyLocations } from '@/services/property-location/fetchPropertyLocations';
+import {
+  type ILocation,
+  fetchPropertyLocations,
+} from '@/services/property-location/fetchPropertyLocations';
 import { getFeaturedCondos } from '@/services/condosForSale/getFeaturedCondos';
 import { type ICondos } from '@/services/condosForSale/types';
 import Link from 'next/dist/client/link';

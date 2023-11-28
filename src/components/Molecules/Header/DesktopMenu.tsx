@@ -31,7 +31,7 @@ const DesktopMenu: React.FC<INavItems> = ({ navItems }) => {
                       as='button'
                       className={
                         (currentRoute !== '/' &&
-                          navItem.subLinks?.some((item) => item.link.includes(currentRoute))) ??
+                          navItem.subLinks?.some((item) => item.link.includes(currentRoute))) ||
                         open
                           ? activeStyle
                           : nonActiveStyle

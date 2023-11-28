@@ -4,3 +4,7 @@ node_modules
 yarn.lock
 package-lock.json
 public
+.eslintrc.js
+ios/
+android/
+*.config.js
