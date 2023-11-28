@@ -10,21 +10,13 @@ export const getCondosByLocation = async (location: string): Promise<ICondosList
     .join(' ');
 
   const { data } = await fetchCondo({
-    filters:{ location: {$eq: formattedLocation} },
-    fields: [
-      'slug',
-      'title',
-      'description',
-      'nearestLandmark',
-      'status',
-      'price',
-      'category'
-    ],
+    filters: { location: { $eq: formattedLocation } },
+    fields: ['slug', 'title', 'description', 'nearestLandmark', 'status', 'price', 'category'],
     populate: { image: { fields: ['url'] } },
-  })
+  });
 
   return {
     pageCount: 30,
     condos: data.map(toCondo),
-  }
-}
+  };
+};

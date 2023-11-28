@@ -20,33 +20,37 @@ export async function generateStaticParams(): Promise<IPropertyCategoryPageParam
   return categories.map((item) => ({ slug: item.slug }));
 }
 
-export default async function PropertyCategoryPage({ params: { slug }}: IPropertyCategoryPageProps) {
+export default async function PropertyCategoryPage({
+  params: { slug },
+}: IPropertyCategoryPageProps) {
   const results = await getCondosByCategory(slug);
 
   return (
     <React.Fragment>
       <Hero
         title={slugParser(slug)}
-        subtitle="Discover all available properties for you"
-        image={"/images/property-categories-hero.png"}
-        altText="Property"
-        height="md"
+        subtitle='Discover all available properties for you'
+        image={'/images/property-categories-hero.png'}
+        altText='Property'
+        height='md'
       />
-      <section className="bg-gray-100 pt-10 pb-20">
+      <section className='bg-gray-100 pt-10 pb-20'>
         <CardsContainer>
           {results?.condos.map((item: ICondos) => (
-              <PropertyCard key={item.slug} {...item}/>
-            ))
-          }
+            <PropertyCard
+              key={item.slug}
+              {...item}
+            />
+          ))}
         </CardsContainer>
       </section>
       <section>
-        <ContactUsBanner 
-          image="/images/real-estate-agents.png" 
-          altText="Real estate agents"
+        <ContactUsBanner
+          image='/images/real-estate-agents.png'
+          altText='Real estate agents'
           full
-        /> 
+        />
       </section>
     </React.Fragment>
-  )
+  );
 }

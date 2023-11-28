@@ -21,32 +21,36 @@ export async function generateStaticParams(): Promise<any> {
   return slugs.map((slug) => ({ slug }));
 }
 
-export default async function PropertyLocationPage({ params: { slug }}: IPropertyLocationPageProps) {
+export default async function PropertyLocationPage({
+  params: { slug },
+}: IPropertyLocationPageProps) {
   const results = await getCondosByLocation(slug);
-  
+
   return (
     <React.Fragment>
       <Hero
         title={slugParser(slug)}
-        image={"/images/property-locations-hero.png"}
-        altText="Property locations"
-        height="md"
+        image={'/images/property-locations-hero.png'}
+        altText='Property locations'
+        height='md'
       />
-      <section className="bg-gray-100 pt-20 pb-20">
+      <section className='bg-gray-100 pt-20 pb-20'>
         <CardsContainer>
           {results?.condos.map((item: ICondos) => (
-              <PropertyCard key={item.slug} {...item}/>
-            ))
-          }
+            <PropertyCard
+              key={item.slug}
+              {...item}
+            />
+          ))}
         </CardsContainer>
       </section>
       <section>
-        <ContactUsBanner 
-          image="/images/real-estate-agents.png" 
-          altText="Real estate agents"
+        <ContactUsBanner
+          image='/images/real-estate-agents.png'
+          altText='Real estate agents'
           full
-        /> 
+        />
       </section>
     </React.Fragment>
-  )
+  );
 }

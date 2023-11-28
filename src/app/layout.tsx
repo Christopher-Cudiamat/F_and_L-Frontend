@@ -5,24 +5,24 @@ import Footer from '@/components/Molecules/Footer/Footer';
 import Header from '@/components/Molecules/Header/Header';
 import { footer } from '@/components/Molecules/Footer/config';
 
-const inter = Open_Sans({ subsets: ['latin'] })
+const inter = Open_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Real-Estate',
   description: 'Real estate website',
-}
+};
 
-export default function RootLayout({children}: {children: React.ReactNode}) {
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className='scroll-smooth'>
+    <html
+      lang='en'
+      className='scroll-smooth'
+    >
       <body className={`${inter.className} bg-white`}>
         <Header />
-        <main>
-          {children}
-        </main>
-        <Footer {...footer}/>
+        <main>{children}</main>
+        <Footer {...footer} />
       </body>
     </html>
-  )
+  );
 }

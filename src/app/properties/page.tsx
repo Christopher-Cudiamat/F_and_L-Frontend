@@ -12,31 +12,33 @@ import Filters from '@/components/Molecules/Filters/Filters';
 import Container from '@/components/Atoms/Container/Container';
 
 interface ISearchParams {
-  searchParams: {page?: string};
+  searchParams: { page?: string };
 }
 
 const pageSize = 8;
 
-const CondosForSalePage = async ({searchParams}: ISearchParams) => {
+const CondosForSalePage = async ({ searchParams }: ISearchParams) => {
   const page = parsePageParam(searchParams.page);
   const results = await getCondos(pageSize, page);
 
   return (
     <React.Fragment>
       <Hero
-        title="Properties"
-        subtitle="Discover all available properties for you"
-        image="/images/properties-hero.png"
-        altText="Property"
-        height="md"
+        title='Properties'
+        subtitle='Discover all available properties for you'
+        image='/images/properties-hero.png'
+        altText='Property'
+        height='md'
       />
       <Filters />
-      <section className="bg-white pt-10 lg:pt-20 pb-10">
+      <section className='bg-white pt-10 lg:pt-20 pb-10'>
         <CardsContainer>
           {results?.condos.map((item: ICondos) => (
-              <PropertyCard key={item.slug} {...item}/>
-            ))
-          }
+            <PropertyCard
+              key={item.slug}
+              {...item}
+            />
+          ))}
         </CardsContainer>
         <Pagination
           pageCount={results?.pageCount}
@@ -44,30 +46,33 @@ const CondosForSalePage = async ({searchParams}: ISearchParams) => {
           path='/properties'
         />
       </section>
-      <section className="bg-white pt-10 pb-14 md:py-14" id="section-category">
-        <SectionTitle 
-          title="What are you looking for?"
+      <section
+        className='bg-white pt-10 pb-14 md:py-14'
+        id='section-category'
+      >
+        <SectionTitle
+          title='What are you looking for?'
           withLine
         />
         <CategoryFilter />
       </section>
       <section>
-        <ContactUsBanner 
-          image="/images/real-estate-agents.png" 
-          altText="Real estate agents"
+        <ContactUsBanner
+          image='/images/real-estate-agents.png'
+          altText='Real estate agents'
           full
-        /> 
+        />
       </section>
     </React.Fragment>
-  )
+  );
 };
 
 export default CondosForSalePage;
 
 function parsePageParam(value: string | undefined) {
-  if(value) {
+  if (value) {
     const page = parseInt(value);
-    if(isFinite(page) && page > 0) {
+    if (isFinite(page) && page > 0) {
       return page;
     }
   }
