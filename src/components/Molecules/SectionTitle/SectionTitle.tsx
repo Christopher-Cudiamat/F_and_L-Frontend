@@ -22,7 +22,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
       <div className='flex flex-col md:flex-row items-center md:justify-between text-center lg:text-left mb-6 lg:mb-8'>
         <div className='flex flex-col items-center md:items-start mb-5 md:mb-0'>
           <h2 className='text-slate-600 text-3xl lg:text-4xl font-semibold mb-3'>{title}</h2>
-          {withLine && <div className='h-1 w-1/4 md:w-1/2 md:h-1.5 bg-yellow-400' />}
+          {withLine && <div className='h-1 w-1/4 md:w-1/2 bg-yellow-400' />}
         </div>
         {ButtonLabel && href && (
           <Link

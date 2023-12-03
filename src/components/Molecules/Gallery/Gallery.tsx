@@ -2,7 +2,6 @@
 
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
-import './gallery.css';
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/24/outline';
 import Container from '@/components/Atoms/Container/Container';
 

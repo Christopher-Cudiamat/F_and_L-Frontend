@@ -36,13 +36,13 @@ const stats = [
 
 const AboutUsBanner: React.FC = () => {
   return (
-    <section className='pt-10 pb-20  xl:pt-20 xl:pb-24 bg-slate-50'>
+    <section className='pt-10 pb-20  xl:pt-20 xl:pb-24 bg-white'>
       <Container className='grid grid-cols-1'>
         <div className='flex flex-col items-center lg:items-start mb-10'>
           <div className='grid grid-cols-1 lg:grid-cols-2 lg:gap-x-12'>
             <SectionTitle
               title='Always choose the SMDC, the leading developer in the Philippines.'
-              className='-pl-4'
+              className='px-0'
             />
             <p className='text-slate-800 font-semibold text-base mb-10 -mt-4 text-center lg:text-left lg:mt-0'>
               If you are looking for an investment opportunity consider the SMDC.With properties

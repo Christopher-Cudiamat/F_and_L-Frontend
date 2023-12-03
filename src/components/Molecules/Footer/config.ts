@@ -3,7 +3,7 @@ import { MapPinIcon } from '@heroicons/react/24/outline';
 export const footer = {
   company: {
     logo: 'FL Real Estate',
-    tagline: 'We Deliver Your Dream Home',
+    tagline: 'Dream Homes Delivered',
   },
   properties: {
     title: 'Properties',
