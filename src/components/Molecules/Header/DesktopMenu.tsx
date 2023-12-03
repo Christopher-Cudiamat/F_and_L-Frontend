@@ -44,7 +44,7 @@ const DesktopMenu: React.FC<INavItems> = ({ navItems }) => {
                     </Menu.Button>
                     <Menu.Items
                       as='div'
-                      className='absolute -bottom-[239px] flex flex-col py-4 rounded-tr-lg rounded-b-lg rounded-tl-0 z-50 bg-white text-blue-600 w-max'
+                      className='absolute -bottom-[239px] flex flex-col py-4 rounded-tr-lg rounded-b-lg rounded-tl-0 z-50 bg-white text-blue-900 w-max'
                     >
                       {navItem.subLinks?.map((item: ISubLink) => (
                         <Menu.Item

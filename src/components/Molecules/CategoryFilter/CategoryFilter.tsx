@@ -58,7 +58,7 @@ const CategoryFilter: React.FC = () => {
                 <span className='font-semibold'>{item.count}</span> listed units
               </p>
             </div>
-            <item.icon className='w-20 md:w-24 lg:w-20 xl:w-32 text-blue-600' />
+            <item.icon className='w-20 md:w-24 lg:w-20 xl:w-32 text-blue-800' />
           </Link>
         ))}
       </Container>

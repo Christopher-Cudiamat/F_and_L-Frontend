@@ -23,7 +23,7 @@ const MobileMenu: React.FC<INavItems> = ({ navItems }) => {
       >
         <Menu.Items
           as='ul'
-          className='px-6 pt-32 fixed right-0 top-0 h-screen w-[100%] bg-blue-800 z-[999] flex flex-col'
+          className='px-6 pt-32 fixed right-0 top-0 h-screen w-[100%] bg-blue-900 z-[999] flex flex-col'
         >
           <Menu.Item
             as='li'

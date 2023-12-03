@@ -15,7 +15,7 @@ const ContactUsBanner: React.FC<IContactUsBannerProps> = ({ image, altText, full
     <div
       className={`w-full ${full ? 'lg:max-w-[90%]' : 'max-w-[1400px]'} ${
         full ? '2xl:rounded-0' : '2xl:rounded-md'
-      } h-[500px] relative mx-auto overflow-hidden`}
+      } h-[500px] lg:h-[400px] relative mx-auto overflow-hidden`}
     >
       <Image
         src={image}
@@ -28,7 +28,7 @@ const ContactUsBanner: React.FC<IContactUsBannerProps> = ({ image, altText, full
         color={`${full ? '2xl:rounded-0' : '2xl:rounded-md'} bg-neutral-950/70 2xl:rounded-md`}
       />
       <Container className='relative flex flex-col justify-center h-full'>
-        <div className='border border-yellow-400 max-w-[600px] px-6 py-12'>
+        <div className='border border-yellow-400 rounded-lg max-w-[600px] px-6 py-12'>
           <h3 className='text-white text-3xl lg:text-4xl font-semibold mb-4'>
             Helping you find the property of your dreams.
           </h3>
@@ -38,7 +38,7 @@ const ContactUsBanner: React.FC<IContactUsBannerProps> = ({ image, altText, full
           </p>
           <Link
             href={'/contact-us'}
-            className='uppercase bg-blue-800 hover:bg-blue-700 font-semibold text-white py-5 px-12 lg:py-6 lg:px-16 w-fit duration-200'
+            className='uppercase bg-blue-800 hover:bg-blue-700 font-semibold text-white py-4 px-8 w-fit duration-200 rounded-lg'
           >
             Contact Us
           </Link>

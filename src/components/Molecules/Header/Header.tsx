@@ -72,7 +72,7 @@ const navItems = [
 const Header: React.FC = () => {
   return (
     <header
-      className='bg-blue-800 z-100 w-full'
+      className='bg-blue-900 z-100 w-full'
       id='header'
     >
       <Container className='flex justify-between items-center'>

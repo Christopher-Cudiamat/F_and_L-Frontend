@@ -32,7 +32,7 @@ const PropertyCard: React.FC<ICondos> = ({
           <ul className='flex gap-x-1'>
             <li
               className={`text-xs font-normal absolute top-3 right-3 rounded-2xl py-2 px-3 text-white
-            ${!status.includes('Sold-out') ? 'bg-blue-600' : 'bg-red-500'} 
+            ${!status.includes('Sold-out') ? 'bg-blue-800' : 'bg-red-500'} 
             `}
             >
               {status}

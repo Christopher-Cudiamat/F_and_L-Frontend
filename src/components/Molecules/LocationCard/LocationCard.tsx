@@ -28,7 +28,7 @@ const LocationCard: React.FC<ILocationCardProps> = ({ slug, location, image }) =
         </div>
         <Link
           href={`property-location/${slug}`}
-          className='bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white text-sm font-semibold flex rounded-md w-fit duration-100'
+          className='bg-blue-800 hover:bg-blue-700 px-4 py-2 text-white text-sm font-semibold flex rounded-md w-fit duration-100'
         >
           Discover more
         </Link>

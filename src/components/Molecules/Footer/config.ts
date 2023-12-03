@@ -1,4 +1,5 @@
 import { MapPinIcon } from '@heroicons/react/24/outline';
+import { FaLinkedin, FaFacebookSquare, FaInstagramSquare } from 'react-icons/fa';
 
 export const footer = {
   company: {
@@ -48,15 +49,15 @@ export const footer = {
     links: [
       {
         link: '/1',
-        icon: MapPinIcon,
+        icon: FaFacebookSquare,
       },
       {
         link: '/2',
-        icon: MapPinIcon,
+        icon: FaInstagramSquare,
       },
       {
         link: '/3',
-        icon: MapPinIcon,
+        icon: FaLinkedin,
       },
     ],
   },

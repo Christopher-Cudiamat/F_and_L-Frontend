@@ -66,7 +66,7 @@ const HomePage: React.FC = async () => {
           ))}
         </CardsContainer>
       </section>
-      <section className='bg-white pt-10 pb-20'>
+      <section className='bg-white py-10'>
         <SectionTitle
           title='Featured locations'
           ButtonLabel='View all'
@@ -85,7 +85,7 @@ const HomePage: React.FC = async () => {
       <AboutUsBanner />
       <section>
         <ContactUsBanner
-          image='/images/real-estate-agents.png'
+          image='/images/test-hero.jpg'
           altText='Real estate agents'
           full
         />

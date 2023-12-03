@@ -76,7 +76,10 @@ const Footer: React.FC<any> = ({ company, properties, contacts, socials, disclai
             {socials.links.map((item: any) => (
               <li key={item.link}>
                 <a href={item.link}>
-                  <item.icon className='w-8 text-white' />
+                  <item.icon
+                    className='text-white/80 hover:text-white/100 duration-150'
+                    size={32}
+                  />
                 </a>
               </li>
             ))}
