@@ -31,7 +31,7 @@ const stats = [
   },
 ];
 
-const StatusCounter = () => {
+const StatusCounter: React.FC = () => {
   return (
     <div className='flex justify-center lg:justify-start sm:gap-10 lg:gap-14'>
       {stats.map((item: IStats) => (
