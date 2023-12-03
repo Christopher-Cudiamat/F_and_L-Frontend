@@ -16,6 +16,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
     "@headlessui/react": "^0.0.0-insiders.adfe121",
     "@heroicons/react": "^2.0.18",
     "@tailwindcss/line-clamp": "^0.4.4",
@@ -28,6 +29,7 @@
     "next": "latest",
     "qs": "^6.11.2",
     "react": "latest",
+    "react-awesome-reveal": "^4.2.7",
     "react-countup": "^6.5.0",
     "react-dom": "latest",
     "react-icons": "^4.12.0"

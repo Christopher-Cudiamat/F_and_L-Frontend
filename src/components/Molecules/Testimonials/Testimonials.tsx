@@ -37,7 +37,7 @@ const Gallery: React.FC<ITestimonials> = ({ testimonials }) => {
         <div className='embla__container py-5'>
           {testimonials.map((testimonial: ITestimonial, index: number) => (
             <div
-              className='shadow-lg rounded-lg text-center bg-white mr-4 md:mr-10'
+              className='shadow-lg rounded-lg text-center bg-white mr-4 md:mr-8'
               key={index}
             >
               <div className='px-2 w-[300px] mb-12'>
