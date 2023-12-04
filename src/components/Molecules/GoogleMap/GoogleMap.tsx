@@ -12,7 +12,7 @@ const GoogleMap: React.FC = () => {
     },
     zoom: 11,
   };
-  console.log('process.env.GOOGLE_MAP_API_KEY', typeof process.env.GOOGLE_MAP_API_KEY);
+
   return (
     // Important! Always set the container height explicitly
     <div className='h-[700px] lg:h-[500px] w-full xl:w-[1300px] xl:px-4 mx-auto rounded-md'>

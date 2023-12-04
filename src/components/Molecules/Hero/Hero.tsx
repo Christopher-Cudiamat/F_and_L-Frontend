@@ -43,7 +43,7 @@ const Hero: React.FC<IHeroProps> = ({
         >
           {title}
         </h1>
-        {subtitle && <h2 className='text-base font-semibold lg:text-xl'>{subtitle}</h2>}
+        {subtitle && <h2 className='text-lg font-semibold lg:text-2xl'>{subtitle}</h2>}
       </Container>
     </div>
   );

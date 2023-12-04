@@ -1,4 +1,5 @@
-import { FaLinkedin, FaFacebookSquare, FaInstagramSquare } from 'react-icons/fa';
+import { FaLinkedin, FaFacebookSquare } from 'react-icons/fa';
+import { RiInstagramFill } from 'react-icons/ri';
 
 export const footer = {
   company: {
@@ -52,7 +53,7 @@ export const footer = {
       },
       {
         link: '/2',
-        icon: FaInstagramSquare,
+        icon: RiInstagramFill,
       },
       {
         link: '/3',

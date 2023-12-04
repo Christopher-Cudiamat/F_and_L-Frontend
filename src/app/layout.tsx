@@ -24,7 +24,7 @@ const RootLayout: React.FC<IRootLayout> = ({ children }) => {
     >
       <body className={`${inter.className} bg-white`}>
         <Header />
-        <main>{children}</main>
+        <main className='bg-white'>{children}</main>
         <Footer {...footer} />
       </body>
     </html>

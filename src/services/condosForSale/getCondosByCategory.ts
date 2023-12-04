@@ -5,7 +5,7 @@ import { type ICondosList } from './types';
 // Retrieve featured condos for sale
 export const getCondosByCategory = async (category: string): Promise<ICondosList | null> => {
   const formattedCategory = `${category[0].toUpperCase()}${category.slice(1).split('-').join(' ')}`;
-  console.log('formattedCategory2', formattedCategory);
+
   const { data } = await fetchCondo({
     filters: { category: { $eq: formattedCategory } },
     fields: ['slug', 'title', 'description', 'nearestLandmark', 'status', 'price', 'category'],
