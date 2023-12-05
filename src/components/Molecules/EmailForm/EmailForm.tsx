@@ -2,12 +2,12 @@
 
 import React, { useState } from 'react';
 import { Formik } from 'formik';
-import { ContactFormSchema } from './contactFormSchema';
+import { EmailFormSchema } from './emailFormSchema';
 import Input from '@/components/Atoms/Input/Input';
 import Textarea from '@/components/Atoms/Textarea/TextArea';
 import Button from '@/components/Atoms/Button/Button';
 
-const ContactForm: React.FC = () => {
+const EmailForm: React.FC = () => {
   const [isSubmitted, setIsSubmited] = useState(false);
   return (
     <Formik
@@ -21,7 +21,7 @@ const ContactForm: React.FC = () => {
       }}
       validateOnBlur={false}
       validateOnChange={false}
-      validationSchema={ContactFormSchema}
+      validationSchema={EmailFormSchema}
       onSubmit={async (values, { setSubmitting, resetForm }) => {
         const json = JSON.stringify(values);
 
@@ -64,24 +64,26 @@ const ContactForm: React.FC = () => {
               required
             />
           </div>
-          <Input
-            id='email'
-            name='email'
-            label='Email'
-            value={values.email}
-            errorMessage={errors.email}
-            onChange={handleChange}
-            required
-          />
-          <Input
-            id='subject'
-            name='subject'
-            label='Subject'
-            value={values.subject}
-            errorMessage={errors.subject}
-            onChange={handleChange}
-            required
-          />
+          <div className='w-full flex flex-col md:flex-row gap-x-8'>
+            <Input
+              id='email'
+              name='email'
+              label='Email'
+              value={values.email}
+              errorMessage={errors.email}
+              onChange={handleChange}
+              required
+            />
+            <Input
+              id='subject'
+              name='subject'
+              label='Subject'
+              value={values.subject}
+              errorMessage={errors.subject}
+              onChange={handleChange}
+              required
+            />
+          </div>
           <Textarea
             id='message'
             name='message'
@@ -117,4 +119,4 @@ const ContactForm: React.FC = () => {
   );
 };
 
-export default ContactForm;
+export default EmailForm;

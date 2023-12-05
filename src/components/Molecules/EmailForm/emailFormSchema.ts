@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 import { validations } from './validations';
 
-export const ContactFormSchema = Yup.object().shape({
+export const EmailFormSchema = Yup.object().shape({
   firstName: Yup.string()
     .min(validations.firstName.minCharacters, validations.firstName.minError)
     .max(validations.firstName.maxCharacters, validations.firstName.maxError)

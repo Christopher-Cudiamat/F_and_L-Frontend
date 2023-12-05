@@ -60,6 +60,10 @@ const navItems = [
     ],
   },
   {
+    label: 'Career',
+    link: '/career',
+  },
+  {
     label: 'About Us',
     link: '/about-us',
   },
@@ -80,7 +84,7 @@ const Header: React.FC = () => {
           href='/'
           className='text-white font-bold text-2xl'
         >
-          FL <span className='text-base font-normal'>Real Estate</span>
+          F&L <span className='text-base font-normal'>Real Estate</span>
         </Link>
         <DesktopMenu navItems={navItems} />
         <MobileMenu navItems={navItems} />

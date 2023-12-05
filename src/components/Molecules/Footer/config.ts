@@ -3,7 +3,7 @@ import { RiInstagramFill } from 'react-icons/ri';
 
 export const footer = {
   company: {
-    logo: 'FL Real Estate',
+    logo: 'F&L Real Estate',
     tagline: 'Dream Homes Delivered',
   },
   properties: {
@@ -65,8 +65,5 @@ export const footer = {
     title: 'Disclaimer',
     text: 'To promote SMDC Projects and increase Sales and Marketing of SMDC Condominiums, all information stated are intended to give a general overview of the project only and does not constitute any part of an offer or contract. www.smdc.com is the official website of SMDC.',
   },
-  copyRight: {
-    company: '',
-    webDeveloper: '',
-  },
+  copyright: 'Copyright 2024 F&L Real Estate. All Rights Reserved.',
 };

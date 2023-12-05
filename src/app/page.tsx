@@ -6,7 +6,7 @@ import {
 import { getFeaturedCondos } from '@/services/condosForSale/getFeaturedCondos';
 import { type ICondos } from '@/services/condosForSale/types';
 import Link from 'next/dist/client/link';
-import { ChevronDoubleDownIcon } from '@heroicons/react/24/outline';
+import { ArrowLongDownIcon } from '@heroicons/react/24/outline';
 import SectionTitle from '@/components/Molecules/SectionTitle/SectionTitle';
 import LocationCard from '@/components/Molecules/LocationCard/LocationCard';
 import PropertyCard from '@/components/Molecules/PropertyCard/PropertyCard.component';
@@ -26,17 +26,19 @@ const HomePage: React.FC = async () => {
       <section className='relative'>
         <Slider />
         <Container className='absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:max-w-[640px] 2xl:max-w-[700px] text-white text-center'>
-          <h1 className='text-4xl md:text-6xl font-bold mb-4'>Dream Homes Delivered</h1>
-          <h2 className='text-base md:text-lg font-semibold mb-12'>
+          <h1 className='tracking-wider text-4xl md:text-6xl font-bold mb-4'>
+            Dream Homes Delivered
+          </h1>
+          <h2 className='text-xl md:text-2xl font-normal mb-12'>
             with Easy Access Locations, Resort-Like Amenities, Hotel-Like Service, And Friendly
             Communities, You Get So Much More To Life Only At SMDC
           </h2>
           <Link
-            className='flex w-fit gap-x-2 items-center mx-auto bg-blue-600 hover:bg-blue-700 rounded-md text-lg font-semibold py-3 px-6'
+            className='flex flex-col w-fit gap-y-4 mx-auto rounded-md text-lg font-light py-3 px-6'
             href='#section-category'
           >
-            Explore
-            <ChevronDoubleDownIcon className='w-4 animate-bounce mt-1' />
+            Scroll
+            <ArrowLongDownIcon className='h-10 w-auto animate-bounce duration-500 mt-1' />
           </Link>
         </Container>
       </section>

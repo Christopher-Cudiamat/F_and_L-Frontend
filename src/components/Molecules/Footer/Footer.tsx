@@ -7,7 +7,14 @@ export interface ILink {
   link: string;
 }
 
-const Footer: React.FC<any> = ({ company, properties, contacts, socials, disclaimer }) => {
+const Footer: React.FC<any> = ({
+  company,
+  properties,
+  contacts,
+  socials,
+  disclaimer,
+  copyright,
+}) => {
   const sectionContainerStyle = 'mb-10 md:mx-auto lg:mx-0';
   const sectionTitleStyle = 'text-lg text-center lg:text-left font-bold mb-5';
   const linksContainerStyle =
@@ -20,11 +27,11 @@ const Footer: React.FC<any> = ({ company, properties, contacts, socials, disclai
         <div className='w-full md:col-span-4 lg:col-span-2 text-center lg:text-left mb-10 border-b border-white/40 lg:border-transparent'>
           <Link
             href='/'
-            className='text-blue-600 font-bold text-6xl lg:text-8xl mb-8 lg:mg-6'
+            className='text-  font-bold text-4xl lg:text-6xl mb-8 lg:mg-6'
           >
             {/* This will be replaced by an actual logo */}
             {company.logo.split(' ')[0]}{' '}
-            <span className='text-2xl lg:text-3xl font-normal'>
+            <span className='text-xl lg:text-2xl font-normal'>
               {company.logo.split(' ')[1] + ' ' + company.logo.split(' ')[2]}
             </span>
           </Link>
@@ -84,9 +91,7 @@ const Footer: React.FC<any> = ({ company, properties, contacts, socials, disclai
               </li>
             ))}
           </ul>
-          <p className='text-xs md:text-sm text-white/70 text-center'>
-            Copyright 2023 FL Real Estate. All Rights Reserved.{' '}
-          </p>
+          <p className='text-xs md:text-sm text-white/70 text-center'>{copyright}</p>
         </Container>
       </div>
     </footer>
