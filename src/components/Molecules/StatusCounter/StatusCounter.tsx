@@ -43,9 +43,9 @@ const StatusCounter: React.FC = () => {
                 duration={8}
                 enableScrollSpy
                 scrollSpyOnce
-                className='text-5xl md:text-7xl font-semibold'
+                className='text-4xl md:text-7xl font-semibold'
               />
-              <p className='text-4xl lg:text-4xl font-semibold'>{item.symbol}</p>
+              <p className='text-4xl font-semibold'>{item.symbol}</p>
             </div>
             <p className='font-semibold text-base lg:text-lg text-center text-slate-500'>
               {item.text}

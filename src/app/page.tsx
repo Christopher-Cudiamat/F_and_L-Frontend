@@ -29,7 +29,7 @@ const HomePage: React.FC = async () => {
           <h1 className='tracking-wider text-4xl md:text-6xl font-bold mb-4'>
             Dream Homes Delivered
           </h1>
-          <h2 className='text-xl md:text-2xl font-normal mb-12'>
+          <h2 className='text-xl md:text-2xl font-normal mb-8'>
             with Easy Access Locations, Resort-Like Amenities, Hotel-Like Service, And Friendly
             Communities, You Get So Much More To Life Only At SMDC
           </h2>
@@ -75,14 +75,17 @@ const HomePage: React.FC = async () => {
           href='/property-location'
           withLine
         />
-        <CardsContainer>
-          {featuredLocations.map((item: ILocation) => (
-            <LocationCard
-              key={item.slug}
-              {...item}
-            />
-          ))}
-        </CardsContainer>
+        <Container>
+          <ul className='flex flex-col md:grid md:grid-cols-3 md:grid-rows-5 md:grid-flow-row gap-x-4 h-auto md:h-[600px]'>
+            {featuredLocations.map((item: ILocation, index: number) => (
+              <LocationCard
+                key={item.slug}
+                index={index}
+                {...item}
+              />
+            ))}
+          </ul>
+        </Container>
       </section>
       <AboutUsBanner />
       <section>
