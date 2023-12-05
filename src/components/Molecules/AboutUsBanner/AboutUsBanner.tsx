@@ -41,7 +41,7 @@ const AboutUsBanner: React.FC = () => {
               </Link>
             </div>
             <Image
-              src={'/images/real-estate-experts.jpg'}
+              src={'/images/real-estate-experts.png'}
               alt='Real estate agents'
               width={300}
               height={300}

@@ -5,12 +5,22 @@ interface InputProps {
   name: string;
   label: string;
   value: string;
+  errorMessage?: string;
   required: boolean;
   onChange: (
     e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>
   ) => void;
 }
-const Input: React.FC<InputProps> = ({ id, name, label, value, required, onChange }) => {
+const Input: React.FC<InputProps> = ({
+  id,
+  name,
+  label,
+  value,
+  errorMessage,
+  required,
+  onChange,
+}) => {
+  console.log('errorMessage-------', errorMessage);
   return (
     <div className='relative flex flex-col w-full'>
       <label
@@ -33,6 +43,9 @@ const Input: React.FC<InputProps> = ({ id, name, label, value, required, onChang
           value === '' ? 'border-slate-300' : 'border-blue-800'
         } border-b focus:border-blue-800 bg-transparent outline-0 h-[40px] text-slate-700 text-base font-semibold mt-4 mb-6`}
       />
+      {errorMessage !== '' && (
+        <p className='absolute bottom-[5px] text-red-500 text-xs'>{errorMessage}</p>
+      )}
     </div>
   );
 };

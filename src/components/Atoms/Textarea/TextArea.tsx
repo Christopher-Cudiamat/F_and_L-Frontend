@@ -5,12 +5,21 @@ interface TextareaProps {
   name: string;
   label: string;
   value: string;
+  errorMessage?: string;
   required: boolean;
   onChange: (
     e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>
   ) => void;
 }
-const Textarea: React.FC<TextareaProps> = ({ id, name, label, value, required, onChange }) => {
+const Textarea: React.FC<TextareaProps> = ({
+  id,
+  name,
+  label,
+  value,
+  errorMessage,
+  required,
+  onChange,
+}) => {
   return (
     <div className='relative flex flex-col w-full'>
       <label
@@ -34,6 +43,9 @@ const Textarea: React.FC<TextareaProps> = ({ id, name, label, value, required, o
           value === '' ? 'border-slate-300' : 'border-blue-800'
         } border-b focus:border-blue-800 bg-transparent outline-0 text-slate-700 text-base font-semibold mt-6 mb-10`}
       />
+      {errorMessage !== '' && (
+        <p className='absolute bottom-[5px] text-red-500 text-xs'>{errorMessage}</p>
+      )}
     </div>
   );
 };

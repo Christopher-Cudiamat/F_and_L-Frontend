@@ -13,13 +13,13 @@ interface IStats {
 const stats = [
   {
     id: '1',
-    count: 43,
+    count: 150,
     symbol: '+',
     text: 'Delivered units',
   },
   {
     id: '2',
-    count: 10,
+    count: 12,
     symbol: '+',
     text: 'Years of service',
   },

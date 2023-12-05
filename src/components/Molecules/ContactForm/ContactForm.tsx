@@ -1,22 +1,14 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik } from 'formik';
-import * as Yup from 'yup';
+import { ContactFormSchema } from './contactFormSchema';
 import Input from '@/components/Atoms/Input/Input';
 import Textarea from '@/components/Atoms/Textarea/TextArea';
 import Button from '@/components/Atoms/Button/Button';
 
-const ContactFormSchema = Yup.object().shape({
-  firstName: Yup.string().min(2, 'Too Short!').max(30, 'Too Long!').required('Required'),
-  lastName: Yup.string().min(2, 'Too Short!').max(30, 'Too Long!').required('Required'),
-  email: Yup.string().email('Invalid email').required('Required'),
-  subject: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
-  message: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
-  access_key: Yup.string().required('Required'),
-});
-
 const ContactForm: React.FC = () => {
+  const [isSubmitted, setIsSubmited] = useState(false);
   return (
     <Formik
       initialValues={{
@@ -27,11 +19,13 @@ const ContactForm: React.FC = () => {
         message: '',
         access_key: process.env.NEXT_PUBLIC_WEB_3_FORMS_API_KEY,
       }}
+      validateOnBlur={false}
+      validateOnChange={false}
       validationSchema={ContactFormSchema}
-      onSubmit={async (values, { setSubmitting }) => {
+      onSubmit={async (values, { setSubmitting, resetForm }) => {
         const json = JSON.stringify(values);
 
-        const response = await fetch('https://api.web3forms.com/submit', {
+        const response = await fetch(process.env.NEXT_PUBLIC_WEB_3_FORM_URL as string, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -43,10 +37,12 @@ const ContactForm: React.FC = () => {
         if (result.success) {
           console.log(result);
           setSubmitting(false);
+          setIsSubmited(true);
+          resetForm();
         }
       }}
     >
-      {({ values, errors, touched, handleChange, handleSubmit, isSubmitting }) => (
+      {({ values, errors, handleChange, handleSubmit, isSubmitting }) => (
         <form onSubmit={handleSubmit}>
           <div className='w-full flex flex-col md:flex-row gap-x-8'>
             <Input
@@ -54,6 +50,7 @@ const ContactForm: React.FC = () => {
               name='firstName'
               label='First Name'
               value={values.firstName}
+              errorMessage={errors.firstName}
               onChange={handleChange}
               required
             />
@@ -62,6 +59,7 @@ const ContactForm: React.FC = () => {
               name='lastName'
               label='Last Name'
               value={values.lastName}
+              errorMessage={errors.lastName}
               onChange={handleChange}
               required
             />
@@ -71,6 +69,7 @@ const ContactForm: React.FC = () => {
             name='email'
             label='Email'
             value={values.email}
+            errorMessage={errors.email}
             onChange={handleChange}
             required
           />
@@ -79,15 +78,16 @@ const ContactForm: React.FC = () => {
             name='subject'
             label='Subject'
             value={values.subject}
+            errorMessage={errors.subject}
             onChange={handleChange}
             required
           />
-          {errors.email && touched.email && errors.email}
           <Textarea
             id='message'
             name='message'
             label='Message'
             value={values.message}
+            errorMessage={errors.message}
             onChange={handleChange}
             required
           />
@@ -102,13 +102,15 @@ const ContactForm: React.FC = () => {
             name='from_name'
             value={`${values.firstName} ${values.lastName}`}
           ></input>
-          <Button
-            type='submit'
-            isLoading={isSubmitting}
-            className='lg:w-40 text-center'
-          >
-            Submit {isSubmitting}
-          </Button>
+          <div className='flex justify-end'>
+            <Button
+              type='submit'
+              isLoading={isSubmitting}
+              className='lg:w-40 mt-10 text-center uppercase'
+            >
+              {!isSubmitted ? 'Submit' : 'Submitted'}
+            </Button>
+          </div>
         </form>
       )}
     </Formik>

@@ -10,7 +10,9 @@ const ContactUsPage: React.FC = () => {
     <React.Fragment>
       <Hero
         title={'Get in touch'}
-        subtitle={'If you are interested to buy in any of our projects, We’re happy to assist you.'}
+        subtitle={
+          "If you are interested to buy in any of SMDC's projects, We’re happy to assist you wherever you are across the globe"
+        }
         image={'/images/contact-us.png'}
         altText={'Real estate office'}
         height='md'
