@@ -33,21 +33,21 @@ const HomePage: React.FC = async () => {
             with Easy Access Locations, Resort-Like Amenities, Hotel-Like Service, And Friendly
             Communities, You Get So Much More To Life Only At SMDC
           </h2>
-          <Link
-            className='flex flex-col w-fit gap-y-4 mx-auto rounded-md text-lg font-light py-3 px-6'
-            href='#section-category'
-          >
-            Scroll
-            <ArrowLongDownIcon className='h-10 w-auto animate-bounce duration-500 mt-1' />
-          </Link>
         </Container>
+        <Link
+          className='absolute -bottom-[20px] left-1/2 transform -translate-y-1/2 -translate-x-1/2 flex flex-col w-fit gap-y-4 mx-auto rounded-md text-lg font-semibold py-3 px-6'
+          href='#section-category'
+        >
+          Explore
+          <ArrowLongDownIcon className='h-10 w-auto animate-bounce duration-500 mt-1' />
+        </Link>
       </section>
       <section
         className='bg-white pt-10 pb-14 md:py-14'
         id='section-category'
       >
         <SectionTitle
-          title='What are you looking for?'
+          title='Property Categories'
           withLine
         />
         <CategoryFilter />

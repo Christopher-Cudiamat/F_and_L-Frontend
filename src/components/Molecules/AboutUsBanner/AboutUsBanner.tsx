@@ -26,7 +26,7 @@ const AboutUsBanner: React.FC = () => {
                 height={300}
                 className='w-full mb-8 rounded-lg shadow-md lg:hidden'
               />
-              <p className='text-slate-800 font-semibold text-base mb-10 -mt-4 text-center lg:text-left lg:mt-0'>
+              <p className='text-slate-500 font-semibold text-base mb-10 -mt-4 text-center lg:text-left lg:mt-0'>
                 If you are looking for an investment opportunity consider the SMDC.With properties
                 still currently being built and still lined-up, the Philippines is still definitely
                 enjoying the major surge of the Real Estate Market.
@@ -41,7 +41,7 @@ const AboutUsBanner: React.FC = () => {
               </Link>
             </div>
             <Image
-              src={'/images/real-estate-experts.png'}
+              src={'/images/cheerful-business-team.jpg'}
               alt='Real estate agents'
               width={300}
               height={300}

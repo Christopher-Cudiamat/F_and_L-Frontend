@@ -3,10 +3,11 @@ import { type ICondos } from '@/services/condosForSale/types';
 import PropertyCard from '@/components/Molecules/PropertyCard/PropertyCard.component';
 import CardsContainer from '@/components/Molecules/CardsContainer/CardsContainer';
 import { getCondosByCategory } from '@/services/condosForSale/getCondosByCategory';
-import { categories } from '@/components/Molecules/CategoryFilter/CategoryFilter';
+// import { categories } from '@/components/Molecules/CategoryFilter/CategoryFilter';
 import Hero from '@/components/Molecules/Hero/Hero';
 import { slugParser } from '@/utils/slugParser';
 import ContactUsBanner from '@/components/Molecules/ContactUsBanner/ContactUsBanner';
+import { categories } from '@/components/Molecules/CategoryFilter/config';
 
 interface IPropertyCategoryPageParams {
   slug: string;
@@ -16,7 +17,7 @@ interface IPropertyCategoryPageProps {
   params: IPropertyCategoryPageParams;
 }
 
-export async function generateStaticParams(): Promise<IPropertyCategoryPageParams[]> {
+export async function generateStaticParams(): Promise<any> {
   return categories.map((item) => ({ slug: item.slug }));
 }
 

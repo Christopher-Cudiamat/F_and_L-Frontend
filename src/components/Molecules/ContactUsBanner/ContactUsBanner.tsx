@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Overlay from '@/components/Atoms/Overlay/Overlay';
 import Container from '@/components/Atoms/Container/Container';
 import Link from 'next/link';
+import Flags from '../Flags/Flags';
 
 interface IContactUsBannerProps {
   image: string;
@@ -13,36 +14,38 @@ interface IContactUsBannerProps {
 const ContactUsBanner: React.FC<IContactUsBannerProps> = ({ image, altText, full = false }) => {
   return (
     <div
-      className={`w-full ${full ? 'lg:max-w-[90%]' : 'max-w-[1400px]'} ${
-        full ? '2xl:rounded-0' : '2xl:rounded-md'
-      } h-[500px] lg:h-[400px] relative mx-auto overflow-hidden`}
+      className={`
+        w-full 
+        ${full ? 'lg:max-w-[90%] md:rounded-0' : 'max-w-[1400px] md:rounded-md'}  
+        py-12 px-4 md:py-20 relative mx-auto overflow-hidden`}
     >
       <Image
         src={image}
         alt={altText}
         fill
         loading='lazy'
-        className={`${full ? '2xl:rounded-0' : '2xl:rounded-md'} inset-0 object-cover`}
+        className={`${full ? 'rounded-0' : 'md:rounded-md'} inset-0 object-cover`}
       />
       <Overlay
-        color={`${full ? '2xl:rounded-0' : '2xl:rounded-md'} bg-neutral-950/70 2xl:rounded-md`}
+        color={`${full ? 'md:rounded-0' : 'md:rounded-md'} bg-neutral-950/70 md:rounded-md`}
       />
-      <Container className='relative flex flex-col justify-center h-full'>
-        <div className='border border-yellow-400 rounded-lg max-w-[600px] px-6 py-12'>
+      <Container className='relative flex flex-col md:flex-row md:items-center justify-center gap-y-20'>
+        <div className='text-center md:text-left rounded-lg max-w-[600px]'>
           <h3 className='text-white text-3xl lg:text-4xl font-semibold mb-4'>
             Helping you find the property of your dreams.
           </h3>
-          <p className='text-base text-white mb-12'>
-            If you’re interested to buy properties in any of our projects in SMDC, we’re happy to
-            answer all your questions.
+          <p className='text-lg text-white mb-12 md:mb-20'>
+            If you are interested to buy in any project of SMDC, We are happy to assist you wherever
+            you are across the globe.
           </p>
           <Link
             href={'/contact-us'}
-            className='uppercase bg-blue-800 hover:bg-blue-700 font-semibold text-white py-4 px-8 w-fit duration-200 rounded-lg'
+            className='uppercase bg-blue-900 hover:bg-blue-800 font-semibold text-white py-4 px-8 w-fit duration-200 rounded-lg'
           >
             Contact Us
           </Link>
         </div>
+        <Flags className='opacity-90 md:w-[400px]' />
       </Container>
     </div>
   );

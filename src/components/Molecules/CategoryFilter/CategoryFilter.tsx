@@ -3,12 +3,8 @@
 import React from 'react';
 import Container from '@/components/Atoms/Container/Container';
 import Link from 'next/link';
-import {
-  BuildingOfficeIcon,
-  BuildingOffice2Icon,
-  HomeModernIcon,
-} from '@heroicons/react/24/outline';
 import { Fade } from 'react-awesome-reveal';
+import { categories } from './config';
 
 interface ICategories {
   slug: string;
@@ -16,27 +12,6 @@ interface ICategories {
   icon: any;
   count: string;
 }
-
-export const categories = [
-  {
-    slug: 'condominium',
-    label: 'Condominium',
-    icon: BuildingOfficeIcon,
-    count: '41',
-  },
-  {
-    slug: 'house-and-lot',
-    label: 'House and lot',
-    icon: HomeModernIcon,
-    count: '2',
-  },
-  {
-    slug: 'residential-office',
-    label: 'Residential office',
-    icon: BuildingOffice2Icon,
-    count: '12',
-  },
-];
 
 const CategoryFilter: React.FC = () => {
   return (
@@ -50,15 +25,17 @@ const CategoryFilter: React.FC = () => {
           <Link
             key={item.slug}
             href={`/property-category/${item.slug}`}
-            className='flex flex-row justify-between items-center bg-slate-50 py-8 px-6 md:px-8 md:px-6 rounded-md shadow-md hover:scale-[1.02] hover:shadow-lg duration-200'
+            className='group/category-filter flex flex-row justify-between items-center bg-slate-50 py-8 px-6 md:px-8 md:px-6 rounded-md shadow-md hover:scale-[1.02] hover:shadow-lg hover:bg-blue-800 duration-200'
           >
             <div className='flex flex-col'>
-              <h4 className='text-slate-800 font-semibold text-xl mb-1.5'>{item.label}</h4>
-              <p className='flex gap-x-2 text-base md:justify-start text-slate-500 font-normal'>
+              <h4 className='text-slate-800 group-hover/category-filter:text-white font-semibold text-xl mb-1.5'>
+                {item.label}
+              </h4>
+              <p className='flex gap-x-2 text-base md:justify-start text-slate-500 group-hover/category-filter:text-white font-normal'>
                 <span className='font-semibold'>{item.count}</span> listed units
               </p>
             </div>
-            <item.icon className='w-20 md:w-24 lg:w-20 xl:w-32 text-blue-800' />
+            <item.icon className='w-20 md:w-24 lg:w-20 xl:w-32 text-blue-800 group-hover/category-filter:text-white' />
           </Link>
         ))}
       </Container>
