@@ -35,7 +35,7 @@ const LocationCard: React.FC<ILocationCardProps> = ({ slug, location, image, ind
             className='duration-300 object-cover'
           />
           <Overlay color='bg-slate-950/30 group-hover/location-card:bg-slate-950/10 duration-300' />
-          <div className='relative flex items-start ml-6 mt-4 text-white'>
+          <div className='relative flex items-start ml-2 mt-4 text-white'>
             <MapPinIcon className='text-white w-8 mr-2' />
             <div className='flex-col'>
               <p className='text-xl font-semibold'>{location}</p>
