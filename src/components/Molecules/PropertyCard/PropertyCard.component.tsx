@@ -1,10 +1,10 @@
 import React from "react";
-import { type ICondos } from "@/services/condosForSale/types";
+import { type IProperties } from "@/services/properties/types";
 import Link from "next/link";
 import Image from "next/image";
 import Overlay from "@/components/Atoms/Overlay/Overlay";
 
-const PropertyCard: React.FC<ICondos> = ({
+const PropertyCard: React.FC<IProperties> = ({
   slug,
   title,
   description,

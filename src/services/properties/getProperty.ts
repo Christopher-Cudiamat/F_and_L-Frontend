@@ -1,10 +1,10 @@
-import { fetchCondo } from "./fetchCondo";
-import { toCondo } from "./toCondo";
-import { type ICondo } from "./types";
+import { fetchProperty } from "./fetchProperties";
+import { toProperty } from "./toProperties";
+import { type IProperty } from "./types";
 
 // Retrieve a single for sale
-export const getCondo = async (slug: string): Promise<ICondo | null> => {
-  const { data } = await fetchCondo({
+export const getProperties = async (slug: string): Promise<IProperty | null> => {
+  const { data } = await fetchProperty({
     filters: { slug: { $eq: slug } },
     fields: [
       "slug",
@@ -49,6 +49,6 @@ export const getCondo = async (slug: string): Promise<ICondo | null> => {
     amenitiesDescription: item.attributes.amenitiesDescription,
     unitDescription: item.attributes.unitDescription,
     lobbyDescription: item.attributes.lobbyDescription,
-    ...toCondo(item),
+    ...toProperty(item),
   };
 };

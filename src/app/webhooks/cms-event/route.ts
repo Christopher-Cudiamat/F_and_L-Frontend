@@ -1,5 +1,5 @@
 import { revalidateTag } from "next/cache";
-import { CACHE_TAG_CONDO } from "@/services/condosForSale/fetchCondo";
+import { CACHE_TAG_CONDO } from "@/services/properties/fetchProperties";
 import { CACHE_TAG_PROPERTY_LOCATION } from "@/services/property-location/fetchPropertyLocations";
 
 const ENTRY_PUBLISH = "entry.publish";

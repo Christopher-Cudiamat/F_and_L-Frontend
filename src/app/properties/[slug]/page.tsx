@@ -1,8 +1,8 @@
 import React from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getCondo } from "@/services/condosForSale/getCondo";
-import { getSlugs } from "@/services/condosForSale/getSlugs";
+import { getProperties } from "@/services/properties/getProperty";
+import { getSlugs } from "@/services/properties/getSlugs";
 import Image from "next/image";
 import { CurrencyDollarIcon, HomeIcon, KeyIcon, MapPinIcon } from "@heroicons/react/24/outline";
 import Container from "@/components/Atoms/Container/Container";
@@ -12,23 +12,23 @@ import VicinityMap from "@/components/Molecules/VicinityMap/VicinityMap";
 import SectionTitle from "@/components/Molecules/SectionTitle/SectionTitle";
 import PropertyList from "@/components/Molecules/PropetyList/PropertyList";
 
-interface ICondoForSalePageParams {
+interface IPropertyForSalePageParams {
   slug: string;
 }
 
-interface ICondoForSalePageProps {
-  params: ICondoForSalePageParams;
+interface IPropertyForSalePageProps {
+  params: IPropertyForSalePageParams;
 }
 
-export async function generateStaticParams(): Promise<ICondoForSalePageParams[]> {
+export async function generateStaticParams(): Promise<IPropertyForSalePageParams[]> {
   const slugs = await getSlugs();
   return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
   params: { slug },
-}: ICondoForSalePageProps): Promise<Metadata> {
-  const condo = await getCondo(slug);
+}: IPropertyForSalePageProps): Promise<Metadata> {
+  const condo = await getProperties(slug);
   if (!condo) {
     notFound();
   }
@@ -37,8 +37,8 @@ export async function generateMetadata({
   };
 }
 
-const PropertyPage: React.FC<ICondoForSalePageProps> = async ({ params: { slug } }) => {
-  const condo = await getCondo(slug);
+const PropertyPage: React.FC<IPropertyForSalePageProps> = async ({ params: { slug } }) => {
+  const condo = await getProperties(slug);
 
   if (!condo) {
     notFound();

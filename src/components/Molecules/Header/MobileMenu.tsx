@@ -14,10 +14,10 @@ const MobileMenu: React.FC<INavItems> = ({ navItems }) => {
         <Bars3Icon className='w-10 text-white' />
       </Menu.Button>
       <Transition
-        enter='transition-opacity ease-linear duration-300'
+        enter='transition-opacity ease-linear duration-100'
         enterFrom='opacity-0'
         enterTo='opacity-100'
-        leave='transition-opacity ease-linear duration-300'
+        leave='transition-opacity ease-linear duration-100'
         leaveFrom='opacity-100'
         leaveTo='opacity-0'
       >
@@ -47,7 +47,7 @@ const MobileMenu: React.FC<INavItems> = ({ navItems }) => {
                     if (index === 0) return;
                     close();
                   }}
-                  className='text-lg text-white'
+                  className='text-xl text-white'
                 >
                   <div className='flex justify-between items-center py-2'>
                     {item.label}
@@ -56,7 +56,7 @@ const MobileMenu: React.FC<INavItems> = ({ navItems }) => {
                     />
                   </div>
                   {item.subLinks && (
-                    <ul className='ml-1'>
+                    <ul>
                       {navItems[0].subLinks?.map((item: ISubLink) => (
                         <Menu.Item
                           key={item.label}
@@ -68,7 +68,7 @@ const MobileMenu: React.FC<INavItems> = ({ navItems }) => {
                               onClick={close}
                             >
                               <div className='flex justify-between items-center py-2'>
-                                <div className='flex gap-x-4'>
+                                <div className='flex gap-x-2'>
                                   <item.icon className='w-5' />
                                   {item.label}
                                 </div>

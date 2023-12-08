@@ -1,15 +1,17 @@
-import { fetchCondo } from "./fetchCondo";
-import { toCondo } from "./toCondo";
-import { type ICondosList } from "./types";
+import { fetchProperty } from "./fetchProperties";
+import { toProperty } from "./toProperties";
+import { type IPropertiesList } from "./types";
 
 // Retrieve featured condos for sale
-export const getCondosByLocation = async (location: string): Promise<ICondosList | null> => {
+export const getPropertiesByLocation = async (
+  location: string
+): Promise<IPropertiesList | null> => {
   const formattedLocation = location
     .split("-")
     .map((item: string) => item[0].toUpperCase() + item.slice(1))
     .join(" ");
 
-  const { data } = await fetchCondo({
+  const { data } = await fetchProperty({
     filters: { location: { $eq: formattedLocation } },
     fields: [
       "slug",
@@ -26,6 +28,6 @@ export const getCondosByLocation = async (location: string): Promise<ICondosList
 
   return {
     pageCount: 30,
-    condos: data.map(toCondo),
+    condos: data.map(toProperty),
   };
 };

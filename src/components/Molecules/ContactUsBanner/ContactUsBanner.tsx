@@ -2,8 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Overlay from "@/components/Atoms/Overlay/Overlay";
 import Container from "@/components/Atoms/Container/Container";
-import Link from "next/link";
 import Flags from "../Flags/Flags";
+import Button from "@/components/Atoms/Button/Button";
 
 interface IContactUsBannerProps {
   image: string;
@@ -38,12 +38,7 @@ const ContactUsBanner: React.FC<IContactUsBannerProps> = ({ image, altText, full
             If you are interested to buy in any project of SMDC, We are happy to assist you wherever
             you are across the globe.
           </p>
-          <Link
-            href={"/contact-us"}
-            className='uppercase bg-blue-900 hover:bg-blue-800 font-semibold text-white py-4 px-8 w-fit duration-200 rounded-lg'
-          >
-            Contact Us
-          </Link>
+          <Button href={"/contact-us"}>Contact Us</Button>
         </div>
         <Flags className='opacity-90 md:w-[400px]' />
       </Container>

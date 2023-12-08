@@ -1,5 +1,5 @@
 import qs from "qs";
-import { type ICmsItem } from "../condosForSale/types";
+import { type ICmsItem } from "../properties/types";
 
 const CMS_URL = process.env.CMS_URL;
 export const CACHE_TAG_PROPERTY_LOCATION = "property-location";

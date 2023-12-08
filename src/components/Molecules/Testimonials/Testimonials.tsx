@@ -54,6 +54,7 @@ const Gallery: React.FC<ITestimonials> = ({ testimonials }) => {
                   <Image
                     src={testimonial.image}
                     alt={testimonial.name}
+                    priority={true}
                     fill
                     className='absolute object-fit w-full h-full inset-0 rounded-full'
                   />

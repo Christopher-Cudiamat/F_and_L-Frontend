@@ -1,13 +1,13 @@
-import { fetchCondo } from "./fetchCondo";
-import { toCondo } from "./toCondo";
-import { type ICondosList } from "./types";
+import { fetchProperty } from "./fetchProperties";
+import { toProperty } from "./toProperties";
+import { type IPropertiesList } from "./types";
 
 // Retrieve all condos for sale
-export const getCondos = async (
+export const getProperties = async (
   pageSize: number = 100,
   page: number = 1
-): Promise<ICondosList | null> => {
-  const { data, meta } = await fetchCondo({
+): Promise<IPropertiesList | null> => {
+  const { data, meta } = await fetchProperty({
     fields: [
       "slug",
       "title",
@@ -24,6 +24,6 @@ export const getCondos = async (
 
   return {
     pageCount: meta.pagination.pageCount,
-    condos: data.map(toCondo),
+    condos: data.map(toProperty),
   };
 };

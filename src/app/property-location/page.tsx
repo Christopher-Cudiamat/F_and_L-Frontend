@@ -7,6 +7,8 @@ import {
 } from "@/services/property-location/fetchPropertyLocations";
 import ContactUsBanner from "@/components/Molecules/ContactUsBanner/ContactUsBanner";
 import Container from "@/components/Atoms/Container/Container";
+import SectionTitle from "@/components/Molecules/SectionTitle/SectionTitle";
+import CategoryFilter from "@/components/Molecules/CategoryFilter/CategoryFilter";
 
 const PropertyLocationsPage: React.FC = async () => {
   const propertyLocations = await fetchPropertyLocations(100);
@@ -20,7 +22,7 @@ const PropertyLocationsPage: React.FC = async () => {
         altText='Property locations'
         height='md'
       />
-      <section className='bg-white pt-10 pb-20'>
+      <section className='bg-white py-20'>
         <Container>
           <ul className='flex flex-col md:grid md:grid-cols-3 md:grid-rows-5 md:grid-flow-row gap-x-4 h-auto md:h-[600px]'>
             {propertyLocations.map((item: ILocation, index: number) => (
@@ -32,6 +34,16 @@ const PropertyLocationsPage: React.FC = async () => {
             ))}
           </ul>
         </Container>
+      </section>
+      <section
+        className='bg-white pt-10 pb-14 md:py-14'
+        id='section-category'
+      >
+        <SectionTitle
+          title='Property Categories'
+          withLine
+        />
+        <CategoryFilter />
       </section>
       <section>
         <ContactUsBanner

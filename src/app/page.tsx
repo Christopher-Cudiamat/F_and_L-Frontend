@@ -3,8 +3,8 @@ import {
   type ILocation,
   fetchPropertyLocations,
 } from "@/services/property-location/fetchPropertyLocations";
-import { getFeaturedCondos } from "@/services/condosForSale/getFeaturedCondos";
-import { type ICondos } from "@/services/condosForSale/types";
+import { getFeaturedProperties } from "@/services/properties/getFeaturedProperties";
+import { type IProperties } from "@/services/properties/types";
 import Link from "next/dist/client/link";
 import { ArrowLongDownIcon } from "@heroicons/react/24/outline";
 import SectionTitle from "@/components/Molecules/SectionTitle/SectionTitle";
@@ -18,8 +18,8 @@ import Slider from "@/components/Molecules/Slider/Slider";
 import Container from "@/components/Atoms/Container/Container";
 
 const HomePage: React.FC = async () => {
-  const featuredLocations = await fetchPropertyLocations(8);
-  const featuredCondos = await getFeaturedCondos();
+  const featuredLocations = await fetchPropertyLocations(6);
+  const featuredProperties = await getFeaturedProperties();
 
   return (
     <React.Fragment>
@@ -60,7 +60,7 @@ const HomePage: React.FC = async () => {
           withLine
         />
         <CardsContainer>
-          {featuredCondos?.condos.map((item: ICondos) => (
+          {featuredProperties?.condos.map((item: IProperties) => (
             <PropertyCard
               key={item.slug}
               {...item}

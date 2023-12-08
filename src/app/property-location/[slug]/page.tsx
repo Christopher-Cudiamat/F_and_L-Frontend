@@ -1,7 +1,7 @@
 import React from "react";
-import { getCondosByLocation } from "@/services/condosForSale/getCondosByLocation";
-import { getSlugs } from "@/services/condosForSale/getSlugs";
-import { type ICondos } from "@/services/condosForSale/types";
+import { getPropertiesByLocation } from "@/services/properties/getPropertiesByLocation";
+import { getSlugs } from "@/services/properties/getSlugs";
+import { type IProperties } from "@/services/properties/types";
 import PropertyCard from "@/components/Molecules/PropertyCard/PropertyCard.component";
 import CardsContainer from "@/components/Molecules/CardsContainer/CardsContainer";
 import Hero from "@/components/Molecules/Hero/Hero";
@@ -22,7 +22,7 @@ export async function generateStaticParams(): Promise<any> {
 }
 
 const PropertyLocationPage: React.FC<IPropertyLocationPageProps> = async ({ params: { slug } }) => {
-  const results = await getCondosByLocation(slug);
+  const results = await getPropertiesByLocation(slug);
 
   return (
     <React.Fragment>
@@ -32,9 +32,9 @@ const PropertyLocationPage: React.FC<IPropertyLocationPageProps> = async ({ para
         altText='Property locations'
         height='md'
       />
-      <section className='bg-gray-100 pt-20 pb-20'>
+      <section className='bg-gray-100 py-20'>
         <CardsContainer>
-          {results?.condos.map((item: ICondos) => (
+          {results?.condos.map((item: IProperties) => (
             <PropertyCard
               key={item.slug}
               {...item}

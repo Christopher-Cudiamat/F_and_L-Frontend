@@ -1,6 +1,6 @@
 import React from "react";
-import { getCondos } from "@/services/condosForSale/getCondos";
-import { type ICondos } from "@/services/condosForSale/types";
+import { getProperties } from "@/services/properties/getProperties";
+import { type IProperties } from "@/services/properties/types";
 import PropertyCard from "@/components/Molecules/PropertyCard/PropertyCard.component";
 import Pagination from "@/components/Molecules/Pagination/Pagination";
 import CardsContainer from "@/components/Molecules/CardsContainer/CardsContainer";
@@ -18,7 +18,7 @@ const pageSize = 8;
 
 const PropertiesPage: React.FC<ISearchParams> = async ({ searchParams }) => {
   const page = parsePageParam(searchParams.page);
-  const results = await getCondos(pageSize, page);
+  const results = await getProperties(pageSize, page);
 
   return (
     <React.Fragment>
@@ -32,7 +32,7 @@ const PropertiesPage: React.FC<ISearchParams> = async ({ searchParams }) => {
       <Filters />
       <section className='bg-white pt-10 lg:pt-20 pb-10'>
         <CardsContainer>
-          {results?.condos.map((item: ICondos) => (
+          {results?.condos.map((item: IProperties) => (
             <PropertyCard
               key={item.slug}
               {...item}
@@ -50,7 +50,7 @@ const PropertiesPage: React.FC<ISearchParams> = async ({ searchParams }) => {
         id='section-category'
       >
         <SectionTitle
-          title='What are you looking for?'
+          title='Property Categories'
           withLine
         />
         <CategoryFilter />

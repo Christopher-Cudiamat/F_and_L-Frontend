@@ -2,10 +2,10 @@
 
 import Container from "@/components/Atoms/Container/Container";
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import StatusCounter from "../StatusCounter/StatusCounter";
+import Button from "@/components/Atoms/Button/Button";
 
 const AboutUsBanner: React.FC = () => {
   return (
@@ -33,12 +33,7 @@ const AboutUsBanner: React.FC = () => {
               </p>
               <StatusCounter />
               <div className='mb-12' />
-              <Link
-                href={"/about-us"}
-                className='block mx-auto lg:m-0 uppercase bg-blue-800 hover:bg-blue-700 font-semibold text-white py-4 px-6 w-fit rounded-md duration-200'
-              >
-                Learn more
-              </Link>
+              <Button href={"/about-us"}>Learn More</Button>
             </div>
             <Image
               src={"/images/cheerful-business-team.jpg"}

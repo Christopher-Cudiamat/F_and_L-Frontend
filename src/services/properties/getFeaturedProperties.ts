@@ -1,10 +1,10 @@
-import { fetchCondo } from "./fetchCondo";
-import { toCondo } from "./toCondo";
-import { type ICondosList } from "./types";
+import { fetchProperty } from "./fetchProperties";
+import { toProperty } from "./toProperties";
+import { type IPropertiesList } from "./types";
 
 // Retrieve featured condos for sale
-export const getFeaturedCondos = async (): Promise<ICondosList | null> => {
-  const { data } = await fetchCondo({
+export const getFeaturedProperties = async (): Promise<IPropertiesList | null> => {
+  const { data } = await fetchProperty({
     filters: { isFeatured: { $eq: true } },
     fields: [
       "slug",
@@ -22,6 +22,6 @@ export const getFeaturedCondos = async (): Promise<ICondosList | null> => {
 
   return {
     pageCount: 30,
-    condos: data.map(toCondo),
+    condos: data.map(toProperty),
   };
 };

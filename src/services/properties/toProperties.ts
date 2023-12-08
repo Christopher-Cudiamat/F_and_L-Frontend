@@ -1,6 +1,6 @@
-import { type ICondos, type ICmsItem } from "./types";
+import { type IProperties, type ICmsItem } from "./types";
 
-export function toCondo(item: ICmsItem): ICondos {
+export function toProperty(item: ICmsItem): IProperties {
   const { attributes } = item;
 
   return {

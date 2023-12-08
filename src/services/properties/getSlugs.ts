@@ -1,8 +1,8 @@
-import { fetchCondo } from "./fetchCondo";
+import { fetchProperty } from "./fetchProperties";
 import { type ICmsItem } from "./types";
 
 export const getSlugs = async (): Promise<string[]> => {
-  const { data } = await fetchCondo({
+  const { data } = await fetchProperty({
     fields: ["slug"],
     sort: ["publishedAt:desc"],
     pagination: { pageSize: 100 },

@@ -1,4 +1,4 @@
-export interface ICondos {
+export interface IProperties {
   slug: string;
   title: string;
   description: string;
@@ -11,7 +11,7 @@ export interface ICondos {
   nearestLandmark?: string;
 }
 
-export interface ICondo extends ICondos {
+export interface IProperty extends IProperties {
   gallery: string[];
   amenities: string[];
   amenitiesDescription: string;
@@ -27,7 +27,7 @@ export interface ICmsItem {
   attributes: any;
 }
 
-export interface ICondosList {
+export interface IPropertiesList {
   pageCount: number;
-  condos: ICondos[];
+  condos: IProperties[];
 }

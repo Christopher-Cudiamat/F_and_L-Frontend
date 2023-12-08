@@ -51,15 +51,18 @@ const DesktopMenu: React.FC<INavItems> = ({ navItems }) => {
                           key={item.link}
                           as='div'
                         >
-                          <Link
-                            href={item.link}
-                            className={`flex gap-x-4 w-full py-2 px-4 text-slate-600 hover:bg-slate-50 ${
-                              item.link === currentRoute ? "bg-slate-50" : "bg-white"
-                            }`}
-                          >
-                            <item.icon className='w-5 text-slate-600' />
-                            {item.label}
-                          </Link>
+                          {({ close }) => (
+                            <Link
+                              href={item.link}
+                              onClick={close}
+                              className={`flex gap-x-4 w-full py-2 px-4 text-slate-600 hover:bg-slate-50 ${
+                                item.link === currentRoute ? "bg-slate-50" : "bg-white"
+                              }`}
+                            >
+                              <item.icon className='w-5 text-slate-600' />
+                              {item.label}
+                            </Link>
+                          )}
                         </Menu.Item>
                       ))}
                     </Menu.Items>

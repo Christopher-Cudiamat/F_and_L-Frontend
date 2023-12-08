@@ -1,13 +1,15 @@
 import React from "react";
-import { type ICondos } from "@/services/condosForSale/types";
+import { type IProperties } from "@/services/properties/types";
 import PropertyCard from "@/components/Molecules/PropertyCard/PropertyCard.component";
 import CardsContainer from "@/components/Molecules/CardsContainer/CardsContainer";
-import { getCondosByCategory } from "@/services/condosForSale/getCondosByCategory";
+import { getPropertiesByCategory } from "@/services/properties/getPropertiesByCategory";
 // import { categories } from '@/components/Molecules/CategoryFilter/CategoryFilter';
 import Hero from "@/components/Molecules/Hero/Hero";
 import { slugParser } from "@/utils/slugParser";
 import ContactUsBanner from "@/components/Molecules/ContactUsBanner/ContactUsBanner";
 import { categories } from "@/components/Molecules/CategoryFilter/config";
+import SectionTitle from "@/components/Molecules/SectionTitle/SectionTitle";
+import CategoryFilter from "@/components/Molecules/CategoryFilter/CategoryFilter";
 
 interface IPropertyCategoryPageParams {
   slug: string;
@@ -22,7 +24,7 @@ export async function generateStaticParams(): Promise<any> {
 }
 
 const PropertyCategoryPage: React.FC<IPropertyCategoryPageProps> = async ({ params: { slug } }) => {
-  const results = await getCondosByCategory(slug);
+  const results = await getPropertiesByCategory(slug);
 
   return (
     <React.Fragment>
@@ -33,15 +35,25 @@ const PropertyCategoryPage: React.FC<IPropertyCategoryPageProps> = async ({ para
         altText='Property'
         height='md'
       />
-      <section className='bg-gray-100 pt-10 pb-20'>
+      <section className='bg-gray-100 py-20'>
         <CardsContainer>
-          {results?.condos.map((item: ICondos) => (
+          {results?.condos.map((item: IProperties) => (
             <PropertyCard
               key={item.slug}
               {...item}
             />
           ))}
         </CardsContainer>
+      </section>
+      <section
+        className='bg-white pt-10 pb-14 md:py-14'
+        id='section-category'
+      >
+        <SectionTitle
+          title='Property Categories'
+          withLine
+        />
+        <CategoryFilter />
       </section>
       <section>
         <ContactUsBanner

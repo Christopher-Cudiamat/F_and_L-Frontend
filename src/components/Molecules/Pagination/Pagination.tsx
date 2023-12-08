@@ -34,7 +34,7 @@ const Pagination: React.FC<PaginationProps> = ({ page, pageCount, path }) => {
                       item === page
                         ? "bg-yellow-400 border-yellow-400"
                         : "bg-white border-slate-800"
-                    } text-slate-800 py-1.5 px-3 rounded-sm hover:bg-yellow-400 hover:border-yellow-400 rounded-md duration-100`}
+                    } text-slate-800 py-1.5 px-3 rounded-md hover:bg-yellow-400 hover:border-yellow-400 duration-100`}
                   >
                     {item}
                   </Link>
