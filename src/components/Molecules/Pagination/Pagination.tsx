@@ -1,6 +1,7 @@
-import Container from "@/components/Atoms/Container/Container";
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
+import Container from "@/components/Atoms/Container/Container";
+import PaginationButton from "./PaginationButton/PaginationButton";
 
 interface PaginationProps {
   page: number;
@@ -19,12 +20,10 @@ const Pagination: React.FC<PaginationProps> = ({ page, pageCount, path }) => {
         <Container>
           <div className='flex justify-center items-center gap-x-4 my-24'>
             {page !== 1 && (
-              <Link
+              <PaginationButton
                 href={`${path}?page=${page - 1}`}
-                className='bg-blue-600 hover:bg-blue-700 text-sm md:text-base font-normal rounded-sm py-1.5 px-4 text-white duration-100'
-              >
-                Previous
-              </Link>
+                label='Prev'
+              />
             )}
             <ul className='flex justify-center items-center gap-x-2'>
               {pages.map((item: any) => (
@@ -35,7 +34,7 @@ const Pagination: React.FC<PaginationProps> = ({ page, pageCount, path }) => {
                       item === page
                         ? "bg-yellow-400 border-yellow-400"
                         : "bg-white border-slate-800"
-                    } text-slate-800 py-1.5 px-3 rounded-sm hover:bg-yellow-400 hover:border-yellow-400 duration-100`}
+                    } text-slate-800 py-1.5 px-3 rounded-sm hover:bg-yellow-400 hover:border-yellow-400 rounded-md duration-100`}
                   >
                     {item}
                   </Link>
@@ -43,12 +42,10 @@ const Pagination: React.FC<PaginationProps> = ({ page, pageCount, path }) => {
               ))}
             </ul>
             {pageCount && page !== pages.length && (
-              <Link
-                className='bg-blue-600 hover:bg-blue-700 text-sm md:text-base font-normal rounded-sm py-1.5 px-4 text-white duration-100'
+              <PaginationButton
                 href={`${path}?page=${page + 1}`}
-              >
-                Next
-              </Link>
+                label='Next'
+              />
             )}
           </div>
         </Container>

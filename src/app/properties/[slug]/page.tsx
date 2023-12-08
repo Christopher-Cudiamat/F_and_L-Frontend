@@ -8,7 +8,7 @@ import { CurrencyDollarIcon, HomeIcon, KeyIcon, MapPinIcon } from "@heroicons/re
 import Container from "@/components/Atoms/Container/Container";
 import ContactUsBanner from "@/components/Molecules/ContactUsBanner/ContactUsBanner";
 import Gallery from "@/components/Molecules/Gallery/Gallery";
-import GoogleMap from "@/components/Molecules/GoogleMap/GoogleMap";
+import VicinityMap from "@/components/Molecules/VicinityMap/VicinityMap";
 import SectionTitle from "@/components/Molecules/SectionTitle/SectionTitle";
 import PropertyList from "@/components/Molecules/PropetyList/PropertyList";
 
@@ -133,7 +133,7 @@ const PropertyPage: React.FC<ICondoForSalePageProps> = async ({ params: { slug }
           title='Vicinity Map'
           withLine
         />
-        <GoogleMap />
+        <VicinityMap />
       </section>
       <section className='bg-white py-10'>
         <SectionTitle
