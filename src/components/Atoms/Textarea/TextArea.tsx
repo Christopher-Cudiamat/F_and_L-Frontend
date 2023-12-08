@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface TextareaProps {
   id: string;
@@ -25,7 +25,7 @@ const Textarea: React.FC<TextareaProps> = ({
       <label
         htmlFor={id}
         className={`${
-          value === '' ? 'text-base text-slate-500 top-[24px]' : 'text-sm text-blue-800 top-[0px]'
+          value === "" ? "text-base text-slate-500 top-[24px]" : "text-sm text-blue-800 top-[0px]"
         } font-semibold absolute duration-200`}
       >
         {label}
@@ -38,12 +38,12 @@ const Textarea: React.FC<TextareaProps> = ({
         rows={7}
         id={id}
         name={name}
-        style={{ resize: 'none' }}
+        style={{ resize: "none" }}
         className={`${
-          value === '' ? 'border-slate-300' : 'border-blue-800'
+          value === "" ? "border-slate-300" : "border-blue-800"
         } border-b focus:border-blue-800 bg-transparent outline-0 text-slate-700 text-base font-semibold mt-6 mb-10`}
       />
-      {errorMessage !== '' && (
+      {errorMessage !== "" && (
         <p className='absolute bottom-[5px] text-red-500 text-xs'>{errorMessage}</p>
       )}
     </div>

@@ -3,7 +3,8 @@ export interface ICondos {
   title: string;
   description: string;
   status: string[];
-  price: string;
+  minPrice: string;
+  maxPrice: string;
   image: string;
   category: string;
   location?: string;
@@ -13,6 +14,9 @@ export interface ICondos {
 export interface ICondo extends ICondos {
   gallery: string[];
   amenities: string[];
+  amenitiesDescription: string;
+  lobbyDescription: string;
+  unitDescription: string;
   units: string[];
   address: string;
   logo?: string;

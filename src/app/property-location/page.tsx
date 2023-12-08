@@ -1,12 +1,12 @@
-import React from 'react';
-import Hero from '@/components/Molecules/Hero/Hero';
-import LocationCard from '@/components/Molecules/LocationCard/LocationCard';
+import React from "react";
+import Hero from "@/components/Molecules/Hero/Hero";
+import LocationCard from "@/components/Molecules/LocationCard/LocationCard";
 import {
   type ILocation,
   fetchPropertyLocations,
-} from '@/services/property-location/fetchPropertyLocations';
-import ContactUsBanner from '@/components/Molecules/ContactUsBanner/ContactUsBanner';
-import Container from '@/components/Atoms/Container/Container';
+} from "@/services/property-location/fetchPropertyLocations";
+import ContactUsBanner from "@/components/Molecules/ContactUsBanner/ContactUsBanner";
+import Container from "@/components/Atoms/Container/Container";
 
 const PropertyLocationsPage: React.FC = async () => {
   const propertyLocations = await fetchPropertyLocations(100);

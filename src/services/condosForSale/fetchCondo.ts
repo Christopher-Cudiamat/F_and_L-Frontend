@@ -1,7 +1,7 @@
-import qs from 'qs';
+import qs from "qs";
 
 const CMS_URL = process.env.CMS_URL;
-export const CACHE_TAG_CONDO = 'condo';
+export const CACHE_TAG_CONDO = "condo";
 
 // set parameters for and fetch api
 export async function fetchCondo(parameters: any): Promise<any> {

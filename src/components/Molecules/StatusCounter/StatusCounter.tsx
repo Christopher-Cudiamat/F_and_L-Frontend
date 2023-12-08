@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React from 'react';
-import CountUp from 'react-countup';
+import React from "react";
+import CountUp from "react-countup";
 
 interface IStats {
   id: string;
@@ -12,21 +12,21 @@ interface IStats {
 
 const stats = [
   {
-    id: '1',
+    id: "1",
     count: 150,
-    symbol: '+',
-    text: 'Delivered units',
+    symbol: "+",
+    text: "Delivered units",
   },
   {
-    id: '2',
+    id: "2",
     count: 12,
-    symbol: '+',
-    text: 'Years of service',
+    symbol: "+",
+    text: "Years of service",
   },
   {
-    id: '3',
+    id: "3",
     count: 100,
-    symbol: '%',
+    symbol: "%",
     text: "Client's satisfaction",
   },
 ];

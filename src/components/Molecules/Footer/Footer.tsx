@@ -1,6 +1,6 @@
-import Container from '@/components/Atoms/Container/Container';
-import Link from 'next/link';
-import React from 'react';
+import Container from "@/components/Atoms/Container/Container";
+import Link from "next/link";
+import React from "react";
 
 export interface ILink {
   label: string;
@@ -15,11 +15,11 @@ const Footer: React.FC<any> = ({
   disclaimer,
   copyright,
 }) => {
-  const sectionContainerStyle = 'mb-10 md:mx-auto lg:mx-0';
-  const sectionTitleStyle = 'text-lg text-center lg:text-left font-bold mb-5';
+  const sectionContainerStyle = "mb-10 md:mx-auto lg:mx-0";
+  const sectionTitleStyle = "text-lg text-center lg:text-left font-bold mb-5";
   const linksContainerStyle =
-    'flex flex-col items-center lg:items-start gap-y-3 text-base font-normal text-white/80';
-  const linkStyle = 'md:hover:text-white duration-150';
+    "flex flex-col items-center lg:items-start gap-y-3 text-base font-normal text-white/80";
+  const linkStyle = "md:hover:text-white duration-150";
 
   return (
     <footer className='bg-neutral-800 pt-12'>
@@ -30,9 +30,9 @@ const Footer: React.FC<any> = ({
             className='text-  font-bold text-4xl lg:text-6xl mb-8 lg:mg-6'
           >
             {/* This will be replaced by an actual logo */}
-            {company.logo.split(' ')[0]}{' '}
+            {company.logo.split(" ")[0]}{" "}
             <span className='text-xl lg:text-2xl font-normal'>
-              {company.logo.split(' ')[1] + ' ' + company.logo.split(' ')[2]}
+              {company.logo.split(" ")[1] + " " + company.logo.split(" ")[2]}
             </span>
           </Link>
           <h2 className='mx-auto lg:mx-0 text-2xl lg:text-2xl lg: max-w-[200px] md:max-w-full font-bold pt-5 pb-8'>

@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import Container from '@/components/Atoms/Container/Container';
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import SectionTitle from '../SectionTitle/SectionTitle';
-import StatusCounter from '../StatusCounter/StatusCounter';
+import Container from "@/components/Atoms/Container/Container";
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import SectionTitle from "../SectionTitle/SectionTitle";
+import StatusCounter from "../StatusCounter/StatusCounter";
 
 const AboutUsBanner: React.FC = () => {
   return (
@@ -20,7 +20,7 @@ const AboutUsBanner: React.FC = () => {
                 withLine
               />
               <Image
-                src={'/images/real-estate-experts.jpg'}
+                src={"/images/real-estate-experts.jpg"}
                 alt='Real estate agents'
                 width={300}
                 height={300}
@@ -34,14 +34,14 @@ const AboutUsBanner: React.FC = () => {
               <StatusCounter />
               <div className='mb-12' />
               <Link
-                href={'/about-us'}
+                href={"/about-us"}
                 className='block mx-auto lg:m-0 uppercase bg-blue-800 hover:bg-blue-700 font-semibold text-white py-4 px-6 w-fit rounded-md duration-200'
               >
                 Learn more
               </Link>
             </div>
             <Image
-              src={'/images/cheerful-business-team.jpg'}
+              src={"/images/cheerful-business-team.jpg"}
               alt='Real estate agents'
               width={300}
               height={300}

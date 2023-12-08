@@ -28,13 +28,4 @@ npm run check-types ||
 echo '🔨🔨🔨🔨... Code is good... Trying to commit changes now. 🔨🔨🔨🔨'
 
 # # If everything passes... Now we can commit
-# echo '🔨🔨🔨🔨... Code is good... Trying to build now. 🔨🔨🔨🔨'
-
-# npm run build ||
-# (
-#     echo '❌👷🔨❌ Build failed, fix remaining errors. ❌👷🔨❌'
-#     false;
-# )
-
-# # If everything passes... Now we can commit
-# echo '✅✅✅✅ You win this time... I am committing this now. ✅✅✅✅'
+# echo '✅✅✅✅ Commit Successful ✅✅✅✅'

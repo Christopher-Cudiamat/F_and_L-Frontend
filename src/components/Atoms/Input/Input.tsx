@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface InputProps {
   id: string;
@@ -20,13 +20,12 @@ const Input: React.FC<InputProps> = ({
   required,
   onChange,
 }) => {
-  console.log('errorMessage-------', errorMessage);
   return (
     <div className='relative flex flex-col w-full'>
       <label
         htmlFor={id}
         className={`${
-          value === '' ? 'text-base text-slate-500 top-[24px]' : 'text-sm text-blue-800 top-0'
+          value === "" ? "text-base text-slate-500 top-[24px]" : "text-sm text-blue-800 top-0"
         } font-semibold absolute duration-200`}
       >
         {label}
@@ -40,10 +39,10 @@ const Input: React.FC<InputProps> = ({
         id={id}
         name={name}
         className={`${
-          value === '' ? 'border-slate-300' : 'border-blue-800'
+          value === "" ? "border-slate-300" : "border-blue-800"
         } border-b focus:border-blue-800 bg-transparent outline-0 h-[40px] text-slate-700 text-base font-semibold mt-4 mb-6`}
       />
-      {errorMessage !== '' && (
+      {errorMessage !== "" && (
         <p className='absolute bottom-[5px] text-red-500 text-xs'>{errorMessage}</p>
       )}
     </div>

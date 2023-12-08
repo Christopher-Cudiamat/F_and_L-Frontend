@@ -1,21 +1,21 @@
-import React from 'react';
-import { FaWhatsapp, FaViber, FaMobileAlt } from 'react-icons/fa';
-import Image from 'next/image';
-import EmailForm from '@/components/Molecules/EmailForm/EmailForm';
-import Hero from '@/components/Molecules/Hero/Hero';
-import SectionTitle from '@/components/Molecules/SectionTitle/SectionTitle';
-import Flags from '@/components/Molecules/Flags/Flags';
+import React from "react";
+import { FaWhatsapp, FaViber, FaMobileAlt } from "react-icons/fa";
+import Image from "next/image";
+import EmailForm from "@/components/Molecules/EmailForm/EmailForm";
+import Hero from "@/components/Molecules/Hero/Hero";
+import SectionTitle from "@/components/Molecules/SectionTitle/SectionTitle";
+import Flags from "@/components/Molecules/Flags/Flags";
 
 const ContactUsPage: React.FC = () => {
   return (
     <React.Fragment>
       <Hero
-        title={'Get in touch'}
+        title={"Get in touch"}
         subtitle={
-          'If you are interested to buy in any project of SMDC, We are happy to assist you wherever you are across the globe.'
+          "If you are interested to buy in any project of SMDC, We are happy to assist you wherever you are across the globe."
         }
-        image={'/images/contact-us.png'}
-        altText={'Real estate office'}
+        image={"/images/contact-us.png"}
+        altText={"Real estate office"}
         height='md'
       />
       <section className='pt-10 pb-5'>

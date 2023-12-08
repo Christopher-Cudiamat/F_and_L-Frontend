@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import Container from '@/components/Atoms/Container/Container';
-import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
-import React from 'react';
-import Reveal from 'react-awesome-reveal';
-import { keyframes } from '@emotion/react';
+import Container from "@/components/Atoms/Container/Container";
+import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
+import React from "react";
+import Reveal from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
 
 interface SectionTitleProps {
   title: string;

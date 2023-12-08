@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import Overlay from '@/components/Atoms/Overlay/Overlay';
-import { MapPinIcon } from '@heroicons/react/24/outline';
-import { Fade } from 'react-awesome-reveal';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import Overlay from "@/components/Atoms/Overlay/Overlay";
+import { MapPinIcon } from "@heroicons/react/24/outline";
+import { Fade } from "react-awesome-reveal";
 
 interface ILocationCardProps {
   slug: string;
@@ -23,7 +23,7 @@ const LocationCard: React.FC<ILocationCardProps> = ({ slug, location, image, ind
     >
       <li
         className={`${
-          index % 2 === 0 || index % 3 === 0 ? 'md:row-span-3' : 'md:row-span-2'
+          index % 2 === 0 || index % 3 === 0 ? "md:row-span-3" : "md:row-span-2"
         } h-[300px] md:h-auto md:col-span-1 mb-4 group/location-card overflow-hidden relative rounded-md shadow-lg hover:shadow-xl duration-200`}
       >
         <Link href={`property-location/${slug}`}>

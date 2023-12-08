@@ -1,69 +1,69 @@
-import { FaLinkedin, FaFacebookSquare } from 'react-icons/fa';
-import { RiInstagramFill } from 'react-icons/ri';
+import { FaLinkedin, FaFacebookSquare } from "react-icons/fa";
+import { RiInstagramFill } from "react-icons/ri";
 
 export const footer = {
   company: {
-    logo: 'F&L Real Estate',
-    tagline: 'Dream Homes Delivered',
+    logo: "F&L Real Estate",
+    tagline: "Dream Homes Delivered",
   },
   properties: {
-    title: 'Properties',
+    title: "Properties",
     links: [
       {
-        label: 'All Properties',
-        link: '/properties',
+        label: "All Properties",
+        link: "/properties",
       },
       {
-        label: 'Condominium',
-        link: '/property-category/condominium',
+        label: "Condominium",
+        link: "/property-category/condominium",
       },
       {
-        label: 'House and Lot',
-        link: '/property-category/house-and-lot',
+        label: "House and Lot",
+        link: "/property-category/house-and-lot",
       },
       {
-        label: 'Residential Office',
-        link: '/property-category/residential-office',
+        label: "Residential Office",
+        link: "/property-category/residential-office",
       },
       {
-        label: 'Prime Locations',
-        link: '/property-location',
+        label: "Prime Locations",
+        link: "/property-location",
       },
     ],
   },
   contacts: {
-    title: 'Company',
+    title: "Company",
     links: [
       {
-        label: 'About Us',
-        link: '/about-us',
+        label: "About Us",
+        link: "/about-us",
       },
       {
-        label: 'Contact Us',
-        link: '/contact-us',
+        label: "Contact Us",
+        link: "/contact-us",
       },
     ],
   },
   socials: {
-    title: 'Follow us',
+    title: "Follow us",
     links: [
       {
-        link: '/1',
+        link: "/1",
         icon: FaFacebookSquare,
       },
       {
-        link: '/2',
+        link: "/2",
         icon: RiInstagramFill,
       },
       {
-        link: '/3',
+        link: "/3",
         icon: FaLinkedin,
       },
     ],
   },
   disclaimer: {
-    title: 'Disclaimer',
-    text: 'To promote SMDC Projects and increase Sales and Marketing of SMDC Condominiums, all information stated are intended to give a general overview of the project only and does not constitute any part of an offer or contract. www.smdc.com is the official website of SMDC.',
+    title: "Disclaimer",
+    text: "To promote SMDC Projects and increase Sales and Marketing of SMDC Condominiums, all information stated are intended to give a general overview of the project only and does not constitute any part of an offer or contract. www.smdc.com is the official website of SMDC.",
   },
-  copyright: 'Copyright 2024 F&L Real Estate. All Rights Reserved.',
+  copyright: "Copyright 2024 F&L Real Estate. All Rights Reserved.",
 };

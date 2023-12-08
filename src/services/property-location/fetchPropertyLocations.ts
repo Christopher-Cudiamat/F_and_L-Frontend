@@ -1,8 +1,8 @@
-import qs from 'qs';
-import { type ICmsItem } from '../condosForSale/types';
+import qs from "qs";
+import { type ICmsItem } from "../condosForSale/types";
 
 const CMS_URL = process.env.CMS_URL;
-export const CACHE_TAG_PROPERTY_LOCATION = 'property-location';
+export const CACHE_TAG_PROPERTY_LOCATION = "property-location";
 
 export interface ILocation {
   slug: string;
@@ -13,8 +13,8 @@ export interface ILocation {
 export async function fetchPropertyLocations(pageSize: number): Promise<any> {
   const url = `${CMS_URL}/api/property-locations?${qs.stringify(
     {
-      fields: ['slug', 'location'],
-      populate: { image: { fields: ['url'] } },
+      fields: ["slug", "location"],
+      populate: { image: { fields: ["url"] } },
       pagination: { pageSize },
     },
     { encodeValuesOnly: true }

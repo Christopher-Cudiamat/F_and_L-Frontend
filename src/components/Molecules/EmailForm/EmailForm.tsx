@@ -1,22 +1,22 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { Formik } from 'formik';
-import { EmailFormSchema } from './emailFormSchema';
-import Input from '@/components/Atoms/Input/Input';
-import Textarea from '@/components/Atoms/Textarea/TextArea';
-import Button from '@/components/Atoms/Button/Button';
+import React, { useState } from "react";
+import { Formik } from "formik";
+import { EmailFormSchema } from "./emailFormSchema";
+import Input from "@/components/Atoms/Input/Input";
+import Textarea from "@/components/Atoms/Textarea/TextArea";
+import Button from "@/components/Atoms/Button/Button";
 
 const EmailForm: React.FC = () => {
   const [isSubmitted, setIsSubmited] = useState(false);
   return (
     <Formik
       initialValues={{
-        firstName: '',
-        lastName: '',
-        email: '',
-        subject: '',
-        message: '',
+        firstName: "",
+        lastName: "",
+        email: "",
+        subject: "",
+        message: "",
         access_key: process.env.NEXT_PUBLIC_WEB_3_FORMS_API_KEY,
       }}
       validateOnBlur={false}
@@ -26,16 +26,15 @@ const EmailForm: React.FC = () => {
         const json = JSON.stringify(values);
 
         const response = await fetch(process.env.NEXT_PUBLIC_WEB_3_FORM_URL as string, {
-          method: 'POST',
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
+            "Content-Type": "application/json",
+            Accept: "application/json",
           },
           body: json,
         });
         const result = await response.json();
         if (result.success) {
-          console.log(result);
           setSubmitting(false);
           setIsSubmited(true);
           resetForm();
@@ -110,7 +109,7 @@ const EmailForm: React.FC = () => {
               isLoading={isSubmitting}
               className='lg:w-40 mt-10 text-center uppercase'
             >
-              {!isSubmitted ? 'Submit' : 'Submitted'}
+              {!isSubmitted ? "Submit" : "Submitted"}
             </Button>
           </div>
         </form>

@@ -1,13 +1,13 @@
-import React from 'react';
-import { type ICondos } from '@/services/condosForSale/types';
-import PropertyCard from '@/components/Molecules/PropertyCard/PropertyCard.component';
-import CardsContainer from '@/components/Molecules/CardsContainer/CardsContainer';
-import { getCondosByCategory } from '@/services/condosForSale/getCondosByCategory';
+import React from "react";
+import { type ICondos } from "@/services/condosForSale/types";
+import PropertyCard from "@/components/Molecules/PropertyCard/PropertyCard.component";
+import CardsContainer from "@/components/Molecules/CardsContainer/CardsContainer";
+import { getCondosByCategory } from "@/services/condosForSale/getCondosByCategory";
 // import { categories } from '@/components/Molecules/CategoryFilter/CategoryFilter';
-import Hero from '@/components/Molecules/Hero/Hero';
-import { slugParser } from '@/utils/slugParser';
-import ContactUsBanner from '@/components/Molecules/ContactUsBanner/ContactUsBanner';
-import { categories } from '@/components/Molecules/CategoryFilter/config';
+import Hero from "@/components/Molecules/Hero/Hero";
+import { slugParser } from "@/utils/slugParser";
+import ContactUsBanner from "@/components/Molecules/ContactUsBanner/ContactUsBanner";
+import { categories } from "@/components/Molecules/CategoryFilter/config";
 
 interface IPropertyCategoryPageParams {
   slug: string;
@@ -29,7 +29,7 @@ const PropertyCategoryPage: React.FC<IPropertyCategoryPageProps> = async ({ para
       <Hero
         title={slugParser(slug)}
         subtitle='Discover all available properties for you'
-        image={'/images/property-categories-hero.png'}
+        image={"/images/property-categories-hero.png"}
         altText='Property'
         height='md'
       />

@@ -1,8 +1,8 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import React from 'react';
-import Container from '@/components/Atoms/Container/Container';
-import { properties } from './config';
+import Link from "next/link";
+import Image from "next/image";
+import React from "react";
+import Container from "@/components/Atoms/Container/Container";
+import { properties } from "./config";
 
 interface IPropertyList {
   activeProperty: string;

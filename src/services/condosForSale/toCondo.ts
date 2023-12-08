@@ -1,4 +1,4 @@
-import { type ICondos, type ICmsItem } from './types';
+import { type ICondos, type ICmsItem } from "./types";
 
 export function toCondo(item: ICmsItem): ICondos {
   const { attributes } = item;
@@ -9,7 +9,8 @@ export function toCondo(item: ICmsItem): ICondos {
     description: attributes.description,
     status: attributes.status,
     nearestLandmark: attributes.nearestLandmark,
-    price: attributes.price,
+    minPrice: attributes.minPrice,
+    maxPrice: attributes.maxPrice,
     category: attributes.category,
     image: new URL(attributes.image.data.attributes.url, process.env.CMS_URL).href,
   };

@@ -4,7 +4,7 @@
   "semi": true,
   "arrowParens": "always",
   "endOfLine": "lf",
-  "singleQuote": true,
+  "singleQuote": false,
   "printWidth": 100,
   "bracketSameLine": false,
   "jsxSingleQuote": true,

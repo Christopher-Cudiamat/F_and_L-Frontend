@@ -1,28 +1,28 @@
-import React from 'react';
-import Image from 'next/image';
-import Overlay from '@/components/Atoms/Overlay/Overlay';
-import Container from '@/components/Atoms/Container/Container';
+import React from "react";
+import Image from "next/image";
+import Overlay from "@/components/Atoms/Overlay/Overlay";
+import Container from "@/components/Atoms/Container/Container";
 
 interface IHeroProps {
   title: string;
   subtitle?: string;
   image?: string;
   altText: string;
-  height?: 'sm' | 'md' | 'lg' | 'full';
+  height?: "sm" | "md" | "lg" | "full";
 }
 
 const Hero: React.FC<IHeroProps> = ({
   title,
   subtitle,
-  image = '/images/property-categories-hero.png',
+  image = "/images/property-categories-hero.png",
   altText,
-  height = 'lg',
+  height = "lg",
 }) => {
   const heightValue = {
-    sm: 'h-[250px]',
-    md: 'h-[350px]',
-    lg: 'h-[550px]',
-    full: 'h-[100%]',
+    sm: "h-[250px]",
+    md: "h-[350px]",
+    lg: "h-[550px]",
+    full: "h-[100%]",
   };
 
   return (
@@ -38,7 +38,7 @@ const Hero: React.FC<IHeroProps> = ({
       <Container className='absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:max-w-[640px] 2xl:max-w-[700px] text-white text-center'>
         <h1
           className={`${
-            height === 'full' || height === 'lg' ? 'font-bold' : 'font-semibold'
+            height === "full" || height === "lg" ? "font-bold" : "font-semibold"
           } text-4xl lg:text-6xl mb-4`}
         >
           {title}

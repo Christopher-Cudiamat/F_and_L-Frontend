@@ -1,8 +1,8 @@
-import React from 'react';
-import { Menu, Transition } from '@headlessui/react';
-import Link from 'next/link';
-import { type INavItem, type INavItems, type ISubLink } from './Header';
-import { Bars3Icon, ChevronRightIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import React from "react";
+import { Menu, Transition } from "@headlessui/react";
+import Link from "next/link";
+import { type INavItem, type INavItems, type ISubLink } from "./Header";
+import { Bars3Icon, ChevronRightIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const MobileMenu: React.FC<INavItems> = ({ navItems }) => {
   return (
@@ -52,7 +52,7 @@ const MobileMenu: React.FC<INavItems> = ({ navItems }) => {
                   <div className='flex justify-between items-center py-2'>
                     {item.label}
                     <ChevronRightIcon
-                      className={`${index === 0 ? 'hidden' : 'flex'} w-5 text-white`}
+                      className={`${index === 0 ? "hidden" : "flex"} w-5 text-white`}
                     />
                   </div>
                   {item.subLinks && (

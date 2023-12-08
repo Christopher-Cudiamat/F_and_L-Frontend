@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Container from '@/components/Atoms/Container/Container';
-import Link from 'next/link';
-import { Fade } from 'react-awesome-reveal';
-import { categories } from './config';
+import React from "react";
+import Container from "@/components/Atoms/Container/Container";
+import Link from "next/link";
+import { Fade } from "react-awesome-reveal";
+import { categories } from "./config";
 
 interface ICategories {
   slug: string;

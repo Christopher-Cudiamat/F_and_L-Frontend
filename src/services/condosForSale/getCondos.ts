@@ -1,6 +1,6 @@
-import { fetchCondo } from './fetchCondo';
-import { toCondo } from './toCondo';
-import { type ICondosList } from './types';
+import { fetchCondo } from "./fetchCondo";
+import { toCondo } from "./toCondo";
+import { type ICondosList } from "./types";
 
 // Retrieve all condos for sale
 export const getCondos = async (
@@ -8,8 +8,17 @@ export const getCondos = async (
   page: number = 1
 ): Promise<ICondosList | null> => {
   const { data, meta } = await fetchCondo({
-    fields: ['slug', 'title', 'description', 'nearestLandmark', 'status', 'price', 'category'],
-    populate: { image: { fields: ['url'] } },
+    fields: [
+      "slug",
+      "title",
+      "description",
+      "nearestLandmark",
+      "status",
+      "maxPrice",
+      "minPrice",
+      "category",
+    ],
+    populate: { image: { fields: ["url"] } },
     pagination: { pageSize, page },
   });
 

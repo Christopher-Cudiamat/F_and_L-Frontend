@@ -1,21 +1,21 @@
-import React from 'react';
+import React from "react";
 import {
   type ILocation,
   fetchPropertyLocations,
-} from '@/services/property-location/fetchPropertyLocations';
-import { getFeaturedCondos } from '@/services/condosForSale/getFeaturedCondos';
-import { type ICondos } from '@/services/condosForSale/types';
-import Link from 'next/dist/client/link';
-import { ArrowLongDownIcon } from '@heroicons/react/24/outline';
-import SectionTitle from '@/components/Molecules/SectionTitle/SectionTitle';
-import LocationCard from '@/components/Molecules/LocationCard/LocationCard';
-import PropertyCard from '@/components/Molecules/PropertyCard/PropertyCard.component';
-import CardsContainer from '@/components/Molecules/CardsContainer/CardsContainer';
-import CategoryFilter from '@/components/Molecules/CategoryFilter/CategoryFilter';
-import ContactUsBanner from '@/components/Molecules/ContactUsBanner/ContactUsBanner';
-import AboutUsBanner from '@/components/Molecules/AboutUsBanner/AboutUsBanner';
-import Slider from '@/components/Molecules/Slider/Slider';
-import Container from '@/components/Atoms/Container/Container';
+} from "@/services/property-location/fetchPropertyLocations";
+import { getFeaturedCondos } from "@/services/condosForSale/getFeaturedCondos";
+import { type ICondos } from "@/services/condosForSale/types";
+import Link from "next/dist/client/link";
+import { ArrowLongDownIcon } from "@heroicons/react/24/outline";
+import SectionTitle from "@/components/Molecules/SectionTitle/SectionTitle";
+import LocationCard from "@/components/Molecules/LocationCard/LocationCard";
+import PropertyCard from "@/components/Molecules/PropertyCard/PropertyCard.component";
+import CardsContainer from "@/components/Molecules/CardsContainer/CardsContainer";
+import CategoryFilter from "@/components/Molecules/CategoryFilter/CategoryFilter";
+import ContactUsBanner from "@/components/Molecules/ContactUsBanner/ContactUsBanner";
+import AboutUsBanner from "@/components/Molecules/AboutUsBanner/AboutUsBanner";
+import Slider from "@/components/Molecules/Slider/Slider";
+import Container from "@/components/Atoms/Container/Container";
 
 const HomePage: React.FC = async () => {
   const featuredLocations = await fetchPropertyLocations(8);

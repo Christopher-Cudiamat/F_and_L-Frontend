@@ -1,15 +1,16 @@
-import React from 'react';
-import { type ICondos } from '@/services/condosForSale/types';
-import Link from 'next/link';
-import Image from 'next/image';
-import Overlay from '@/components/Atoms/Overlay/Overlay';
+import React from "react";
+import { type ICondos } from "@/services/condosForSale/types";
+import Link from "next/link";
+import Image from "next/image";
+import Overlay from "@/components/Atoms/Overlay/Overlay";
 
 const PropertyCard: React.FC<ICondos> = ({
   slug,
   title,
   description,
   nearestLandmark,
-  price,
+  minPrice,
+  maxPrice,
   status,
   image,
   category,
@@ -32,7 +33,7 @@ const PropertyCard: React.FC<ICondos> = ({
           <ul className='flex gap-x-1'>
             <li
               className={`text-xs font-normal absolute top-3 right-3 rounded-2xl py-2 px-3 text-white
-            ${!status.includes('Sold-out') ? 'bg-blue-800' : 'bg-red-500'} 
+            ${!status.includes("Sold-out") ? "bg-blue-800" : "bg-red-500"} 
             `}
             >
               {status}
@@ -40,7 +41,9 @@ const PropertyCard: React.FC<ICondos> = ({
           </ul>
           <div className='absolute bottom-4 left-4 max-w-[80%]'>
             <h6 className='text-yellow-300 text-sm font-semibold uppercase'>{category}</h6>
-            <p className='text-white text-base'>{price}</p>
+            {minPrice && maxPrice && (
+              <p className='text-white text-base'>{`Php ${minPrice.toLocaleString()} - ${maxPrice.toLocaleString()}`}</p>
+            )}
           </div>
         </div>
         <div className='px-4 pt-6 pb-8'>

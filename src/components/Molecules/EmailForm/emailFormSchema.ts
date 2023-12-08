@@ -1,5 +1,5 @@
-import * as Yup from 'yup';
-import { validations } from './validations';
+import * as Yup from "yup";
+import { validations } from "./validations";
 
 export const EmailFormSchema = Yup.object().shape({
   firstName: Yup.string()
@@ -21,5 +21,5 @@ export const EmailFormSchema = Yup.object().shape({
     .min(validations.message.minCharacters, validations.message.minError)
     .max(validations.message.maxCharacters, validations.message.maxError)
     .required(validations.message.requiredError),
-  access_key: Yup.string().required('Required'),
+  access_key: Yup.string().required("Required"),
 });

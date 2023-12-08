@@ -1,14 +1,14 @@
-import React from 'react';
-import { getCondos } from '@/services/condosForSale/getCondos';
-import { type ICondos } from '@/services/condosForSale/types';
-import PropertyCard from '@/components/Molecules/PropertyCard/PropertyCard.component';
-import Pagination from '@/components/Molecules/Pagination/Pagination';
-import CardsContainer from '@/components/Molecules/CardsContainer/CardsContainer';
-import Hero from '@/components/Molecules/Hero/Hero';
-import ContactUsBanner from '@/components/Molecules/ContactUsBanner/ContactUsBanner';
-import SectionTitle from '@/components/Molecules/SectionTitle/SectionTitle';
-import CategoryFilter from '@/components/Molecules/CategoryFilter/CategoryFilter';
-import Filters from '@/components/Molecules/Filters/Filters';
+import React from "react";
+import { getCondos } from "@/services/condosForSale/getCondos";
+import { type ICondos } from "@/services/condosForSale/types";
+import PropertyCard from "@/components/Molecules/PropertyCard/PropertyCard.component";
+import Pagination from "@/components/Molecules/Pagination/Pagination";
+import CardsContainer from "@/components/Molecules/CardsContainer/CardsContainer";
+import Hero from "@/components/Molecules/Hero/Hero";
+import ContactUsBanner from "@/components/Molecules/ContactUsBanner/ContactUsBanner";
+import SectionTitle from "@/components/Molecules/SectionTitle/SectionTitle";
+import CategoryFilter from "@/components/Molecules/CategoryFilter/CategoryFilter";
+import Filters from "@/components/Molecules/Filters/Filters";
 
 interface ISearchParams {
   searchParams: { page?: string };

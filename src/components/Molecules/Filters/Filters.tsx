@@ -1,9 +1,9 @@
-import React from 'react';
-import { locations } from '@/utils/locations';
-import { propertyStatus } from '@/utils/propertyStatus';
-import Link from 'next/link';
-import Container from '@/components/Atoms/Container/Container';
-import Select from '@/components/Atoms/Select/Select';
+import React from "react";
+import { locations } from "@/utils/locations";
+import { propertyStatus } from "@/utils/propertyStatus";
+import Link from "next/link";
+import Container from "@/components/Atoms/Container/Container";
+import Select from "@/components/Atoms/Select/Select";
 
 const Filters: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const Filters: React.FC = () => {
         <Select items={locations} />
         <Select items={propertyStatus} />
         <Link
-          href={''}
+          href={""}
           className='bg-blue-600 text-white w-full text-center py-3 px-8 mt-4 md:mt-0 rounded-md'
         >
           Search

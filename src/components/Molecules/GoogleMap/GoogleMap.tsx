@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import GoogleMapReact from 'google-map-react';
+import GoogleMapReact from "google-map-react";
 
 // const AnyReactComponent = ({ text }: { text: string }) => <div>{text}</div>;
 
@@ -17,7 +17,7 @@ const GoogleMap: React.FC = () => {
     // Important! Always set the container height explicitly
     <div className='h-[700px] lg:h-[500px] w-full xl:w-[1300px] xl:px-4 mx-auto rounded-md'>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: 'AIzaSyARD2gmektqE4cVBX5SPma_iYAIRklnXmY' }}
+        bootstrapURLKeys={{ key: "AIzaSyARD2gmektqE4cVBX5SPma_iYAIRklnXmY" }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
       >

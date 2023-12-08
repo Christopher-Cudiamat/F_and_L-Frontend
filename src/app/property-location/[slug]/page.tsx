@@ -1,12 +1,12 @@
-import React from 'react';
-import { getCondosByLocation } from '@/services/condosForSale/getCondosByLocation';
-import { getSlugs } from '@/services/condosForSale/getSlugs';
-import { type ICondos } from '@/services/condosForSale/types';
-import PropertyCard from '@/components/Molecules/PropertyCard/PropertyCard.component';
-import CardsContainer from '@/components/Molecules/CardsContainer/CardsContainer';
-import Hero from '@/components/Molecules/Hero/Hero';
-import { slugParser } from '@/utils/slugParser';
-import ContactUsBanner from '@/components/Molecules/ContactUsBanner/ContactUsBanner';
+import React from "react";
+import { getCondosByLocation } from "@/services/condosForSale/getCondosByLocation";
+import { getSlugs } from "@/services/condosForSale/getSlugs";
+import { type ICondos } from "@/services/condosForSale/types";
+import PropertyCard from "@/components/Molecules/PropertyCard/PropertyCard.component";
+import CardsContainer from "@/components/Molecules/CardsContainer/CardsContainer";
+import Hero from "@/components/Molecules/Hero/Hero";
+import { slugParser } from "@/utils/slugParser";
+import ContactUsBanner from "@/components/Molecules/ContactUsBanner/ContactUsBanner";
 
 interface IPropertyLocationPageParams {
   slug: string;
@@ -28,7 +28,7 @@ const PropertyLocationPage: React.FC<IPropertyLocationPageProps> = async ({ para
     <React.Fragment>
       <Hero
         title={slugParser(slug)}
-        image={'/images/property-locations-hero.png'}
+        image={"/images/property-locations-hero.png"}
         altText='Property locations'
         height='md'
       />

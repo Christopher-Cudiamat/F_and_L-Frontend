@@ -1,15 +1,15 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Open_Sans } from 'next/font/google';
-import Footer from '@/components/Molecules/Footer/Footer';
-import Header from '@/components/Molecules/Header/Header';
-import { footer } from '@/components/Molecules/Footer/config';
+import "./globals.css";
+import type { Metadata } from "next";
+import { Open_Sans } from "next/font/google";
+import Footer from "@/components/Molecules/Footer/Footer";
+import Header from "@/components/Molecules/Header/Header";
+import { footer } from "@/components/Molecules/Footer/config";
 
-const inter = Open_Sans({ subsets: ['latin'] });
+const inter = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Real-Estate',
-  description: 'Real estate website',
+  title: "Real-Estate",
+  description: "Real estate website",
 };
 
 interface IRootLayout {

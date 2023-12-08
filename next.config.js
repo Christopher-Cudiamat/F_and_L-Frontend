@@ -3,10 +3,10 @@ module.exports = {
   images: {
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '1337',
-        pathname: '/uploads/**',
+        protocol: "http",
+        hostname: "localhost",
+        port: "1337",
+        pathname: "/uploads/**",
       },
       toRemotePattern(process.env.CMS_IMAGE_PATTERN),
     ],
@@ -16,7 +16,7 @@ module.exports = {
 function toRemotePattern(urlString) {
   const url = new URL(urlString);
   return {
-    protocol: url.protocol.replace(':', ''),
+    protocol: url.protocol.replace(":", ""),
     hostname: url.hostname,
     port: url.port,
     pathname: url.pathname,

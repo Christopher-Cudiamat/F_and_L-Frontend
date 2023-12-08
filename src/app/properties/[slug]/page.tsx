@@ -1,16 +1,16 @@
-import React from 'react';
-import { notFound } from 'next/navigation';
-import type { Metadata } from 'next';
-import { getCondo } from '@/services/condosForSale/getCondo';
-import { getSlugs } from '@/services/condosForSale/getSlugs';
-import Image from 'next/image';
-import { CurrencyDollarIcon, HomeIcon, KeyIcon, MapPinIcon } from '@heroicons/react/24/outline';
-import Container from '@/components/Atoms/Container/Container';
-import ContactUsBanner from '@/components/Molecules/ContactUsBanner/ContactUsBanner';
-import Gallery from '@/components/Molecules/Gallery/Gallery';
-import GoogleMap from '@/components/Molecules/GoogleMap/GoogleMap';
-import SectionTitle from '@/components/Molecules/SectionTitle/SectionTitle';
-import PropertyList from '@/components/Molecules/PropetyList/PropertyList';
+import React from "react";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import { getCondo } from "@/services/condosForSale/getCondo";
+import { getSlugs } from "@/services/condosForSale/getSlugs";
+import Image from "next/image";
+import { CurrencyDollarIcon, HomeIcon, KeyIcon, MapPinIcon } from "@heroicons/react/24/outline";
+import Container from "@/components/Atoms/Container/Container";
+import ContactUsBanner from "@/components/Molecules/ContactUsBanner/ContactUsBanner";
+import Gallery from "@/components/Molecules/Gallery/Gallery";
+import GoogleMap from "@/components/Molecules/GoogleMap/GoogleMap";
+import SectionTitle from "@/components/Molecules/SectionTitle/SectionTitle";
+import PropertyList from "@/components/Molecules/PropetyList/PropertyList";
 
 interface ICondoForSalePageParams {
   slug: string;
@@ -72,7 +72,7 @@ const PropertyPage: React.FC<ICondoForSalePageProps> = async ({ params: { slug }
           <p className='text-base text-slate-700'>{condo.description}</p>
         </Container>
       </section>
-      <section className='bg-white text-white py-10 xl:max-w-[1300px] xl:px-4 mx-auto'>
+      <section className='bg-white text-white py-10 xl:max-w-[1300px] mx-auto'>
         <Container className='md:grid md:grid-cols-2 xl:grid-cols-4 bg-blue-800 py-10 md:py-16 xl:py-20 flex flex-col gap-y-8 lg:rounded-lg'>
           <div className='flex gap-x-2 items-start'>
             <MapPinIcon className='w-12 text-blue-400' />
@@ -85,7 +85,7 @@ const PropertyPage: React.FC<ICondoForSalePageProps> = async ({ params: { slug }
             <CurrencyDollarIcon className='w-12 text-blue-400' />
             <div className='flex flex-col'>
               <h2 className='text-lg font-semibold mb-1.5'>PRICE RANGE</h2>
-              <p className='text-base'>{condo.price}</p>
+              <p className='text-base'>{`Php ${condo.minPrice.toLocaleString()} - ${condo.maxPrice.toLocaleString()}`}</p>
             </div>
           </div>
           <div className='flex gap-x-2 items-start'>
@@ -120,7 +120,12 @@ const PropertyPage: React.FC<ICondoForSalePageProps> = async ({ params: { slug }
           />
         </Container>
         <div className='xl:max-w-[1300px] xl-px-8 mx-auto'>
-          <Gallery slides={condo.gallery} />
+          <Gallery
+            amenitiesDescription={condo.amenitiesDescription}
+            lobbyDescription={condo.lobbyDescription}
+            unitDescription={condo.unitDescription}
+            slides={condo.gallery}
+          />
         </div>
       </section>
       <section className='bg-white pt-5 pb-10'>

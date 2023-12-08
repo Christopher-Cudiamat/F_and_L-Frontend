@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import Container from '@/components/Atoms/Container/Container';
-import React from 'react';
-import { Fade } from 'react-awesome-reveal';
+import Container from "@/components/Atoms/Container/Container";
+import React from "react";
+import { Fade } from "react-awesome-reveal";
 
 interface ICardsContainerProps {
   children: React.ReactNode;

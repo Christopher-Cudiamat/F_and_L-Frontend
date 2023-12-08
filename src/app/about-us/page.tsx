@@ -1,11 +1,11 @@
-import React from 'react';
-import { data } from './config';
-import Image from 'next/image';
-import Hero from '@/components/Molecules/Hero/Hero';
-import SectionTitle from '@/components/Molecules/SectionTitle/SectionTitle';
-import Container from '@/components/Atoms/Container/Container';
-import ContactUsBanner from '@/components/Molecules/ContactUsBanner/ContactUsBanner';
-import Testimonials from '@/components/Molecules/Testimonials/Testimonials';
+import React from "react";
+import { data } from "./config";
+import Image from "next/image";
+import Hero from "@/components/Molecules/Hero/Hero";
+import SectionTitle from "@/components/Molecules/SectionTitle/SectionTitle";
+import Container from "@/components/Atoms/Container/Container";
+import ContactUsBanner from "@/components/Molecules/ContactUsBanner/ContactUsBanner";
+import Testimonials from "@/components/Molecules/Testimonials/Testimonials";
 
 const AboutUsPage: React.FC<any> = () => {
   return (

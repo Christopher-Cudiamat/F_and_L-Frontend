@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import useEmblaCarousel from 'embla-carousel-react';
-import Image from 'next/image';
-import { ArrowLongLeftIcon, ArrowLongRightIcon } from '@heroicons/react/24/outline';
-import { BiSolidQuoteAltLeft } from 'react-icons/bi';
-import Container from '@/components/Atoms/Container/Container';
-import Stars from './Stars/Stars';
+import useEmblaCarousel from "embla-carousel-react";
+import Image from "next/image";
+import { ArrowLongLeftIcon, ArrowLongRightIcon } from "@heroicons/react/24/outline";
+import { BiSolidQuoteAltLeft } from "react-icons/bi";
+import Container from "@/components/Atoms/Container/Container";
+import Stars from "./Stars/Stars";
 
 interface ITestimonial {
   image: string;
@@ -19,8 +19,8 @@ interface ITestimonials {
 }
 
 const Gallery: React.FC<ITestimonials> = ({ testimonials }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'center' });
-  const arrowStlye = 'z-50 text-slate-800/60 hover:text-slate-800/80 duration-150 w-16';
+  const [emblaRef, emblaApi] = useEmblaCarousel({ align: "center" });
+  const arrowStlye = "z-50 text-slate-800/60 hover:text-slate-800/80 duration-150 w-16";
 
   const scrollPrev = (): void => {
     if (emblaApi) emblaApi.scrollPrev();

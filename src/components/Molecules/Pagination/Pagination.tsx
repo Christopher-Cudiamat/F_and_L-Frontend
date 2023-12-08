@@ -1,6 +1,6 @@
-import Container from '@/components/Atoms/Container/Container';
-import Link from 'next/link';
-import React from 'react';
+import Container from "@/components/Atoms/Container/Container";
+import Link from "next/link";
+import React from "react";
 
 interface PaginationProps {
   page: number;
@@ -33,8 +33,8 @@ const Pagination: React.FC<PaginationProps> = ({ page, pageCount, path }) => {
                     href={`${path}?page=${item}`}
                     className={`border ${
                       item === page
-                        ? 'bg-yellow-400 border-yellow-400'
-                        : 'bg-white border-slate-800'
+                        ? "bg-yellow-400 border-yellow-400"
+                        : "bg-white border-slate-800"
                     } text-slate-800 py-1.5 px-3 rounded-sm hover:bg-yellow-400 hover:border-yellow-400 duration-100`}
                   >
                     {item}

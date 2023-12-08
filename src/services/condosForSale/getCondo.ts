@@ -1,30 +1,34 @@
-import { fetchCondo } from './fetchCondo';
-import { toCondo } from './toCondo';
-import { type ICondo } from './types';
+import { fetchCondo } from "./fetchCondo";
+import { toCondo } from "./toCondo";
+import { type ICondo } from "./types";
 
 // Retrieve a single for sale
 export const getCondo = async (slug: string): Promise<ICondo | null> => {
   const { data } = await fetchCondo({
     filters: { slug: { $eq: slug } },
     fields: [
-      'slug',
-      'title',
-      'description',
-      'location',
-      'price',
-      'description',
-      'location',
-      'amenities',
-      'units',
-      'address',
-      'status',
-      'nearestLandmark',
-      'category',
+      "slug",
+      "title",
+      "description",
+      "location",
+      "maxPrice",
+      "minPrice",
+      "description",
+      "location",
+      "amenities",
+      "units",
+      "address",
+      "status",
+      "nearestLandmark",
+      "category",
+      "amenitiesDescription",
+      "unitDescription",
+      "lobbyDescription",
     ],
     populate: {
-      gallery: { fields: ['url'] },
-      image: { fields: ['url'] },
-      logo: { fields: ['url'] },
+      gallery: { fields: ["url"] },
+      image: { fields: ["url"] },
+      logo: { fields: ["url"] },
     },
     pagination: { pageSize: 1, withCount: false },
   });
@@ -42,6 +46,9 @@ export const getCondo = async (slug: string): Promise<ICondo | null> => {
     amenities: item.attributes.amenities,
     units: item.attributes.units,
     logo: new URL(item.attributes.logo.data.attributes.url, process.env.CMS_URL).href,
+    amenitiesDescription: item.attributes.amenitiesDescription,
+    unitDescription: item.attributes.unitDescription,
+    lobbyDescription: item.attributes.lobbyDescription,
     ...toCondo(item),
   };
 };

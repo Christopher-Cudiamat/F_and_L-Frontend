@@ -1,27 +1,27 @@
-'use client';
+"use client";
 
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
-import Image from 'next/image';
-import './slider.css';
-import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/24/outline';
-import Overlay from '@/components/Atoms/Overlay/Overlay';
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import Image from "next/image";
+import "./slider.css";
+import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
+import Overlay from "@/components/Atoms/Overlay/Overlay";
 
 const slides = [
   {
     id: 1,
-    image: '/images/home-hero-1.png',
-    altText: 'family real estate',
+    image: "/images/home-hero-1.png",
+    altText: "family real estate",
   },
   {
     id: 2,
-    image: '/images/home-hero-2.png',
-    altText: '',
+    image: "/images/home-hero-2.png",
+    altText: "",
   },
   {
     id: 3,
-    image: '/images/home-hero-3.png',
-    altText: '',
+    image: "/images/home-hero-3.png",
+    altText: "",
   },
 ];
 
