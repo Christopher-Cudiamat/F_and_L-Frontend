@@ -9,7 +9,7 @@ import Button from "@/components/Atoms/Button/Button";
 
 const AboutUsBanner: React.FC = () => {
   return (
-    <section className='py-14 lg:py-20 bg-white'>
+    <section className='relative py-14 lg:py-20 bg-white'>
       <Container className='grid grid-cols-1'>
         <div className='flex flex-col items-center lg:items-start mb-10'>
           <div className='grid grid-cols-1 lg:grid-cols-2 lg:gap-x-12'>

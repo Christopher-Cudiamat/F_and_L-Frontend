@@ -48,6 +48,7 @@ const HomePage: React.FC = async () => {
       >
         <SectionTitle
           title='Property Categories'
+          subtitle='Find the best home for your lifestyle.'
           withLine
         />
         <CategoryFilter />
@@ -55,6 +56,7 @@ const HomePage: React.FC = async () => {
       <section className='bg-slate-50 pt-10 pb-20'>
         <SectionTitle
           title='Featured properties'
+          subtitle='Selection of premium residential condominiums.'
           ButtonLabel='View all'
           href='/properties'
           withLine
@@ -68,9 +70,11 @@ const HomePage: React.FC = async () => {
           ))}
         </CardsContainer>
       </section>
+      <AboutUsBanner />
       <section className='bg-white py-10'>
         <SectionTitle
           title='Featured locations'
+          subtitle='Search for SMDC properties near your ideal location.'
           ButtonLabel='View all'
           href='/property-location'
           withLine
@@ -87,7 +91,6 @@ const HomePage: React.FC = async () => {
           </ul>
         </Container>
       </section>
-      <AboutUsBanner />
       <section>
         <ContactUsBanner
           image='/images/test-hero.jpg'

@@ -12,6 +12,7 @@ export function toProperty(item: ICmsItem): IProperties {
     minPrice: attributes.minPrice,
     maxPrice: attributes.maxPrice,
     category: attributes.category,
+    location: attributes.location,
     image: new URL(attributes.image.data.attributes.url, process.env.CMS_URL).href,
   };
 }

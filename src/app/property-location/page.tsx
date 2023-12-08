@@ -24,7 +24,7 @@ const PropertyLocationsPage: React.FC = async () => {
       />
       <section className='bg-white py-20'>
         <Container>
-          <ul className='flex flex-col md:grid md:grid-cols-3 md:grid-rows-5 md:grid-flow-row gap-x-4 h-auto md:h-[600px]'>
+          <ul className='flex flex-col md:grid md:grid-cols-4 md:grid-rows-5 md:grid-flow-row gap-x-4 h-auto md:h-[600px]'>
             {propertyLocations.map((item: ILocation, index: number) => (
               <LocationCard
                 key={item.slug}

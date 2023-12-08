@@ -12,9 +12,16 @@ interface ILocationCardProps {
   location: string;
   image: string;
   index: number;
+  propertyCount: string;
 }
 
-const LocationCard: React.FC<ILocationCardProps> = ({ slug, location, image, index }) => {
+const LocationCard: React.FC<ILocationCardProps> = ({
+  slug,
+  location,
+  image,
+  index,
+  propertyCount,
+}) => {
   return (
     <Fade
       direction='up'
@@ -39,7 +46,7 @@ const LocationCard: React.FC<ILocationCardProps> = ({ slug, location, image, ind
             <MapPinIcon className='text-white w-8 mr-2' />
             <div className='flex-col'>
               <p className='text-xl font-semibold'>{location}</p>
-              <p className='text-base'>31 Properties</p>
+              <p className='text-base'>{propertyCount}</p>
             </div>
           </div>
         </Link>
