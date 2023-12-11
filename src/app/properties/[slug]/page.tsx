@@ -11,6 +11,8 @@ import Gallery from "@/components/Molecules/Gallery/Gallery";
 import VicinityMap from "@/components/Molecules/VicinityMap/VicinityMap";
 import SectionTitle from "@/components/Molecules/SectionTitle/SectionTitle";
 import PropertyList from "@/components/Molecules/PropetyList/PropertyList";
+import Breadcrumbs from "@/components/Molecules/Breadcrumbs/Breadcrumbs";
+import ShareButtons from "@/components/Molecules/ShareButtons/ShareButtons";
 
 interface IPropertyForSalePageParams {
   slug: string;
@@ -55,14 +57,18 @@ const PropertyPage: React.FC<IPropertyForSalePageProps> = async ({ params: { slu
             className='w-full h-full duration-300 object-cover shadow-lg'
           />
         </div>
-        <Container className='py-8 text-slate-800 xl:pr-20'>
+        <Container className='pb-8 text-slate-800 xl:pr-20'>
+          <Breadcrumbs
+            className='mb-0 mt-0'
+            variant='dark'
+          />
           {condo.logo && (
             <Image
               src={condo.logo}
               width={500}
               height={500}
               alt={`${condo.title} logo`}
-              className='w-32 h-auto mb-10'
+              className='w-32 h-auto my-10'
             />
           )}
           <h1 className='text-4xl xl:text-6xl font-semibold mb-1'>{condo.title}</h1>
@@ -70,6 +76,7 @@ const PropertyPage: React.FC<IPropertyForSalePageProps> = async ({ params: { slu
             {condo.category}
           </p>
           <p className='text-base text-slate-700'>{condo.description}</p>
+          <ShareButtons />
         </Container>
       </section>
       <section className='bg-white text-white py-10 xl:max-w-[1300px] mx-auto'>

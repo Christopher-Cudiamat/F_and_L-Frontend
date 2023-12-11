@@ -10,18 +10,18 @@ import SectionTitle from "@/components/Molecules/SectionTitle/SectionTitle";
 import CategoryFilter from "@/components/Molecules/CategoryFilter/CategoryFilter";
 import Filters from "@/components/Molecules/Filters/Filters";
 import { parsePageParam } from "@/utils/parsePageParam";
-import Container from "@/components/Atoms/Container/Container";
-import { IoFilterSharp } from "react-icons/io5";
+import FilterResult from "@/components/Molecules/FilterResult/FilterResult";
 
 interface ISearchParams {
-  searchParams: { page?: string };
+  searchParams: { page?: string; location?: string; status?: string; order?: string };
 }
 
 const pageSize = 8;
 
 const PropertiesPage: React.FC<ISearchParams> = async ({ searchParams }) => {
   const page = parsePageParam(searchParams.page);
-  const results = await getProperties(pageSize, page);
+  const { location, status, order } = searchParams;
+  const results = await getProperties(pageSize, page, location, status, order);
 
   return (
     <React.Fragment>
@@ -34,13 +34,7 @@ const PropertiesPage: React.FC<ISearchParams> = async ({ searchParams }) => {
       />
       <Filters />
       <section className='bg-white pt-10 lg:pt-20 pb-10'>
-        <Container className='flex flex-col lg:flex-row items-center justify-center lg:justify-start text-lg md:text-xl gap-4 mb-10'>
-          <IoFilterSharp
-            size={50}
-            className='text-slate-700'
-          />
-          <p className='text-slate-500 text-center capitalize font-semibold'>All Properties</p>
-        </Container>
+        <FilterResult />
         <CardsContainer>
           {results?.condos.map((item: IProperties) => (
             <PropertyCard

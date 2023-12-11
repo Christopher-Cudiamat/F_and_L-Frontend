@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Overlay from "@/components/Atoms/Overlay/Overlay";
 import Container from "@/components/Atoms/Container/Container";
+import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 
 interface IHeroProps {
   title: string;
@@ -27,6 +28,9 @@ const Hero: React.FC<IHeroProps> = ({
 
   return (
     <div className={`relative w-full ${heightValue[height]}`}>
+      <Container className='relative z-[99999]'>
+        <Breadcrumbs className='absolute top-4 left-0' />
+      </Container>
       <Image
         src={image}
         alt={altText}

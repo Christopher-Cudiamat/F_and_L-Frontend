@@ -32,7 +32,7 @@ const Select: React.FC<ISelectProps> = ({ options, onChange, selected }) => {
               className={`w-4 mt-1 duration-150 ${open ? "rotate-180" : "rotate-0"}`}
             />
           </Listbox.Button>
-          <Listbox.Options className='absolute top-[45px] origin-top w-full z-10 shadow-lg'>
+          <Listbox.Options className='absolute top-[45px] origin-top w-full z-10 shadow-lg border-t-2 border-blue-800'>
             {options.map(
               (item: Option) =>
                 item.value !== "" && (

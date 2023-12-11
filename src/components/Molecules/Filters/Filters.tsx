@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
-import useIsClient from "@/hooks/useIsClient";
+import React, { useEffect, useState } from "react";
 import { locations } from "@/utils/locations";
 import { status } from "@/utils/status";
 import Link from "next/link";
@@ -10,11 +9,17 @@ import Select from "@/components/Atoms/Select/Select";
 const Filters: React.FC = () => {
   const [selectedLocation, setSelectedLocation] = useState(locations[0]);
   const [selectedStatus, setSelectedStatus] = useState(status[0]);
-  const isClient = useIsClient();
+  const [query, setQuery] = useState("/properties");
 
-  if (!isClient) {
-    return null;
-  }
+  useEffect(() => {
+    if (selectedLocation.value && selectedStatus.value) {
+      setQuery(`location=${selectedLocation.value}&status=${selectedStatus.value}`);
+    } else if (selectedLocation.value && !selectedStatus.value) {
+      setQuery(`location=${selectedLocation.value}`);
+    } else if (!selectedLocation.value && selectedStatus.value) {
+      setQuery(`status=${selectedStatus.value!}`);
+    }
+  }, [selectedLocation, selectedStatus]);
 
   return (
     <section className='bg-white px-4'>
@@ -30,8 +35,9 @@ const Filters: React.FC = () => {
           selected={selectedStatus}
         />
         <Link
-          href={`/filter-results?location=${selectedLocation.value}&status=${selectedStatus.value}`}
-          className='bg-blue-600 text-white w-full text-center py-3 px-8 mt-4 md:mt-0 rounded-md'
+          href={`/properties?${query}`}
+          replace
+          className='bg-blue-800 hover:bg-blue-700 text-white w-full text-center py-3 px-8 mt-4 md:mt-0 rounded-md'
         >
           Search
         </Link>

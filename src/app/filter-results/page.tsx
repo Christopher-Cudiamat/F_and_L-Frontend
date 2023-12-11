@@ -10,6 +10,7 @@ import CategoryFilter from "@/components/Molecules/CategoryFilter/CategoryFilter
 import Filters from "@/components/Molecules/Filters/Filters";
 import { getFilteredProperties } from "@/services/properties/getFilteredProperties";
 import Container from "@/components/Atoms/Container/Container";
+import FilterResult from "@/components/Molecules/FilterResult/FilterResult";
 
 interface ISearchParams {
   searchParams: { location: string; status: string };
@@ -30,18 +31,11 @@ const FilterResultsPage: React.FC<ISearchParams> = async ({ searchParams }) => {
       />
       <Filters />
       <section className='bg-white pt-10 lg:pt-20 pb-10 min-h-[200px] lg:min-h-[500px]'>
-        <Container className='flex flex-col lg:flex-row items-center justify-center lg:justify-start text-lg md:text-xl gap-4 mb-10'>
-          <IoFilterSharp
-            size={50}
-            className='text-slate-700'
-          />
-          <p className='text-slate-500 text-center'>
-            {hasResults ? "Filter results for " : "No results found for "}
-            <span className='capitalize font-semibold'>{`"${location}${
-              location && status ? "/" : ""
-            }${status === "rfo" ? status.toUpperCase() : status}"`}</span>
-          </p>
-        </Container>
+        <FilterResult
+          location={location}
+          hasResults={hasResults}
+          status={status}
+        />
         <CardsContainer>
           {results?.condos.map((item: IProperties) => (
             <PropertyCard

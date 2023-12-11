@@ -4,6 +4,9 @@ import { Open_Sans } from "next/font/google";
 import Footer from "@/components/Molecules/Footer/Footer";
 import Header from "@/components/Molecules/Header/Header";
 import { footer } from "@/components/Molecules/Footer/config";
+import CookieBanner from "@/components/Molecules/CookeBanner/CookieBanner";
+import Container from "@/components/Atoms/Container/Container";
+import Breadcrumbs from "@/components/Molecules/Breadcrumbs/Breadcrumbs";
 
 const inter = Open_Sans({ subsets: ["latin"] });
 
@@ -24,8 +27,9 @@ const RootLayout: React.FC<IRootLayout> = ({ children }) => {
     >
       <body className={`${inter.className} bg-white`}>
         <Header />
-        <main className='bg-white'>{children}</main>
+        <main className='bg-white tracking-normal'>{children}</main>
         <Footer {...footer} />
+        <CookieBanner />
       </body>
     </html>
   );

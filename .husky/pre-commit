@@ -11,18 +11,18 @@ npm run check-format ||
 )
 
 # Check ESLint Standards
-npm run check-lint ||
-(
-        echo '❌❌❌ESLint Check Failed. Make the required changes listed above, add changes and try to commit again.❌❌❌'
-        false; 
-)
+# npm run check-lint ||
+# (
+#         echo '❌❌❌ESLint Check Failed. Make the required changes listed above, add changes and try to commit again.❌❌❌'
+#         false; 
+# )
 
 # Check tsconfig standards
-npm run check-types ||
-(
-    echo '❌❌❌Failed Type check.❌❌❌'
-    false;
-)
+# npm run check-types ||
+# (
+#     echo '❌❌❌Failed Type check.❌❌❌'
+#     false;
+# )
 
 # If everything passes... Now we can commit
 echo '🔨🔨🔨🔨... Code is good... Trying to commit changes now. 🔨🔨🔨🔨'

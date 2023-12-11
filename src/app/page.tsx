@@ -23,7 +23,7 @@ const HomePage: React.FC = async () => {
 
   return (
     <React.Fragment>
-      <section className='relative'>
+      <section className='relative overflow-hidden'>
         <Slider />
         <Container className='absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:max-w-[640px] 2xl:max-w-[700px] text-white text-center'>
           <h1 className='tracking-wider text-4xl md:text-6xl font-bold mb-4'>
@@ -70,7 +70,6 @@ const HomePage: React.FC = async () => {
           ))}
         </CardsContainer>
       </section>
-      <AboutUsBanner />
       <section className='bg-white py-10'>
         <SectionTitle
           title='Featured locations'
@@ -91,6 +90,7 @@ const HomePage: React.FC = async () => {
           </ul>
         </Container>
       </section>
+      <AboutUsBanner />
       <section>
         <ContactUsBanner
           image='/images/test-hero.jpg'

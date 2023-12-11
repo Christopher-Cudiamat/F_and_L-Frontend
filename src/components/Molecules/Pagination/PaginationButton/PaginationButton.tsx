@@ -9,7 +9,7 @@ const PaginationButton: React.FC<PaginationButtonProps> = ({ label, href }) => {
   return (
     <Link
       href={href}
-      className='bg-blue-600 hover:bg-blue-700 text-sm md:text-base font-normal rounded-md py-1.5 px-4 text-white duration-100'
+      className='bg-blue-800 hover:bg-blue-700 text-sm md:text-base font-normal rounded-md py-1.5 px-4 text-white duration-100'
     >
       {label}
     </Link>
